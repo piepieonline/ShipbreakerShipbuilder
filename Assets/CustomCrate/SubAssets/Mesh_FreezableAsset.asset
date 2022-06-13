@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1967338516, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: Mesh_FreezableAsset
+  m_EditorClassIdentifier: 
+  m_AssetGUID: c3cbed16a976c9b48beca89a8af699e6
+  m_FreezableProperties:
+    m_DoesFreeze: 1
+    m_FreezeTime:
+      m_Min: 0.1
+      m_Max: 0.5
+    m_DoesThaw: 1
+    m_ThawTime:
+      m_Min: 5
+      m_Max: 10
+    m_DoesMelt: 1
+    m_MeltTime:
+      m_Min: 60
+      m_Max: 60
+    m_StartsFrozen: 0
+    m_StartsFreezing: 0
+    m_FreezingBounds: 1
+    m_FreezingStrength: 1
+  m_GeneralProperties:
+    m_PropertyType: 0
+    m_FX: {fileID: 0}
+    m_FXPrefabRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    m_DamageFXEvent: 
+    m_LoopStartEvent:
+      WwiseGuid: 8A64DB7C-C512-4C55-AA10-C8B3017A067E:sfx_env_hazard_cryo_idle
+    m_LoopEndEvent:
+      WwiseGuid: 4FFF6EDF-19E5-4A93-BDBC-A5652879C52F:sfx_env_hazard_cryo_idle_stop
+    m_StateChangedEvent:
+      WwiseGuid: 423A97C8-9A45-4DFD-AC74-EF6E97F91F58:sfx_env_hazard_cryo_emission_idle
+    m_IsMasterSFX: 0
+    m_ExtraStartEvent:
+      WwiseGuid: 
+    m_ExtraEndEvent:
+      WwiseGuid: 
+    m_DamageType: {fileID: 0}
+    m_Tick: 0
+    m_DamagePerTick: 0

@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -680302862, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: ModuleConstructionAsset
+  m_EditorClassIdentifier: 
+  m_AssetGUID: 
+  Data:
+    m_ShipArchetype: {fileID: 11400000, guid: 0ad370b770501434b9030dc634998469, type: 2}
+    m_Manufacturer: {fileID: 0}
+    ManufacturerRef:
+      m_AssetGUID: 10ba5f74e181ef14185f6cadf0dc8981
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    m_RootModulePrefab: {fileID: 0}
+    m_ShipLoadingScreenImage: {fileID: 0}
+    m_CatalogueImage: {fileID: 0}
+    m_RootModuleRef:
+      m_AssetGUID: 985e889cb1a325c4ba92855918db3bcf
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    m_ShipLoadingScreenImageRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    m_CatalogueImageRef:
+      m_AssetGUID: 5bac34681042e2641a3d151918aac454
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    m_SkinData: {fileID: 0}
+    m_PropertyData: {fileID: 0}
+    m_ShipRewardsData: {fileID: 0}
+    m_IsTutorialShip: 0
+    m_IsContinueable: 1
+    m_TutorialShipClass: {fileID: 0}
+    m_ShipAudioSize: {fileID: 0}
+    m_VitalityData: {fileID: 0}
+    m_ShipIcon: {fileID: 0}
+    m_Restrictions: []
+    m_NoRandomSeed: 0
+    m_SeedToSet: 0
+    m_ShipEncounteredPlayerAction: {fileID: 0}
+    m_ShipTypeCompletedWorkOrder: {fileID: 0}
+    m_ShipManifestBlueprintAsset: {fileID: 0}

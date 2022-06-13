@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1241210037, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: DefaultBreakMassless_BreakableJointComponentAsset
+  m_EditorClassIdentifier: 
+  Data:
+    m_BreakableBy: 7
+    m_TotalDurability: 200
+    m_ClampForce: 1
+    m_ForceRange:
+      Min: 1
+      Max: 1.5
+    m_DecompressionForceScaleRange:
+      Min: 0.01
+      Max: 1
+    m_Thresholds:
+    - Threshold: 0.99
+      MaxDegrees: 5
+      FXLocalPositionOffset: {x: 0.01, y: 0, z: 0.02}
+      FX: {fileID: -2440138893309211558, guid: 00000000000000000000000000000000, type: 0}
+      SFX:
+        WwiseGuid: 
+    m_BreakLocalPositionOffset: {x: 0, y: 0, z: 0}
+    m_BreakFX: {fileID: -2440138893309211558, guid: 00000000000000000000000000000000, type: 0}
+    m_BreakRegardlessOfMass: 1
+    m_YankLockOnStart: 0
+    m_YankLockPAT: {fileID: 0}
+    m_YankUnlockOnlyPAT: {fileID: 0}
+    m_BreakDamageConnectedObjects: {fileID: 0}
+    m_BreakStartSFX:
+      WwiseGuid: 
+    m_BreakInProgressRTPC:
+      WwiseGuid: E6CBB5C7-AB85-4702-A8E5-0E59B26FA6C6:Dejoint_Progress
+    m_BreakStopSFX:
+      WwiseGuid: 
+    m_BreakSuccessSFX:
+      WwiseGuid: 2F7ACCE1-CBD8-49C2-8E36-2AC5EBE9635D:sfx_dejoint_phys_gen_medium

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Modded Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Modded Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ac6adf41935d3ba4ea6462428e98e6f3
+  m_SerializeEntries:
+  - m_GUID: 0bf9509d41b55564ea5e63474c6e6439
+    m_Address: Assets/CustomRootModule.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6b6dd887e0738b54cbbc02ced494c701
+    m_Address: Assets/Sphere.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 985e889cb1a325c4ba92855918db3bcf
+    m_Address: Assets/CustomCrate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Release
+  - m_GUID: d69920c4182e4ff4e9af35699f874ca5
+    m_Address: Assets/DemoButton.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 253d8ebc32dc5ff4bb79b98cdd931718
+    m_Address: Assets/CustomLevel/LevelAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+  - m_GUID: 5c58230aec577b14fb1c49aa7272637a
+    m_Address: Assets/CustomLevel/fees.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 934391b755e9bba49ba646167e2c1d58
+    m_Address: Assets/CustomLevel/ModuleConstructionAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 41ec03b2a742f9d43bf0a13bb5ba8fe2
+    m_Address: Assets/CustomOperation/CuttableDemo.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a6c97fb2efb3bb14faac21c54b561293
+    m_Address: Assets/CustomOperation/MackNoseRefs.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 102453e3bd4709c41b25e2fc6f6fe3f7
+    m_Address: Assets/CustomOperation/AirlockRef.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2ade62975d33c5408fc695ba5be1d27
+    m_Address: Assets/CustomOperation/BoxRef.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3075522616fd26a4ea5283b81585c3a6
+    m_Address: Assets/CustomOperation/BoxRef/ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 651889da8c02ede4a88f34efec8d762f
+    m_Address: Assets/CustomOperation/BoxRef/PRF_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a5026e8f389a9cb45aa66509624a50c0, type: 2}
+    - {fileID: 11400000, guid: 3ae9c38fa3bdcae4fae026d2a47db314, type: 2}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -225375714, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: SP_Mat_Chassis_CutPoint_Grade0_Vaporize
+  m_EditorClassIdentifier: 
+  Data:
+    m_DisplaysInfo: 1
+    m_ApplySurfaceDamage: 1
+    m_SalvagedObjectAction: {fileID: 0}
+    m_SalvagedObjectIncorrectAction: {fileID: 0}
+    m_ScrappedObjectAction: {fileID: 0}
+    m_DejointedObjectAction: {fileID: 0}
+    m_ObjectGrappledAction: {fileID: 0}
+    m_ObjectCutBySplitsawAction: {fileID: 0}
+    m_IRigidbodyAsset: {fileID: 11400000, guid: 3b32e3acc57bf9d4b939ce20a7ae0e9b, type: 2}
+    m_AudioMaterialAsset: {fileID: 11400000, guid: 23cb3d550969d73458fcee4c3e39a7dd, type: 2}
+    m_FXMaterialAsset: {fileID: 11400000, guid: f3416a215e71c8447a5cd4e212e17f5f, type: 2}
+    m_ObjectInfoAsset: {fileID: 11400000, guid: bb3baaa7efab8fb4b8e2d09a6daa36ba, type: 2}
+    m_ShatterableComponentAsset: {fileID: 11400000, guid: 23700dbd7e3f72f49a8c23b3714dc55e, type: 2}
+    m_CuttingTargetableAsset: {fileID: 11400000, guid: 831c32ae3a68c184a87379d0517caf7b, type: 2}
+    m_HighlightAsset: {fileID: 11400000, guid: d4a571ef7a5ba414d830453c6994e6b3, type: 2}
+    m_ScannerComponentAsset: {fileID: 11400000, guid: 22918b043b1c8ac4ab376e556a38a4b3, type: 2}
+    m_SalvageableAsset: {fileID: 0}
+    m_ScorchGlowAsset: {fileID: 0}
+    m_BreakableJointAsset: {fileID: 0}
+    m_JointSetupAsset: {fileID: 11400000, guid: 9ded8d51ea5e37f40bbc8d9ff2d92cb2, type: 2}
+    m_VitalityControllerAsset: {fileID: 0}
+    m_ImpactDamageRanges: {fileID: 0}
+    m_MigrationEntityBlueprint: {fileID: 11400000, guid: 30806b9d189278f4982f88f29a45baf4, type: 2}

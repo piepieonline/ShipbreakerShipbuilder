@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1920448954, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: SALV_Crate_Hard
+  m_EditorClassIdentifier: 
+  m_AssetGUID: b60fa48d15b42714e9cc089f2681464b
+  m_Data:
+    m_PossibleSalvageableOptions: 2
+    m_Denomination: pc
+    m_AwardedCurrencies:
+    - m_CurrencyType: {fileID: 11400000, guid: 1318a5a0a3e4df14f9983923fe6c975b, type: 2}
+      m_MinInitialValue: 58500
+      m_MaxInitialValue: 58500
+      m_MassBasedValue: 0
+      m_MassToValueCurve: {fileID: 0}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -212276096, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: Crate_ScannerComponentAsset
+  m_EditorClassIdentifier: 
+  m_Data:
+    m_ShowWarningIconOnLowHealth: 0
+    m_ScannedSprite: {fileID: -798450013370803045, guid: 00000000000000000000000000000000, type: 0}
+    m_WarningSprite: {fileID: -2059978268427667124, guid: 00000000000000000000000000000000, type: 0}
+    m_UnknownSprite: {fileID: 3775460846047549404, guid: 00000000000000000000000000000000, type: 0}
+    m_ScannedSpriteColor: {r: 1, g: 1, b: 1, a: 1}
+    m_WarningSpriteColor: {r: 1, g: 0, b: 0, a: 0.7019608}
+    m_UnknownSpriteColor: {r: 0.6911765, g: 0.6911765, b: 0.6911765, a: 0.622}
+    m_HUDMarkerPrefab: {fileID: 1189535288306137285, guid: 00000000000000000000000000000000, type: 0}
+    m_DisplayHealthOutsideOfScanMode: 0
+    m_AllowDistanceScanning: 1
+    m_ShowHealthOnGrapple: 1
+    m_DisplayHealthScanModes:
+    - {fileID: 11400000, guid: 88f1eca66bf790e4cb3a961bfd156158, type: 2}

@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1127858399, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: LevelAsset
+  m_EditorClassIdentifier: 
+  Data:
+    LevelDisplayName: Demo Ship
+    LevelDescriptionShort: Demo Ship Short
+    LevelDescriptionFull: Demo Ship Long
+    LevelThumbnailImage: {fileID: 0}
+    LevelFullImage: {fileID: 0}
+    LevelThumbnailImageRef:
+      m_AssetGUID: 5c58230aec577b14fb1c49aa7272637a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    LevelFullImageRef:
+      m_AssetGUID: 5c58230aec577b14fb1c49aa7272637a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    SessionType: 4
+    SortOrder: 0
+    CompletionTimeInSeconds: 9999
+    TimerCountsUp: 1
+    StartingShip: {fileID: 0}
+    StartingShipRef:
+      m_AssetGUID: 934391b755e9bba49ba646167e2c1d58
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    SetSeed: 0
+    Seed: 0
+    BaseScene: 
+    BaseSceneRef:
+      m_AssetGUID: be5ef977dfbe2b344b39a1cd19df1fb1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    IsUnlocked: 1
+    IsDeveloperLevel: 0
+    SceneParts: []
+    ScenePartRefs: []
+    SoundBanks: []
+    StartingUpgrades: {fileID: 0}
+    PurchaseStartingUpgrades: 0
+    ObjectiveOverrides:
+      m_SequentialObjectives: []
+    LocksHabUntilObjectivesComplete: 0
+    UseSpawnLocationOverride: 0
+    SpawnLocation: {x: 0, y: 0, z: 0}

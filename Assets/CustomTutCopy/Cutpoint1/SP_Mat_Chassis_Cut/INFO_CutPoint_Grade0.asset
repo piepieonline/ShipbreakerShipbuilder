@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1887844807, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: INFO_CutPoint_Grade0
+  m_EditorClassIdentifier: 
+  m_AssetGUID: 070181c740ce2284d858837164e3cc60
+  m_Data:
+    m_ObjectName: 3891
+    m_DestroyedObjectName: 
+    m_Categories:
+    - {fileID: 11400000, guid: aa230b7771659f049aa428627761b0d3, type: 2}
+    - {fileID: 11400000, guid: b2df8632569e00249a60b4db7f8d6f06, type: 2}
+    m_Description: 3892
+    m_Priority: 2
+    m_CategoryColor: {r: 1, g: 0, b: 0.6862745, a: 1}
+    m_SpeechAsset: {fileID: 0}
+    m_TriggerSpeechMoreThanOnce: 0

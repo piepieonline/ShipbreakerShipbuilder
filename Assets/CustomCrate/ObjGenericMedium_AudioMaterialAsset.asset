@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -642757549, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: ObjGenericMedium_AudioMaterialAsset
+  m_EditorClassIdentifier: 
+  Data:
+    m_LeftGrab:
+      WwiseGuid: 1709128E-189D-445A-822D-64FC9DD5786E:sfx_mech_hands_grab_L
+    m_RightGrab:
+      WwiseGuid: 9514F39C-5AAB-42BE-9A56-C48013C7C351:sfx_mech_hands_grab_R
+    m_PlayerImpact:
+      WwiseGuid: C1A2C340-8951-4C1B-AE14-4BBAB8444A25:sfx_player_impact_generic
+    m_PlayerImpactVisorOverride:
+      WwiseGuid: BA21BE9C-CAEA-4540-87D5-E96DC942F0E9:sfx_player_impact_generic_medium
+    m_SquishyCollide:
+      WwiseGuid: 91AABCEB-6C6E-483F-8489-8C0BD6098BE4:sfx_player_squishy_collide
+    m_Tag:
+      WwiseGuid: 7C08E284-A288-4156-84FE-3B3C6FD0E001:sfx_phys_obj_generic_medium_impact
+    m_Family:
+      WwiseGuid: 58ADB0C4-5D46-4AC4-9204-FA8CC773DCF1:sfx_phys_obj_generic_small_impact
+    m_Threshold: 0.35
+    m_GlobalEventCooldown: 0.33
+    m_GlobalEventMaxPerCooldown: 6
+    m_MassRTPC:
+      WwiseGuid: F2D0EAFE-1399-4096-B1B0-6B2B437C3631:0
+    m_CollisionForceRTPC:
+      WwiseGuid: C34D499D-662D-4E23-9454-AD5C22B9CF78:0
+    m_AudioCollisionOptionsOverride: 4
+    m_UseVaporizationAudioEventsForDissolve: 0
+    m_SizeExtraSmallAudioEvent:
+      WwiseGuid: 
+    m_SizeSmallAudioEvent:
+      WwiseGuid: 
+    m_SizeMediumAudioEvent:
+      WwiseGuid: 
+    m_SizeLargeAudioEvent:
+      WwiseGuid: 
+    m_SizeExtraLargeAudioEvent:
+      WwiseGuid: 
