@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DynamicRoomContainerAsset: {fileID: 0}
-  m_IsAirlock: 0
+  m_IsAirlock: 1
   m_PressurizationTime: 2
   m_DecompressionTime: 2
   m_DoorSafetyProtocols: 0

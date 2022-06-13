@@ -72,6 +72,10 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/BoxRef/PRF_Room.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 41de0a0595534cc4eb29ba7c4baf3a46
+    m_Address: Assets/CustomOperation/BoxRef/BoxRefAirlock.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

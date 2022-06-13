@@ -13,6 +13,7 @@ public class LoadGameAssets
         ReloadAssets();
     }
 
+    [MenuItem("Shipbreaker/Reload Assets")]
     static void ReloadAssets()
     {
         if (LoadAddressables.handle1.IsValid()) Addressables.Release(LoadAddressables.handle1);

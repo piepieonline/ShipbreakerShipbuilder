@@ -30,11 +30,16 @@ public class DrawEditor : MonoBehaviour
         foreach (var addressable in addressables)
         {
             if(addressable.parent == null) continue;
-            Matrix4x4 matrix = Matrix4x4.TRS(addressable.parent.TransformPoint(addressable.offset), addressable.parent.rotation, addressable.parent.localScale);
+            // Matrix4x4 matrix = Matrix4x4.TRS(addressable.parent.TransformPoint(addressable.offset) + Vector3.up * 5, addressable.parent.rotation, addressable.parent.localScale);
+            // Graphics.DrawMeshInstanced(addressable.mesh, 0, addressable.mat, new Matrix4x4[] { matrix }, 1);
+
+            // Matrix4x4 matrix = Matrix4x4.TRS(addressable.offset, addressable.rotation, addressable.parent.localScale);
+            Matrix4x4 parentMatrix = Matrix4x4.TRS(addressable.parent.position, addressable.parent.rotation, Vector3.one);
+            Matrix4x4 childMatrix = Matrix4x4.TRS(addressable.offset, addressable.rotation, Vector3.one);
             // Graphics.DrawMesh(addressable.mesh, matrix, addressable.mat, gameObject.layer, camera);
 
             addressable.mat.enableInstancing = true;
-            Graphics.DrawMeshInstanced(addressable.mesh, 0, addressable.mat, new Matrix4x4[] { matrix }, 1);
+            Graphics.DrawMeshInstanced(addressable.mesh, 0, addressable.mat, new Matrix4x4[] { parentMatrix * childMatrix }, 1);
         }
     }
 
@@ -67,7 +72,6 @@ public class DrawEditor : MonoBehaviour
                     }
                 }
             }
-
 
             if (!needToRefreshCache || LoadAddressables.handle1.IsValid() && LoadAddressables.handle2.IsValid())
             {
@@ -109,72 +113,80 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
+    int count = 0;
     public void TryCacheAsset(string address, GameObject obj, Transform parent)
     {
+        count = 0;
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
+        if (!prefab)
+        {
+            prefab = new GameObject(address);
+
+            CloneMeshTree(address, obj.transform, prefab.transform);
+
+            PrefabUtility.SaveAsPrefabAsset(prefab, $"Assets/EditorCache/{address}.prefab");
+            DestroyImmediate(prefab);
+            prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
+        }
+
+        foreach (var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
+        {
+            addressables.Add(new AddressableMapping(address, count, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, meshFilter.transform));
+            count++;
+        }
+    }
+
+    private void CloneMeshTree(string address, Transform inTransform, Transform outParent)
+    {
+        var newPrefabChild = new GameObject($"{address}_{count}");
+        newPrefabChild.transform.parent = outParent;
+        newPrefabChild.transform.localPosition = inTransform.localPosition;
+        newPrefabChild.transform.localRotation = inTransform.localRotation;
+        foreach (Transform child in inTransform)
+        {
+            CloneMeshTree(address, child, newPrefabChild.transform);
+        }
+
         var meshPath = $"Assets/EditorCache/{address}_mesh";
         var matPath = $"Assets/EditorCache/{address}_mat";
         var shaderPath = $"Assets/EditorCache/{address}_sha";
         var texturePath = $"/EditorCache/{address}_tex";
 
-        if (!prefab)
+        if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer))
         {
-            prefab = new GameObject(address);
-            prefab.transform.localPosition = obj.transform.localPosition;
+            var meshFilter = inTransform.GetComponent<MeshFilter>();
+            var suffix = $"_{count}";
 
-            int count = 0;
-            foreach (var meshFilter in obj.GetComponentsInChildren<MeshFilter>())
-            {
-                var suffix = $"_{count}";
+            var tempMesh = Instantiate(meshFilter.sharedMesh);
 
-                var tempMesh = Instantiate(meshFilter.sharedMesh);
-                var tempTexture = DuplicateTexture((Texture2D)meshFilter.GetComponent<MeshRenderer>().sharedMaterial.GetTexture("_BaseColorMap"));
-                // var tempShader = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial.shader);
-                // var tempMaterial = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial);
-                var tempMaterial = Instantiate(testMat);
-                System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}{suffix}.png", tempTexture.EncodeToPNG());
-                AssetDatabase.Refresh();
-                // tempMaterial.shader = testMat.shader;
-                var tempTextureNew = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}{suffix}.png");
-                EditorUtility.SetDirty(tempTextureNew);
+            var tempTexture = DuplicateTexture((Texture2D)meshRenderer.sharedMaterial.GetTexture("_BaseColorMap"));
+            // var tempShader = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial.shader);
+            // var tempMaterial = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial);
+            var tempMaterial = Instantiate(testMat);
+            System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}{suffix}.png", tempTexture.EncodeToPNG());
+            AssetDatabase.Refresh();
+            // tempMaterial.shader = testMat.shader;
+            var tempTextureNew = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}{suffix}.png");
+            EditorUtility.SetDirty(tempTextureNew);
 
-                tempMaterial.SetTexture("_BaseColorMap", tempTextureNew);
-                // EditorUtility.SetDirty(tempMaterial);
+            tempMaterial.SetTexture("_BaseColorMap", tempTextureNew);
+            // EditorUtility.SetDirty(tempMaterial);
 
-                // AssetDatabase.CreateAsset(tempShader, $"{shaderPath}{suffix}.shader");
-                AssetDatabase.CreateAsset(tempMaterial, $"{matPath}{suffix}.mat");
-                AssetDatabase.CreateAsset(tempMesh, $"{meshPath}{suffix}.asset");
-                var mesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{suffix}.asset");
-                var mat = AssetDatabase.LoadAssetAtPath<Material>($"{matPath}{suffix}.mat");
-                mat.SetTexture("_BaseColorMap", tempTextureNew);
-                mat.enableInstancing = true;
-                EditorUtility.SetDirty(mat);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
+            // AssetDatabase.CreateAsset(tempShader, $"{shaderPath}{suffix}.shader");
+            AssetDatabase.CreateAsset(tempMaterial, $"{matPath}{suffix}.mat");
+            AssetDatabase.CreateAsset(tempMesh, $"{meshPath}{suffix}.asset");
+            var mesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{suffix}.asset");
+            var mat = AssetDatabase.LoadAssetAtPath<Material>($"{matPath}{suffix}.mat");
+            mat.SetTexture("_BaseColorMap", tempTextureNew);
+            mat.enableInstancing = true;
+            EditorUtility.SetDirty(mat);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
 
-                var newPrefabChild = new GameObject($"{address}_{count}");
-                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = mesh;
-                newPrefabChild.AddComponent<MeshRenderer>().sharedMaterial = mat;
-                newPrefabChild.transform.parent = prefab.transform;
-                newPrefabChild.transform.localPosition = meshFilter.transform.localPosition;
-                newPrefabChild.transform.localRotation = meshFilter.transform.localRotation;
+            newPrefabChild.AddComponent<MeshFilter>().sharedMesh = mesh;
+            newPrefabChild.AddComponent<MeshRenderer>().sharedMaterial = mat;
 
-                addressables.Add(new AddressableMapping(address, count, mesh, mat, parent, obj.transform));
-
-                count++;
-            }
-
-            PrefabUtility.SaveAsPrefabAsset(prefab, $"Assets/EditorCache/{address}.prefab");
-            DestroyImmediate(prefab);
-        }
-        else
-        {
-            int count = 0;
-            foreach (var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
-            {
-                addressables.Add(new AddressableMapping(address, count, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, obj.transform));
-                count++;
-            }
+            count++;
         }
     }
 
@@ -222,6 +234,7 @@ public class DrawEditor : MonoBehaviour
         public Material mat;
         public Transform parent;
         public Vector3 offset;
+        public Quaternion rotation;
 
         public AddressableMapping(string _hash, int _index, Mesh _mesh, Material _mat, Transform _parent, Transform _offset)
         {
@@ -231,6 +244,7 @@ public class DrawEditor : MonoBehaviour
             mat = _mat;
             parent = _parent;
             offset = _offset.position;
+            rotation = _offset.rotation;
         }
     }
 }
