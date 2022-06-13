@@ -7,6 +7,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using BBI.Unity.Game;
 
 [ExecuteInEditMode]
 public class DrawEditor : MonoBehaviour
@@ -30,15 +31,11 @@ public class DrawEditor : MonoBehaviour
         foreach (var addressable in addressables)
         {
             if(addressable.parent == null) continue;
-            // Matrix4x4 matrix = Matrix4x4.TRS(addressable.parent.TransformPoint(addressable.offset) + Vector3.up * 5, addressable.parent.rotation, addressable.parent.localScale);
-            // Graphics.DrawMeshInstanced(addressable.mesh, 0, addressable.mat, new Matrix4x4[] { matrix }, 1);
 
-            // Matrix4x4 matrix = Matrix4x4.TRS(addressable.offset, addressable.rotation, addressable.parent.localScale);
             Matrix4x4 parentMatrix = Matrix4x4.TRS(addressable.parent.position, addressable.parent.rotation, Vector3.one);
             Matrix4x4 childMatrix = Matrix4x4.TRS(addressable.offset, addressable.rotation, Vector3.one);
-            // Graphics.DrawMesh(addressable.mesh, matrix, addressable.mat, gameObject.layer, camera);
 
-            addressable.mat.enableInstancing = true;
+            // addressable.mat.enableInstancing = true;
             Graphics.DrawMeshInstanced(addressable.mesh, 0, addressable.mat, new Matrix4x4[] { parentMatrix * childMatrix }, 1);
         }
     }
@@ -50,8 +47,6 @@ public class DrawEditor : MonoBehaviour
             clearAddressables = false;
             addressables.Clear();
         }
-
-        List<(string, Transform)> addressablesToLoad = new List<(string, Transform)>();
 
         if(updateView)
         {
@@ -83,11 +78,16 @@ public class DrawEditor : MonoBehaviour
                     }
                 }
 
+                foreach(var hardpoint in rootGameObject.GetComponentsInChildren<HardPoint>())
+                {
+                    LoadHardpoint(hardpoint);
+                }
+
                 if (!needToRefreshCache || LoadAddressables.handle1.IsValid() && LoadAddressables.handle2.IsValid())
                 {
                     foreach (var addressable in addressablesToLoad)
                     {
-                        LoadAddress(addressable.Item1, addressable.Item2);
+                        LoadAddress(addressable.Item1, addressable.Item2, false);
                     }
                 }
                 else
@@ -98,7 +98,23 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
-    public static void LoadAddress(string addressRef, Transform transform)
+    static void LoadHardpoint(HardPoint hardPoint)
+    {
+        Addressables.LoadAssetAsync<ModuleListAsset>(hardPoint.AssetRef.AssetGUID).Completed += res =>
+        {
+            if (res.IsValid())
+            {
+                var moduleEntry = res.Result.Data.ModuleEntryContainer.Data.FirstOrDefault();
+                if (moduleEntry == null) return;
+                if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
+                {
+                    LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
+                }
+            }
+        };
+    }
+
+    static void LoadAddress(string addressRef, Transform transform, bool isHardpoint)
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
 
@@ -110,7 +126,7 @@ public class DrawEditor : MonoBehaviour
             ).Completed += res => {
                 if(res.IsValid())
                 {
-                    TryCacheAsset(addressRef, res.Result, transform);
+                    TryCacheAsset(addressRef, res.Result, transform, isHardpoint);
                 }
             };
         }
@@ -118,14 +134,13 @@ public class DrawEditor : MonoBehaviour
         {
             foreach(var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
             {
-                addressables.Add(new AddressableMapping(addressRef, -1, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, transform, meshFilter.transform));
+                addressables.Add(new AddressableMapping(addressRef, -1, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, transform, prefab.transform, meshFilter.transform, isHardpoint));
             }
-            
         }
     }
 
     static int count = 0;
-    static void TryCacheAsset(string address, GameObject obj, Transform parent)
+    static void TryCacheAsset(string address, GameObject obj, Transform parent, bool isHardpoint)
     {
         count = 0;
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
@@ -142,7 +157,7 @@ public class DrawEditor : MonoBehaviour
 
         foreach (var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
         {
-            addressables.Add(new AddressableMapping(address, count, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, meshFilter.transform));
+            addressables.Add(new AddressableMapping(address, count, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, prefab.transform, meshFilter.transform, isHardpoint));
             count++;
         }
     }
@@ -227,7 +242,7 @@ public class DrawEditor : MonoBehaviour
         {
             for(int i = 0; i < loader.refs.Count; i++)
             {
-                LoadAddress(loader.refs[i], arg.Result.transform);
+                LoadAddress(loader.refs[i], arg.Result.transform, false);
             }
         }
 
@@ -245,14 +260,14 @@ public class DrawEditor : MonoBehaviour
         public Vector3 offset;
         public Quaternion rotation;
 
-        public AddressableMapping(string _hash, int _index, Mesh _mesh, Material _mat, Transform _parent, Transform _offset)
+        public AddressableMapping(string _hash, int _index, Mesh _mesh, Material _mat, Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
         {
             hash = _hash;
             index = _index;
             mesh = _mesh;
             mat = _mat;
             parent = _parent;
-            offset = _offset.position;
+            offset = _hardpoint ? _offset.position - _offsetParent.GetChild(0).position : _offset.position;
             rotation = _offset.rotation;
         }
     }
