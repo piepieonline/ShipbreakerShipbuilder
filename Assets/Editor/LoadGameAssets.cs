@@ -11,6 +11,7 @@ public class LoadGameAssets
     static LoadGameAssets()
     {
         ReloadAssets();
+        EditorApplication.hierarchyChanged += OnHierarchyChanged;
     }
 
     [MenuItem("Shipbreaker/Reload Assets")]
@@ -24,5 +25,16 @@ public class LoadGameAssets
 
         LoadAddressables.handle1.Completed += status => { Debug.Log($"Loading 1 complete: Valid: {status.IsValid()}"); };
         LoadAddressables.handle2.Completed += status => { Debug.Log($"Loading 2 complete: Valid: {status.IsValid()}"); };
+    }
+
+    static int lastNumRoot;
+    static void OnHierarchyChanged()
+    {
+        if(lastNumRoot != UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount)
+        {
+            lastNumRoot = UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount;
+
+            DrawEditor.UpdateViewList();
+        }
     }
 }

@@ -14,7 +14,7 @@ public class DrawEditor : MonoBehaviour
     public bool updateView = false;
     public bool clearAddressables = false;
 
-    List<AddressableMapping> addressables = new List<AddressableMapping>();
+    static List<AddressableMapping> addressables = new List<AddressableMapping>();
 
     public Material testMat;
 
@@ -56,38 +56,49 @@ public class DrawEditor : MonoBehaviour
         if(updateView)
         {
             updateView = false;
+            UpdateViewList();
+        }
+    }
 
-            addressables.Clear();
-            bool needToRefreshCache = false;
+    public static void UpdateViewList()
+    {
+        addressables.Clear();
+        bool needToRefreshCache = false;
+        List<(string, Transform)> addressablesToLoad = new List<(string, Transform)>();
 
-            foreach (var addressable in FindObjectsOfType<BBI.Unity.Game.AddressableLoader>())
+        foreach (var rootGameObject in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
+        {
+            if(rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
             {
-                foreach (var (addressRef, i) in addressable.refs.Select((addressRef, i) => (addressRef, i)))
+                foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
                 {
-                    addressablesToLoad.Add((addressRef, addressable.transform.GetChild(i)));
-
-                    if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressRef}.prefab")))
+                    foreach (var (addressRef, i) in addressable.refs.Select((addressRef, i) => (addressRef, i)))
                     {
-                        needToRefreshCache = true;
+                        addressablesToLoad.Add((addressRef, addressable.transform.GetChild(i)));
+
+                        if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressRef}.prefab")))
+                        {
+                            needToRefreshCache = true;
+                        }
                     }
                 }
-            }
 
-            if (!needToRefreshCache || LoadAddressables.handle1.IsValid() && LoadAddressables.handle2.IsValid())
-            {
-                foreach (var addressable in addressablesToLoad)
+                if (!needToRefreshCache || LoadAddressables.handle1.IsValid() && LoadAddressables.handle2.IsValid())
                 {
-                    LoadAddress(addressable.Item1, addressable.Item2);
+                    foreach (var addressable in addressablesToLoad)
+                    {
+                        LoadAddress(addressable.Item1, addressable.Item2);
+                    }
                 }
-            }
-            else
-            {
-                Debug.Log("Please load the catalogs");
+                else
+                {
+                    Debug.Log("Please load the catalogs");
+                }
             }
         }
     }
 
-    public void LoadAddress(string addressRef, Transform transform)
+    public static void LoadAddress(string addressRef, Transform transform)
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
 
@@ -113,8 +124,8 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
-    int count = 0;
-    public void TryCacheAsset(string address, GameObject obj, Transform parent)
+    static int count = 0;
+    static void TryCacheAsset(string address, GameObject obj, Transform parent)
     {
         count = 0;
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
@@ -136,7 +147,7 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
-    private void CloneMeshTree(string address, Transform inTransform, Transform outParent)
+    private static void CloneMeshTree(string address, Transform inTransform, Transform outParent)
     {
         var newPrefabChild = new GameObject($"{address}_{count}");
         newPrefabChild.transform.parent = outParent;
@@ -162,7 +173,7 @@ public class DrawEditor : MonoBehaviour
             var tempTexture = DuplicateTexture((Texture2D)meshRenderer.sharedMaterial.GetTexture("_BaseColorMap"));
             // var tempShader = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial.shader);
             // var tempMaterial = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial);
-            var tempMaterial = Instantiate(testMat);
+            var tempMaterial = new Material(Shader.Find("HDRP/Lit"));
             System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}{suffix}.png", tempTexture.EncodeToPNG());
             AssetDatabase.Refresh();
             // tempMaterial.shader = testMat.shader;
@@ -190,7 +201,7 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
-    Texture2D DuplicateTexture(Texture2D source)
+    static Texture2D DuplicateTexture(Texture2D source)
     {
         RenderTexture renderTex = RenderTexture.GetTemporary(
                     source.width,
@@ -210,10 +221,8 @@ public class DrawEditor : MonoBehaviour
         return readableText;
     }
 
-    public AsyncOperationHandle<GameObject> GameObjectReady(AsyncOperationHandle<GameObject> arg)
+    static AsyncOperationHandle<GameObject> GameObjectReady(AsyncOperationHandle<GameObject> arg)
     {
-        // arg.Result.transform.localPosition = Vector3.zero;
-
         if(arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
         {
             for(int i = 0; i < loader.refs.Count; i++)
