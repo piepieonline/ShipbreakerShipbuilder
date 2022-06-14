@@ -27,14 +27,20 @@ public class LoadGameAssets
         LoadAddressables.handle2.Completed += status => { Debug.Log($"Loading 2 complete: Valid: {status.IsValid()}"); };
     }
 
+    [MenuItem("Shipbreaker/Force View Refresh")]
+    static void ViewRefresh()
+    {
+        lastNumRoot = UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount;
+
+        DrawEditor.UpdateViewList();
+    }
+
     static int lastNumRoot;
     static void OnHierarchyChanged()
     {
         if(lastNumRoot != UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount)
         {
-            lastNumRoot = UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount;
-
-            DrawEditor.UpdateViewList();
+            ViewRefresh();
         }
     }
 }

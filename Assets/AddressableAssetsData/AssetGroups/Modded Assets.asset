@@ -76,6 +76,18 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/BoxRef/BoxRefAirlock.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e723eba8ae422e84190e2971c9c374f5
+    m_Address: Assets/CustomOperation/BoxRef/FirstShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7cd277cdb529a94db5fce8b1ddb990f
+    m_Address: Assets/CustomOperation/FirstShip/FirstShip_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3b4c0bc8e1989641b359c0f00d0d118
+    m_Address: Assets/CustomOperation/FirstShip/FirstShip_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

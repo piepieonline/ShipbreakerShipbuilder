@@ -12,12 +12,21 @@ using BBI.Unity.Game;
 [ExecuteInEditMode]
 public class DrawEditor : MonoBehaviour
 {
+    public static DrawEditor Instance;
+
     public bool updateView = false;
     public bool clearAddressables = false;
 
-    static List<AddressableMapping> addressables = new List<AddressableMapping>();
+    static List<RenderableMapping> addressables = new List<RenderableMapping>();
+    static List<RenderableMapping> rooms = new List<RenderableMapping>();
 
-    public Material testMat;
+    static Dictionary<string, string> prefabToHardpoint = new Dictionary<string, string>();
+
+    [ExecuteInEditMode]
+    void OnEnable()
+    {
+        Instance = this;
+    }
 
     [ExecuteInEditMode]
     void Update()
@@ -26,18 +35,33 @@ public class DrawEditor : MonoBehaviour
         Draw(cam);
     }
 
+    void OnDrawGizmos()
+    {
+        foreach (var room in rooms)
+        {
+            Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, Vector3.one);
+            Matrix4x4 childMatrix = Matrix4x4.TRS(room.offset, room.rotation, Vector3.one);
+
+            Gizmos.matrix = parentMatrix * childMatrix;
+            Gizmos.color = new Color(0, 1, 0, 0.1f);
+            Gizmos.DrawCube(Vector3.zero, room.scale);
+        }
+    }
+
     private void Draw(Camera camera)
     {
-        foreach (var addressable in addressables)
-        {
-            if(addressable.parent == null) continue;
+        foreach (var addressable in addressables) DrawRenderable(addressable);
 
-            Matrix4x4 parentMatrix = Matrix4x4.TRS(addressable.parent.position, addressable.parent.rotation, Vector3.one);
-            Matrix4x4 childMatrix = Matrix4x4.TRS(addressable.offset, addressable.rotation, Vector3.one);
+    }
 
-            // addressable.mat.enableInstancing = true;
-            Graphics.DrawMeshInstanced(addressable.mesh, 0, addressable.mat, new Matrix4x4[] { parentMatrix * childMatrix }, 1);
-        }
+    private void DrawRenderable(RenderableMapping renderableMapping)
+    {
+        if (renderableMapping.parent == null || !renderableMapping.parent.gameObject.activeInHierarchy) return;
+
+        Matrix4x4 parentMatrix = Matrix4x4.TRS(renderableMapping.parent.position, renderableMapping.parent.rotation, Vector3.one);
+        Matrix4x4 childMatrix = Matrix4x4.TRS(renderableMapping.offset, renderableMapping.rotation, Vector3.one);
+
+        Graphics.DrawMeshInstanced(renderableMapping.mesh, 0, renderableMapping.mat, new Matrix4x4[] { parentMatrix * childMatrix }, 1);
     }
 
     void OnValidate()
@@ -46,6 +70,7 @@ public class DrawEditor : MonoBehaviour
         {
             clearAddressables = false;
             addressables.Clear();
+            rooms.Clear();
         }
 
         if(updateView)
@@ -58,8 +83,10 @@ public class DrawEditor : MonoBehaviour
     public static void UpdateViewList()
     {
         addressables.Clear();
+        rooms.Clear();
         bool needToRefreshCache = false;
         List<(string, Transform)> addressablesToLoad = new List<(string, Transform)>();
+        List<HardPoint> hardPoints = new List<HardPoint>();
 
         foreach (var rootGameObject in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
         {
@@ -80,7 +107,12 @@ public class DrawEditor : MonoBehaviour
 
                 foreach(var hardpoint in rootGameObject.GetComponentsInChildren<HardPoint>())
                 {
-                    LoadHardpoint(hardpoint);
+                    hardPoints.Add(hardpoint);
+
+                    if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardpoint.AssetRef.AssetGUID}.prefab")))
+                    {
+                        needToRefreshCache = true;
+                    }
                 }
 
                 if (!needToRefreshCache || LoadAddressables.handle1.IsValid() && LoadAddressables.handle2.IsValid())
@@ -88,6 +120,11 @@ public class DrawEditor : MonoBehaviour
                     foreach (var addressable in addressablesToLoad)
                     {
                         LoadAddress(addressable.Item1, addressable.Item2, false);
+                    }
+
+                    foreach(var hardpoint in hardPoints)
+                    {
+                        LoadHardpoint(hardpoint);
                     }
                 }
                 else
@@ -108,13 +145,14 @@ public class DrawEditor : MonoBehaviour
                 if (moduleEntry == null) return;
                 if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
                 {
+                    prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
                     LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
                 }
             }
         };
     }
 
-    static void LoadAddress(string addressRef, Transform transform, bool isHardpoint)
+    static void LoadAddress(string addressRef, Transform parent, bool isHardpoint)
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
 
@@ -126,7 +164,7 @@ public class DrawEditor : MonoBehaviour
             ).Completed += res => {
                 if(res.IsValid())
                 {
-                    TryCacheAsset(addressRef, res.Result, transform, isHardpoint);
+                    TryCacheAsset(addressRef, res.Result, parent, isHardpoint);
                 }
             };
         }
@@ -134,7 +172,12 @@ public class DrawEditor : MonoBehaviour
         {
             foreach(var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
             {
-                addressables.Add(new AddressableMapping(addressRef, -1, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, transform, prefab.transform, meshFilter.transform, isHardpoint));
+                addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, prefab.transform, meshFilter.transform, isHardpoint));
+            }
+
+            foreach (var room in prefab.GetComponentsInChildren<RoomSubVolumeDefinition>())
+            {
+                rooms.Add(RenderableMapping.RoomMapping(parent, prefab.transform, room.transform, isHardpoint));
             }
         }
     }
@@ -155,19 +198,34 @@ public class DrawEditor : MonoBehaviour
             prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
         }
 
+        if(isHardpoint)
+        {
+            var hardpointPrefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
+
+            if(!hardpointPrefab)
+            {   
+                PrefabUtility.SaveAsPrefabAsset((GameObject)PrefabUtility.InstantiatePrefab(prefab), $"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
+            }
+        }
+
         foreach (var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
         {
-            addressables.Add(new AddressableMapping(address, count, meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, prefab.transform, meshFilter.transform, isHardpoint));
-            count++;
+            addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, prefab.transform, meshFilter.transform, isHardpoint));
+        }
+
+        foreach(var room in prefab.GetComponentsInChildren<RoomSubVolumeDefinition>())
+        {
+            rooms.Add(RenderableMapping.RoomMapping(parent, prefab.transform, room.transform, isHardpoint));
         }
     }
 
     private static void CloneMeshTree(string address, Transform inTransform, Transform outParent)
     {
-        var newPrefabChild = new GameObject($"{address}_{count}");
+        var newPrefabChild = new GameObject($"{inTransform.name}_{address}");
         newPrefabChild.transform.parent = outParent;
         newPrefabChild.transform.localPosition = inTransform.localPosition;
         newPrefabChild.transform.localRotation = inTransform.localRotation;
+        newPrefabChild.transform.localScale = inTransform.localScale;
         foreach (Transform child in inTransform)
         {
             CloneMeshTree(address, child, newPrefabChild.transform);
@@ -214,6 +272,14 @@ public class DrawEditor : MonoBehaviour
 
             count++;
         }
+
+        if(inTransform.TryGetComponent<RoomSubVolumeDefinition>(out var roomVolume))
+        {
+            var newRoomVolume = newPrefabChild.AddComponent<RoomSubVolumeDefinition>();
+            EditorUtility.CopySerialized(roomVolume, newRoomVolume);
+            newRoomVolume.transform.localScale = roomVolume.Size;
+            newRoomVolume.transform.localPosition = roomVolume.Center;
+        }
     }
 
     static Texture2D DuplicateTexture(Texture2D source)
@@ -250,25 +316,38 @@ public class DrawEditor : MonoBehaviour
     }
 
 
-    class AddressableMapping
+    class RenderableMapping
     {
-        public string hash;
-        public int index;
         public Mesh mesh;
         public Material mat;
         public Transform parent;
         public Vector3 offset;
         public Quaternion rotation;
+        public Vector3 scale;
 
-        public AddressableMapping(string _hash, int _index, Mesh _mesh, Material _mat, Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
+        private RenderableMapping() { }
+
+        public static RenderableMapping AddressableMapping(Mesh _mesh, Material _mat, Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
         {
-            hash = _hash;
-            index = _index;
-            mesh = _mesh;
-            mat = _mat;
-            parent = _parent;
-            offset = _hardpoint ? _offset.position - _offsetParent.GetChild(0).position : _offset.position;
-            rotation = _offset.rotation;
+            return new RenderableMapping()
+            {
+                mesh = _mesh,
+                mat = _mat,
+                parent = _parent,
+                offset = _hardpoint ? _offset.position - _offsetParent.GetChild(0).position : _offset.position,
+                rotation = _offset.rotation
+            };
+        }
+
+        public static RenderableMapping RoomMapping(Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
+        {
+            return new RenderableMapping()
+            {
+                parent = _parent,
+                offset = _hardpoint ? _offset.position - _offsetParent.GetChild(0).position : _offset.position,
+                rotation = _offset.rotation,
+                scale = _offset.localScale
+            };
         }
     }
 }

@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &282837120171647050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1423392280971626467}
+  - component: {fileID: 1614458424668059028}
+  m_Layer: 0
+  m_Name: IncludeVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 16733525
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1423392280971626467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282837120171647050}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2188838894575964155}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 4.5277818e+33, y: 4.56095e-40, z: 0}
+--- !u!114 &1614458424668059028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282837120171647050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 890487936, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.8, y: 4, z: 4}
+  m_Mode: 0
+--- !u!1 &2239559941291252867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2188838894575964155}
+  - component: {fileID: 7969247547363847673}
+  - component: {fileID: 3074235881339599178}
+  - component: {fileID: 5539662075988165718}
+  m_Layer: 0
+  m_Name: FirstShip_Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2188838894575964155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239559941291252867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1423392280971626467}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7969247547363847673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239559941291252867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 326123832, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PreviewPropertiesOverride: {fileID: 0}
+  m_SetPreviewSeed: 0
+  m_PreviewSeed: 0
+  m_ModuleTypes: []
+  m_DisableInFreeMode: 0
+  m_RotationSettings: 0
+  m_RandomXRotation:
+    Min: 0
+    Max: 0
+  m_RandomYRotation:
+    Min: 0
+    Max: 0
+  m_RandomZRotation:
+    Min: 0
+    Max: 0
+--- !u!114 &3074235881339599178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239559941291252867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1256396289, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DynamicRoomContainerAsset: {fileID: 0}
+  m_IsAirlock: 1
+  m_PressurizationTime: 2
+  m_DecompressionTime: 2
+  m_DoorSafetyProtocols: 0
+--- !u!114 &5539662075988165718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239559941291252867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65951d5478ae5c04a89e8937f96f23b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comp:
+  - BBI.Unity.Game.RoomContainerDefinition
+  field:
+  - m_DynamicRoomContainerAsset
+  refs:
+  - c69f6c1382018f447bd3ab232bf02176
