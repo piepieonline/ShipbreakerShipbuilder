@@ -10,5 +10,7 @@
 * Copy the catalog into the game mod directory (BepInEx\plugins\TestProj)
 
 ## Notes
-* Unity must be restarted after each build
+* Unity must be restarted after each build before you can load a new object from the game files
 * When using asset references, it must be the assets GUID, not the addressable name/path
+* Currently, there is no way to reuse the shader from the game, so we are stuck with a default lit shader, which doesn't behave the same
+* Spawnpoint hardpoint is not working

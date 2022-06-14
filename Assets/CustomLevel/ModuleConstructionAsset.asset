@@ -25,7 +25,7 @@ MonoBehaviour:
     m_ShipLoadingScreenImage: {fileID: 0}
     m_CatalogueImage: {fileID: 0}
     m_RootModuleRef:
-      m_AssetGUID: 985e889cb1a325c4ba92855918db3bcf
+      m_AssetGUID: e723eba8ae422e84190e2971c9c374f5
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

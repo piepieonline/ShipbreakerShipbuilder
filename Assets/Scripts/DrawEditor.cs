@@ -137,19 +137,27 @@ public class DrawEditor : MonoBehaviour
 
     static void LoadHardpoint(HardPoint hardPoint)
     {
-        Addressables.LoadAssetAsync<ModuleListAsset>(hardPoint.AssetRef.AssetGUID).Completed += res =>
+        if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab")))
         {
-            if (res.IsValid())
+            Addressables.LoadAssetAsync<ModuleListAsset>(hardPoint.AssetRef.AssetGUID).Completed += res =>
             {
-                var moduleEntry = res.Result.Data.ModuleEntryContainer.Data.FirstOrDefault();
-                if (moduleEntry == null) return;
-                if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
+                if (res.IsValid())
                 {
-                    prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
-                    LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
+                    var moduleEntry = res.Result.Data.ModuleEntryContainer.Data.FirstOrDefault();
+                    if (moduleEntry == null) return;
+                    if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
+                    {
+                        prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
+                        LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
+                    }
                 }
-            }
-        };
+            };
+        }
+        else
+        {
+            LoadAddress(hardPoint.AssetRef.AssetGUID, hardPoint.transform, true);
+        }
+
     }
 
     static void LoadAddress(string addressRef, Transform parent, bool isHardpoint)
