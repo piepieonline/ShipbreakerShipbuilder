@@ -67,9 +67,9 @@ public class DrawEditor : MonoBehaviour
             {
                 foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
                 {
-                    foreach (var (addressRef, i) in addressable.refs.Select((addressRef, i) => (addressRef, i)))
+                    foreach (var addressRef in addressable.refs)
                     {
-                        addressablesToLoad.Add((addressRef, addressable.transform.GetChild(i)));
+                        addressablesToLoad.Add((addressRef, addressable.transform));
 
                         if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressRef}.prefab")))
                         {
