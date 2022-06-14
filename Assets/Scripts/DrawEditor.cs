@@ -17,6 +17,9 @@ public class DrawEditor : MonoBehaviour
     public bool updateView = false;
     public bool clearAddressables = false;
 
+    public bool drawRooms = true;
+    public float roomOpacity = .1f;
+
     static List<RenderableMapping> addressables = new List<RenderableMapping>();
     static List<RenderableMapping> rooms = new List<RenderableMapping>();
 
@@ -37,14 +40,19 @@ public class DrawEditor : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        foreach (var room in rooms)
+        if(drawRooms)
         {
-            Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, Vector3.one);
-            Matrix4x4 childMatrix = Matrix4x4.TRS(room.offset, room.rotation, Vector3.one);
+            foreach (var room in rooms)
+            {
+                if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
 
-            Gizmos.matrix = parentMatrix * childMatrix;
-            Gizmos.color = new Color(0, 1, 0, 0.1f);
-            Gizmos.DrawCube(Vector3.zero, room.scale);
+                Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, Vector3.one);
+                Matrix4x4 childMatrix = Matrix4x4.TRS(room.offset, room.rotation, Vector3.one);
+
+                Gizmos.matrix = parentMatrix * childMatrix;
+                Gizmos.color = new Color(0, 1, 0, roomOpacity);
+                Gizmos.DrawCube(Vector3.zero, room.scale);
+            }
         }
     }
 
@@ -137,7 +145,17 @@ public class DrawEditor : MonoBehaviour
 
     static void LoadHardpoint(HardPoint hardPoint)
     {
-        if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab")))
+        if (!string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)))
+        {
+            var moduleEntry = AssetDatabase.LoadAssetAtPath<ModuleListAsset>(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)).Data.ModuleEntryContainer.Data.FirstOrDefault();
+            if (moduleEntry == null) return;
+            if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
+            {
+                prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
+                LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
+            }
+        }
+        else if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab")))
         {
             Addressables.LoadAssetAsync<ModuleListAsset>(hardPoint.AssetRef.AssetGUID).Completed += res =>
             {
