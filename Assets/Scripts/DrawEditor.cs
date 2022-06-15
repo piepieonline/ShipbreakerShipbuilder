@@ -67,9 +67,12 @@ public class DrawEditor : MonoBehaviour
         if (renderableMapping.parent == null || !renderableMapping.parent.gameObject.activeInHierarchy) return;
 
         Matrix4x4 parentMatrix = Matrix4x4.TRS(renderableMapping.parent.position, renderableMapping.parent.rotation, Vector3.one);
-        Matrix4x4 childMatrix = Matrix4x4.TRS(renderableMapping.offset, renderableMapping.rotation, Vector3.one);
+        Matrix4x4 childMatrix = Matrix4x4.TRS(renderableMapping.offset, renderableMapping.rotation, renderableMapping.scale);
 
-        Graphics.DrawMeshInstanced(renderableMapping.mesh, 0, renderableMapping.mat, new Matrix4x4[] { parentMatrix * childMatrix }, 1);
+        for (int i = 0; i < renderableMapping.mesh.subMeshCount; i++)
+        {
+            Graphics.DrawMeshInstanced(renderableMapping.mesh, i, renderableMapping.mats[i], new Matrix4x4[] { parentMatrix * childMatrix }, 1);
+        }
     }
 
     void OnValidate()
@@ -145,6 +148,8 @@ public class DrawEditor : MonoBehaviour
 
     static void LoadHardpoint(HardPoint hardPoint)
     {
+        var cachePath = AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab");
+
         if (!string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)))
         {
             var moduleEntry = AssetDatabase.LoadAssetAtPath<ModuleListAsset>(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)).Data.ModuleEntryContainer.Data.FirstOrDefault();
@@ -155,7 +160,7 @@ public class DrawEditor : MonoBehaviour
                 LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
             }
         }
-        else if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab")))
+        else if (string.IsNullOrEmpty(cachePath))
         {
             Addressables.LoadAssetAsync<ModuleListAsset>(hardPoint.AssetRef.AssetGUID).Completed += res =>
             {
@@ -198,7 +203,7 @@ public class DrawEditor : MonoBehaviour
         {
             foreach(var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
             {
-                addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, prefab.transform, meshFilter.transform, isHardpoint));
+                addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterials, parent, prefab.transform, meshFilter.transform, isHardpoint));
             }
 
             foreach (var room in prefab.GetComponentsInChildren<RoomSubVolumeDefinition>())
@@ -229,14 +234,16 @@ public class DrawEditor : MonoBehaviour
             var hardpointPrefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
 
             if(!hardpointPrefab)
-            {   
-                PrefabUtility.SaveAsPrefabAsset((GameObject)PrefabUtility.InstantiatePrefab(prefab), $"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
+            {
+                var tempGO = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+                PrefabUtility.SaveAsPrefabAsset(tempGO, $"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
+                DestroyImmediate(tempGO);
             }
         }
 
         foreach (var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
         {
-            addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterial, parent, prefab.transform, meshFilter.transform, isHardpoint));
+            addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterials, parent, prefab.transform, meshFilter.transform, isHardpoint));
         }
 
         foreach(var room in prefab.GetComponentsInChildren<RoomSubVolumeDefinition>())
@@ -258,43 +265,19 @@ public class DrawEditor : MonoBehaviour
         }
 
         var meshPath = $"Assets/EditorCache/{address}_mesh";
-        var matPath = $"Assets/EditorCache/{address}_mat";
+        
         var shaderPath = $"Assets/EditorCache/{address}_sha";
-        var texturePath = $"/EditorCache/{address}_tex";
 
         if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer))
         {
             var meshFilter = inTransform.GetComponent<MeshFilter>();
             var suffix = $"_{count}";
 
-            var tempMesh = Instantiate(meshFilter.sharedMesh);
+            AssetDatabase.CreateAsset(Instantiate(meshFilter.sharedMesh), $"{meshPath}{suffix}.asset");
+            newPrefabChild.AddComponent<MeshFilter>().sharedMesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{suffix}.asset");
 
-            var tempTexture = DuplicateTexture((Texture2D)meshRenderer.sharedMaterial.GetTexture("_BaseColorMap"));
-            // var tempShader = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial.shader);
-            // var tempMaterial = Instantiate(meshFilter.GetComponent<MeshRenderer>().sharedMaterial);
-            var tempMaterial = new Material(Shader.Find("HDRP/Lit"));
-            System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}{suffix}.png", tempTexture.EncodeToPNG());
-            AssetDatabase.Refresh();
-            // tempMaterial.shader = testMat.shader;
-            var tempTextureNew = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}{suffix}.png");
-            EditorUtility.SetDirty(tempTextureNew);
-
-            tempMaterial.SetTexture("_BaseColorMap", tempTextureNew);
-            // EditorUtility.SetDirty(tempMaterial);
-
-            // AssetDatabase.CreateAsset(tempShader, $"{shaderPath}{suffix}.shader");
-            AssetDatabase.CreateAsset(tempMaterial, $"{matPath}{suffix}.mat");
-            AssetDatabase.CreateAsset(tempMesh, $"{meshPath}{suffix}.asset");
-            var mesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{suffix}.asset");
-            var mat = AssetDatabase.LoadAssetAtPath<Material>($"{matPath}{suffix}.mat");
-            mat.SetTexture("_BaseColorMap", tempTextureNew);
-            mat.enableInstancing = true;
-            EditorUtility.SetDirty(mat);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-
-            newPrefabChild.AddComponent<MeshFilter>().sharedMesh = mesh;
-            newPrefabChild.AddComponent<MeshRenderer>().sharedMaterial = mat;
+            MeshRenderer newRenderer = newPrefabChild.AddComponent<MeshRenderer>();
+            newRenderer.sharedMaterials = meshRenderer.sharedMaterials.Select((mat, matIndex) => CloneMaterial(address, suffix, mat, matIndex)).ToArray();
 
             count++;
         }
@@ -328,6 +311,27 @@ public class DrawEditor : MonoBehaviour
         return readableText;
     }
 
+    static Material CloneMaterial(string address, string suffix, Material material, int materialIndex)
+    {
+        var matPath = $"Assets/EditorCache/{address}_mat_{suffix}_{materialIndex}";
+        var texturePath = $"/EditorCache/{address}_tex_{suffix}_{materialIndex}";
+        
+        System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}.png", DuplicateTexture((Texture2D)material.GetTexture("_BaseColorMap")).EncodeToPNG());
+        AssetDatabase.Refresh();
+
+        var tempTexture = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}.png");
+        EditorUtility.SetDirty(tempTexture);
+
+        var tempMaterial = new Material(Shader.Find("HDRP/Lit")); // Currently can't use the game's material, so just use the default
+        tempMaterial.SetTexture("_BaseColorMap", tempTexture);
+        tempMaterial.enableInstancing = true;
+        AssetDatabase.CreateAsset(tempMaterial, $"{matPath}.mat");
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+        return AssetDatabase.LoadAssetAtPath<Material>($"{matPath}.mat");
+    }
+
     static AsyncOperationHandle<GameObject> GameObjectReady(AsyncOperationHandle<GameObject> arg)
     {
         if(arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
@@ -345,7 +349,7 @@ public class DrawEditor : MonoBehaviour
     class RenderableMapping
     {
         public Mesh mesh;
-        public Material mat;
+        public Material[] mats;
         public Transform parent;
         public Vector3 offset;
         public Quaternion rotation;
@@ -353,15 +357,16 @@ public class DrawEditor : MonoBehaviour
 
         private RenderableMapping() { }
 
-        public static RenderableMapping AddressableMapping(Mesh _mesh, Material _mat, Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
+        public static RenderableMapping AddressableMapping(Mesh _mesh, Material[] _mats, Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
         {
             return new RenderableMapping()
             {
                 mesh = _mesh,
-                mat = _mat,
+                mats = _mats,
                 parent = _parent,
                 offset = _hardpoint ? _offset.position - _offsetParent.GetChild(0).position : _offset.position,
-                rotation = _offset.rotation
+                rotation = _offset.rotation,
+                scale = _offset.lossyScale
             };
         }
 

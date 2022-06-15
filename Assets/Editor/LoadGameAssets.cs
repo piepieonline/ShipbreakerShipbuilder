@@ -27,6 +27,13 @@ public class LoadGameAssets
         LoadAddressables.handle2.Completed += status => { Debug.Log($"Loading 2 complete: Valid: {status.IsValid()}"); };
     }
 
+    [MenuItem("Shipbreaker/Clear Asset Cache")]
+    static void ClearAssetCache()
+    {
+        AssetDatabase.DeleteAssets(new string[] { "Assets/EditorCache" }, new List<string>());
+        AssetDatabase.CreateFolder("Assets", "EditorCache");
+    }
+
     [MenuItem("Shipbreaker/Force View Refresh")]
     static void ViewRefresh()
     {
