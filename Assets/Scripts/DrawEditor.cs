@@ -10,7 +10,6 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using BBI.Unity.Game;
 
 /* TODO
- * Visualise overlap zones
  * Load from editor assets first, before checking addressables/cache
 */ 
 
@@ -23,10 +22,12 @@ public class DrawEditor : MonoBehaviour
     public bool clearAddressables = false;
 
     public bool drawRooms = true;
+    public bool drawRoomOverlaps = true;
     public float roomOpacity = .1f;
 
     static List<RenderableMapping> addressables = new List<RenderableMapping>();
     static List<RenderableMapping> rooms = new List<RenderableMapping>();
+    static List<RenderableMapping> roomOverlaps = new List<RenderableMapping>();
 
     static List<GameObject> fakes = new List<GameObject>();
 
@@ -59,6 +60,25 @@ public class DrawEditor : MonoBehaviour
                 
                 Gizmos.color = new Color(0, 1, 0, roomOpacity);
                 Gizmos.DrawCube(Vector3.zero, Vector3.one);
+            }
+        }
+        
+        if(drawRoomOverlaps)
+        {
+            foreach (var room in roomOverlaps)
+            {
+                if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
+
+                if(room.parent.TryGetComponent<RoomOpeningDefinition>(out var roomOpeningDefinition))
+                {
+                    Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale);
+                    Matrix4x4 childMatrix = Matrix4x4.TRS(roomOpeningDefinition.Center, Quaternion.identity, roomOpeningDefinition.Size);
+
+                    Gizmos.matrix = parentMatrix * childMatrix;
+
+                    Gizmos.color = new Color(1, 0, 0, roomOpacity);
+                    Gizmos.DrawCube(Vector3.zero, Vector3.one);
+                }
             }
         }
     }
@@ -101,6 +121,7 @@ public class DrawEditor : MonoBehaviour
             clearAddressables = false;
             addressables.Clear();
             rooms.Clear();
+            roomOverlaps.Clear();
 
             foreach (var fakePrefab in fakes)
             {
@@ -136,6 +157,7 @@ public class DrawEditor : MonoBehaviour
 
         addressables.Clear();
         rooms.Clear();
+        roomOverlaps.Clear();
         bool needToRefreshCache = false;
         List<(string, Transform)> addressablesToLoad = new List<(string, Transform)>();
         List<HardPoint> hardPoints = new List<HardPoint>();
@@ -284,6 +306,11 @@ public class DrawEditor : MonoBehaviour
                 rooms.Add(RenderableMapping.RoomMapping(room.transform, isHardpoint));
             }
 
+            foreach(var roomOverlap in temp.GetComponentsInChildren<RoomOpeningDefinition>())
+            {
+                roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, isHardpoint));
+            }
+
             fakes.Add(temp);
 
             /*
@@ -373,6 +400,14 @@ public class DrawEditor : MonoBehaviour
             EditorUtility.CopySerialized(roomVolume, newRoomVolume);
             newRoomVolume.transform.localScale = roomVolume.Size;
             newRoomVolume.transform.localPosition = roomVolume.Center;
+        }
+
+        if (inTransform.TryGetComponent<RoomOpeningDefinition>(out var roomOpening))
+        {
+            var newRoomOpening = newPrefabChild.AddComponent<RoomOpeningDefinition>();
+            EditorUtility.CopySerialized(roomOpening, newRoomOpening);
+            // newRoomOpening.transform.localScale = roomOpening.Size;
+            // newRoomOpening.transform.localPosition = roomOpening.Center;
         }
 
         if (inTransform.TryGetComponent<HardPoint>(out var hardPoint))
