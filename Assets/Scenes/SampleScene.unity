@@ -838,8 +838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateView: 0
   clearAddressables: 0
-  testMat: {fileID: 2100000, guid: 9419243820a25bc469985debc2b6512a, type: 2}
-  roomVisualiser: {fileID: 8910920497156062751, guid: b11b150435ce0d7469d0f30c39197025, type: 3}
+  drawRooms: 1
+  roomOpacity: 0.1
 --- !u!114 &1846878155
 MonoBehaviour:
   m_ObjectHideFlags: 0

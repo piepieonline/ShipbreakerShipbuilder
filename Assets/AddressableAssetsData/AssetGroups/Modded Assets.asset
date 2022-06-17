@@ -92,6 +92,22 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/FirstShjpSpawner/FirstShipSpawner.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: c9789be75340bfc408fa626d21e982de
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallStraightRoom_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fed91a7584f175a4a9d980d956771a99
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallStraightRoom_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 939a359db52ea9d43a6fdcc63cd3e1e0
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallCornerRoom_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2066f5af922a03648bb051f57655c52c
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallCorner_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

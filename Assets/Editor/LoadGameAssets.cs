@@ -32,6 +32,7 @@ public class LoadGameAssets
     {
         AssetDatabase.DeleteAssets(new string[] { "Assets/EditorCache" }, new List<string>());
         AssetDatabase.CreateFolder("Assets", "EditorCache");
+        AssetDatabase.Refresh();
     }
 
     [MenuItem("Shipbreaker/Force View Refresh")]
@@ -47,7 +48,7 @@ public class LoadGameAssets
     {
         if(lastNumRoot != UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount)
         {
-            ViewRefresh();
+            // ViewRefresh();
         }
     }
 }

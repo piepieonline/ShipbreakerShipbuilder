@@ -9,6 +9,11 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using BBI.Unity.Game;
 
+/* TODO
+ * Visualise overlap zones
+ * Load from editor assets first, before checking addressables/cache
+*/ 
+
 [ExecuteInEditMode]
 public class DrawEditor : MonoBehaviour
 {
@@ -22,6 +27,8 @@ public class DrawEditor : MonoBehaviour
 
     static List<RenderableMapping> addressables = new List<RenderableMapping>();
     static List<RenderableMapping> rooms = new List<RenderableMapping>();
+
+    static List<GameObject> fakes = new List<GameObject>();
 
     static Dictionary<string, string> prefabToHardpoint = new Dictionary<string, string>();
 
@@ -46,12 +53,12 @@ public class DrawEditor : MonoBehaviour
             {
                 if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
 
-                Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, Vector3.one);
-                Matrix4x4 childMatrix = Matrix4x4.TRS(room.offset, room.rotation, Vector3.one);
+                Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale); 
 
-                Gizmos.matrix = parentMatrix * childMatrix;
+                Gizmos.matrix = parentMatrix;
+                
                 Gizmos.color = new Color(0, 1, 0, roomOpacity);
-                Gizmos.DrawCube(Vector3.zero, room.scale);
+                Gizmos.DrawCube(Vector3.zero, Vector3.one);
             }
         }
     }
@@ -59,7 +66,6 @@ public class DrawEditor : MonoBehaviour
     private void Draw(Camera camera)
     {
         foreach (var addressable in addressables) DrawRenderable(addressable);
-
     }
 
     private void DrawRenderable(RenderableMapping renderableMapping)
@@ -75,6 +81,19 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
+    void OnDisable()
+    {
+        isUpdating = false;
+
+        foreach (var fakePrefab in fakes)
+        {
+            UnityEditor.EditorApplication.delayCall += () =>
+            {
+                DestroyImmediate(fakePrefab);
+            };
+        }
+    }
+
     void OnValidate()
     {
         if(clearAddressables)
@@ -82,24 +101,48 @@ public class DrawEditor : MonoBehaviour
             clearAddressables = false;
             addressables.Clear();
             rooms.Clear();
+
+            foreach (var fakePrefab in fakes)
+            {
+                UnityEditor.EditorApplication.delayCall += () =>
+                {
+                    DestroyImmediate(fakePrefab);
+                };
+            }
         }
 
         if(updateView)
         {
+            isUpdating = false;
             updateView = false;
-            UpdateViewList();
+            UnityEditor.EditorApplication.delayCall += () =>
+            {
+                UpdateViewList();
+            }; 
         }
     }
 
-    public static void UpdateViewList()
+    static bool isUpdating = false;
+
+    public async static void UpdateViewList()
     {
+        if(isUpdating) return;
+        isUpdating = true; 
+
+        foreach (var fakePrefab in fakes)
+        {
+            DestroyImmediate(fakePrefab);
+        }
+
         addressables.Clear();
         rooms.Clear();
         bool needToRefreshCache = false;
         List<(string, Transform)> addressablesToLoad = new List<(string, Transform)>();
         List<HardPoint> hardPoints = new List<HardPoint>();
 
-        foreach (var rootGameObject in UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects())
+        var rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+
+        foreach (var rootGameObject in rootObjects)
         {
             if(rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
             {
@@ -130,12 +173,13 @@ public class DrawEditor : MonoBehaviour
                 {
                     foreach (var addressable in addressablesToLoad)
                     {
-                        LoadAddress(addressable.Item1, addressable.Item2, false);
+                        await LoadAddress(addressable.Item1, addressable.Item2, false, true);
                     }
 
                     foreach(var hardpoint in hardPoints)
                     {
-                        LoadHardpoint(hardpoint);
+                        var realID = await LoadHardpoint(hardpoint);
+                        await LoadAddress(realID, hardpoint.transform, true, true);
                     }
                 }
                 else
@@ -144,77 +188,122 @@ public class DrawEditor : MonoBehaviour
                 }
             }
         }
+
+        isUpdating = false;
     }
 
-    static void LoadHardpoint(HardPoint hardPoint)
+    async static System.Threading.Tasks.Task<string> LoadHardpoint(HardPoint hardPoint)
     {
-        var cachePath = AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab");
-
-        if (!string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)))
+        if(System.IO.File.Exists($"{Application.dataPath}/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab"))
+        {
+            return hardPoint.AssetRef.AssetGUID;
+        }
+        else if (!string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)))
         {
             var moduleEntry = AssetDatabase.LoadAssetAtPath<ModuleListAsset>(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)).Data.ModuleEntryContainer.Data.FirstOrDefault();
-            if (moduleEntry == null) return;
+            // if (moduleEntry == null) return;
             if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
             {
                 prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
-                LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
+                return ((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID;
             }
-        }
-        else if (string.IsNullOrEmpty(cachePath))
-        {
-            Addressables.LoadAssetAsync<ModuleListAsset>(hardPoint.AssetRef.AssetGUID).Completed += res =>
-            {
-                if (res.IsValid())
-                {
-                    var moduleEntry = res.Result.Data.ModuleEntryContainer.Data.FirstOrDefault();
-                    if (moduleEntry == null) return;
-                    if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
-                    {
-                        prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
-                        LoadAddress(((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID, hardPoint.transform, true);
-                    }
-                }
-            };
         }
         else
         {
-            LoadAddress(hardPoint.AssetRef.AssetGUID, hardPoint.transform, true);
+            var guid = await LoadHardpointGuidFromModuleListAsset(hardPoint.AssetRef.AssetGUID);
+            prefabToHardpoint[guid] = hardPoint.AssetRef.AssetGUID;
+            return guid;
         }
 
+        throw new System.Exception("LoadHardpoint");
     }
 
-    static void LoadAddress(string addressRef, Transform parent, bool isHardpoint)
+    async static System.Threading.Tasks.Task<string> LoadHardpointGuidFromModuleListAsset(string moduleListAssetGuid)
+    {
+        var res = Addressables.LoadAssetAsync<ModuleListAsset>(moduleListAssetGuid);
+        await res.Task;
+
+        if (res.IsValid())
+        {
+            var moduleEntry = res.Result.Data.ModuleEntryContainer.Data.FirstOrDefault();
+            // if (moduleEntry == null) return;
+            if (moduleEntry.GetType() == typeof(ModuleEntryDefinition))
+            {
+                return ((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID;
+            }
+            else if (moduleEntry.GetType() == typeof(ModuleEntryList))
+            {
+                return await LoadHardpointGuidFromModuleListAsset(((ModuleEntryList)moduleEntry).ModuleListRef.AssetGUID);
+            }
+        }
+
+        throw new System.Exception("LoadHardpointGuidFromModuleListAsset");
+    }
+
+    async static System.Threading.Tasks.Task<GameObject> LoadAddress(string addressRef, Transform parent, bool isHardpoint, bool addToRenderList)
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
 
         if(!prefab)
         {
-            Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(
-                Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(addressRef)),
-                GameObjectReady
-            ).Completed += res => {
-                if(res.IsValid())
+            var res = Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(addressRef));
+            await res.Task;
+
+            if (res.IsValid())
+            {
+                if (res.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
                 {
-                    TryCacheAsset(addressRef, res.Result, parent, isHardpoint);
+                    for (int i = 0; i < loader.refs.Count; i++)
+                    {
+                        await LoadAddress(loader.refs[i], res.Result.transform, false, addToRenderList);
+                    }
                 }
-            };
+
+                await TryCacheAsset(addressRef, res.Result, parent, isHardpoint);
+
+                foreach(var hardpoint in res.Result.GetComponentsInChildren<HardPoint>())
+                {
+                    var hardpointAddress = await LoadHardpoint(hardpoint);
+                    await LoadAddress(hardpointAddress, hardpoint.transform, isHardpoint, addToRenderList);
+                }
+
+                return res.Result;
+            }
         }
         else
         {
-            foreach(var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
+            var temp = Instantiate(prefab, parent);
+            temp.name = addressRef;
+            temp.hideFlags = HideFlags.DontSave | HideFlags.HideInHierarchy;
+
+            if (isHardpoint)
+                temp.transform.GetChild(0).localPosition = Vector3.zero;
+
+            foreach (var room in temp.GetComponentsInChildren<RoomSubVolumeDefinition>())
             {
-                addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterials, parent, prefab.transform, meshFilter.transform, isHardpoint));
+                rooms.Add(RenderableMapping.RoomMapping(room.transform, isHardpoint));
             }
 
-            foreach (var room in prefab.GetComponentsInChildren<RoomSubVolumeDefinition>())
+            fakes.Add(temp);
+
+            /*
+            foreach (var hardpoint in temp.GetComponentsInChildren<HardPoint>())
             {
-                rooms.Add(RenderableMapping.RoomMapping(parent, prefab.transform, room.transform, isHardpoint));
+                var hardpointPrefab = await LoadAddress(hardpoint.AssetRef.AssetGUID, hardpoint.transform, true, false);
+            }
+            */
+
+            foreach (var hardpoint in temp.GetComponentsInChildren<FakeHardpoint>())
+            {
+                var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true, false);
             }
         }
+
+        return prefab;
     }
 
     static int count = 0;
-    static void TryCacheAsset(string address, GameObject obj, Transform parent, bool isHardpoint)
+    async static System.Threading.Tasks.Task TryCacheAsset(string address, GameObject obj, Transform parent, bool isHardpoint)
     {
         count = 0;
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
@@ -222,7 +311,7 @@ public class DrawEditor : MonoBehaviour
         {
             prefab = new GameObject(address);
 
-            CloneMeshTree(address, obj.transform, prefab.transform);
+            await CloneMeshTree(address, obj.transform, prefab.transform);
 
             PrefabUtility.SaveAsPrefabAsset(prefab, $"Assets/EditorCache/{address}.prefab");
             DestroyImmediate(prefab);
@@ -241,27 +330,23 @@ public class DrawEditor : MonoBehaviour
             }
         }
 
-        foreach (var meshFilter in prefab.GetComponentsInChildren<MeshFilter>())
+        foreach (var hardpoint in prefab.GetComponentsInChildren<FakeHardpoint>())
         {
-            addressables.Add(RenderableMapping.AddressableMapping(meshFilter.sharedMesh, meshFilter.GetComponent<MeshRenderer>().sharedMaterials, parent, prefab.transform, meshFilter.transform, isHardpoint));
-        }
-
-        foreach(var room in prefab.GetComponentsInChildren<RoomSubVolumeDefinition>())
-        {
-            rooms.Add(RenderableMapping.RoomMapping(parent, prefab.transform, room.transform, isHardpoint));
+            await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, isHardpoint, true);
         }
     }
 
-    private static void CloneMeshTree(string address, Transform inTransform, Transform outParent)
+    private async static System.Threading.Tasks.Task CloneMeshTree(string address, Transform inTransform, Transform outParent)
     {
         var newPrefabChild = new GameObject($"{inTransform.name}_{address}");
         newPrefabChild.transform.parent = outParent;
         newPrefabChild.transform.localPosition = inTransform.localPosition;
         newPrefabChild.transform.localRotation = inTransform.localRotation;
         newPrefabChild.transform.localScale = inTransform.localScale;
+        newPrefabChild.AddComponent<SelectAddressableParent>();
         foreach (Transform child in inTransform)
         {
-            CloneMeshTree(address, child, newPrefabChild.transform);
+            await CloneMeshTree(address, child, newPrefabChild.transform);
         }
 
         var meshPath = $"Assets/EditorCache/{address}_mesh";
@@ -288,6 +373,14 @@ public class DrawEditor : MonoBehaviour
             EditorUtility.CopySerialized(roomVolume, newRoomVolume);
             newRoomVolume.transform.localScale = roomVolume.Size;
             newRoomVolume.transform.localPosition = roomVolume.Center;
+        }
+
+        if (inTransform.TryGetComponent<HardPoint>(out var hardPoint))
+        {
+            var assetGUID = await LoadHardpoint(hardPoint);
+
+            var newHardpoint = newPrefabChild.AddComponent<FakeHardpoint>();
+            newHardpoint.AssetGUID = assetGUID;
         }
     }
 
@@ -332,20 +425,6 @@ public class DrawEditor : MonoBehaviour
         return AssetDatabase.LoadAssetAtPath<Material>($"{matPath}.mat");
     }
 
-    static AsyncOperationHandle<GameObject> GameObjectReady(AsyncOperationHandle<GameObject> arg)
-    {
-        if(arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
-        {
-            for(int i = 0; i < loader.refs.Count; i++)
-            {
-                LoadAddress(loader.refs[i], arg.Result.transform, false);
-            }
-        }
-
-        return Addressables.ResourceManager.CreateCompletedOperation(arg.Result, string.Empty);
-    }
-
-
     class RenderableMapping
     {
         public Mesh mesh;
@@ -370,14 +449,24 @@ public class DrawEditor : MonoBehaviour
             };
         }
 
-        public static RenderableMapping RoomMapping(Transform _parent, Transform _offsetParent, Transform _offset, bool _hardpoint)
+        public static RenderableMapping AddressableHardpointMapping(Mesh _mesh, Material[] _mats, Transform _parent, Transform _offsetParent, Transform _offset)
         {
             return new RenderableMapping()
             {
+                mesh = _mesh,
+                mats = _mats,
                 parent = _parent,
-                offset = _hardpoint ? _offset.position - _offsetParent.GetChild(0).position : _offset.position,
-                rotation = _offset.rotation,
-                scale = _offset.localScale
+                offset = _offsetParent.position + _offset.position,
+                rotation = _offsetParent.rotation * _offset.rotation,
+                scale = Vector3.Scale(_offsetParent.lossyScale, _offset.lossyScale)
+            };
+        }
+
+        public static RenderableMapping RoomMapping(Transform _parent, bool _hardpoint)
+        {
+            return new RenderableMapping()
+            {
+                parent = _parent
             };
         }
     }
