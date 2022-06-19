@@ -52,23 +52,9 @@ MonoBehaviour:
       - m_Id: 7f8e40055f6a9ad42877daa3c8ea7fdf
         m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
       - m_Id: c2bed94757443d34e867aa5a79a834e4
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+        m_Value: BuiltShipContent
       - m_Id: 0da4904b9473e334b91b50508e730065
-        m_Value: D:\Games\Xbox\Hardspace- Shipbreaker\Content\Shipbreaker_Data\StreamingAssets\aa\StandaloneWindows64
-      - m_Id: b0ec54c2efdf37548971dddadffc8dd8
-        m_Value: ServerData/[BuildTarget]
-      - m_Id: ccc0ba715ba6eda488e9949b528c3e2b
-        m_Value: http://localhost/[BuildTarget]
-    - m_InheritedParent: 
-      m_Id: 77e3990eba84f844cb0f1956258a55f4
-      m_ProfileName: GameAssets
-      m_Values:
-      - m_Id: 7f8e40055f6a9ad42877daa3c8ea7fdf
-        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: c2bed94757443d34e867aa5a79a834e4
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: 0da4904b9473e334b91b50508e730065
-        m_Value: D:\Games\Xbox\Hardspace- Shipbreaker\Content\Shipbreaker_Data\StreamingAssets\aa\StandaloneWindows64
+        m_Value: BuiltShipContent
       - m_Id: b0ec54c2efdf37548971dddadffc8dd8
         m_Value: ServerData/[BuildTarget]
       - m_Id: ccc0ba715ba6eda488e9949b528c3e2b

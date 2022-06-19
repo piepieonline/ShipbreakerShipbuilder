@@ -4,13 +4,6 @@ using BBI.Unity.Game;
 
 public class Create_EntityBlueprintAsset : MonoBehaviour
 {
-    [MenuItem("Example/Build Asset Bundles")]
-    static void BuildABs()
-    {
-        // Put the bundles in a folder called "ABs" within the Assets folder.
-        Debug.Log(BuildPipeline.BuildAssetBundles("Assets/Bundles", BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64));
-    }
-
     // [MenuItem("Assets/Create/Scriptable Objects/EntityBlueprintAsset")]
     public static void CreateMyAsset(System.Type t)
     {

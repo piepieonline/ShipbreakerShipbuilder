@@ -23,6 +23,7 @@ public class DrawEditor : MonoBehaviour
 
     public bool drawRooms = true;
     public bool drawRoomOverlaps = true;
+    public bool drawRoomOverlapFlows = true;
     public float roomOpacity = .1f;
 
     static List<RenderableMapping> addressables = new List<RenderableMapping>();
@@ -74,10 +75,19 @@ public class DrawEditor : MonoBehaviour
                     Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale);
                     Matrix4x4 childMatrix = Matrix4x4.TRS(roomOpeningDefinition.Center, Quaternion.identity, roomOpeningDefinition.Size);
 
-                    Gizmos.matrix = parentMatrix * childMatrix;
+                    Matrix4x4 transformMatrix = parentMatrix * childMatrix;
+
+                    Gizmos.matrix = transformMatrix;
 
                     Gizmos.color = new Color(1, 0, 0, roomOpacity);
                     Gizmos.DrawCube(Vector3.zero, Vector3.one);
+
+                    if(drawRoomOverlapFlows)
+                    {
+                        Gizmos.color = new Color(1, 0, 0, 1);
+                        DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.up : Vector3.forward);
+                        DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.down : Vector3.back);
+                    }
                 }
             }
         }

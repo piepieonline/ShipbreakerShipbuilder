@@ -80,3 +80,6 @@ crashlytics-build.properties
 
 # Build folder
 /[Bb]in/
+
+# Modded Catalog, to be regenerated on each machine
+modded_catalog.json
