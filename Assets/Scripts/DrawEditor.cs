@@ -11,7 +11,7 @@ using BBI.Unity.Game;
 
 /* TODO
  * Load from editor assets first, before checking addressables/cache
-*/ 
+*/
 
 [ExecuteInEditMode]
 public class DrawEditor : MonoBehaviour
@@ -49,28 +49,34 @@ public class DrawEditor : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        if(drawRooms)
+        if (drawRooms)
         {
             foreach (var room in rooms)
             {
                 if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
 
-                Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale); 
+                if (room.parent.TryGetComponent<RoomSubVolumeDefinition>(out var roomSubVolumeDefinition))
+                {
+                    Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale);
+                    Matrix4x4 childMatrix = Matrix4x4.TRS(roomSubVolumeDefinition.Center, Quaternion.identity, roomSubVolumeDefinition.Size);
 
-                Gizmos.matrix = parentMatrix;
-                
-                Gizmos.color = new Color(0, 1, 0, roomOpacity);
-                Gizmos.DrawCube(Vector3.zero, Vector3.one);
+                    Matrix4x4 transformMatrix = parentMatrix * childMatrix;
+
+                    Gizmos.matrix = transformMatrix;
+
+                    Gizmos.color = new Color(0, 1, 0, roomOpacity);
+                    Gizmos.DrawCube(Vector3.zero, Vector3.one);
+                }
             }
         }
-        
-        if(drawRoomOverlaps)
+
+        if (drawRoomOverlaps)
         {
             foreach (var room in roomOverlaps)
             {
                 if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
 
-                if(room.parent.TryGetComponent<RoomOpeningDefinition>(out var roomOpeningDefinition))
+                if (room.parent.TryGetComponent<RoomOpeningDefinition>(out var roomOpeningDefinition))
                 {
                     Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale);
                     Matrix4x4 childMatrix = Matrix4x4.TRS(roomOpeningDefinition.Center, Quaternion.identity, roomOpeningDefinition.Size);
@@ -82,7 +88,7 @@ public class DrawEditor : MonoBehaviour
                     Gizmos.color = new Color(1, 0, 0, roomOpacity);
                     Gizmos.DrawCube(Vector3.zero, Vector3.one);
 
-                    if(drawRoomOverlapFlows)
+                    if (drawRoomOverlapFlows)
                     {
                         Gizmos.color = new Color(1, 0, 0, 1);
                         DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.up : Vector3.forward);
@@ -124,9 +130,22 @@ public class DrawEditor : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        isUpdating = false;
+
+        foreach (var fakePrefab in fakes)
+        {
+            UnityEditor.EditorApplication.delayCall += () =>
+            {
+                DestroyImmediate(fakePrefab);
+            };
+        }
+    }
+
     void OnValidate()
     {
-        if(clearAddressables)
+        if (clearAddressables)
         {
             clearAddressables = false;
             addressables.Clear();
@@ -142,14 +161,14 @@ public class DrawEditor : MonoBehaviour
             }
         }
 
-        if(updateView)
+        if (updateView)
         {
             isUpdating = false;
             updateView = false;
             UnityEditor.EditorApplication.delayCall += () =>
             {
                 UpdateViewList();
-            }; 
+            };
         }
     }
 
@@ -157,8 +176,8 @@ public class DrawEditor : MonoBehaviour
 
     public async static void UpdateViewList()
     {
-        if(isUpdating) return;
-        isUpdating = true; 
+        if (isUpdating) return;
+        isUpdating = true;
 
         foreach (var fakePrefab in fakes)
         {
@@ -176,7 +195,7 @@ public class DrawEditor : MonoBehaviour
 
         foreach (var rootGameObject in rootObjects)
         {
-            if(rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
+            if (rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
             {
                 foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
                 {
@@ -191,7 +210,7 @@ public class DrawEditor : MonoBehaviour
                     }
                 }
 
-                foreach(var hardpoint in rootGameObject.GetComponentsInChildren<HardPoint>())
+                foreach (var hardpoint in rootGameObject.GetComponentsInChildren<HardPoint>())
                 {
                     hardPoints.Add(hardpoint);
 
@@ -208,7 +227,7 @@ public class DrawEditor : MonoBehaviour
                         await LoadAddress(addressable.Item1, addressable.Item2, false, true);
                     }
 
-                    foreach(var hardpoint in hardPoints)
+                    foreach (var hardpoint in hardPoints)
                     {
                         var realID = await LoadHardpoint(hardpoint);
                         await LoadAddress(realID, hardpoint.transform, true, true);
@@ -226,7 +245,7 @@ public class DrawEditor : MonoBehaviour
 
     async static System.Threading.Tasks.Task<string> LoadHardpoint(HardPoint hardPoint)
     {
-        if(System.IO.File.Exists($"{Application.dataPath}/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab"))
+        if (System.IO.File.Exists($"{Application.dataPath}/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab"))
         {
             return hardPoint.AssetRef.AssetGUID;
         }
@@ -274,9 +293,19 @@ public class DrawEditor : MonoBehaviour
 
     async static System.Threading.Tasks.Task<GameObject> LoadAddress(string addressRef, Transform parent, bool isHardpoint, bool addToRenderList)
     {
-        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
+        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(addressRef));
 
-        if(!prefab)
+        // Only treat it as a hardpoint if it's loading from the game files, for some reason?
+        if (prefab)
+        {
+            isHardpoint = false;
+        }
+        else
+        {
+            prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
+        }
+
+        if (!prefab)
         {
             var res = Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(addressRef));
             await res.Task;
@@ -293,7 +322,7 @@ public class DrawEditor : MonoBehaviour
 
                 await TryCacheAsset(addressRef, res.Result, parent, isHardpoint);
 
-                foreach(var hardpoint in res.Result.GetComponentsInChildren<HardPoint>())
+                foreach (var hardpoint in res.Result.GetComponentsInChildren<HardPoint>())
                 {
                     var hardpointAddress = await LoadHardpoint(hardpoint);
                     await LoadAddress(hardpointAddress, hardpoint.transform, isHardpoint, addToRenderList);
@@ -316,7 +345,7 @@ public class DrawEditor : MonoBehaviour
                 rooms.Add(RenderableMapping.RoomMapping(room.transform, isHardpoint));
             }
 
-            foreach(var roomOverlap in temp.GetComponentsInChildren<RoomOpeningDefinition>())
+            foreach (var roomOverlap in temp.GetComponentsInChildren<RoomOpeningDefinition>())
             {
                 roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, isHardpoint));
             }
@@ -343,7 +372,8 @@ public class DrawEditor : MonoBehaviour
     async static System.Threading.Tasks.Task TryCacheAsset(string address, GameObject obj, Transform parent, bool isHardpoint)
     {
         count = 0;
-        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
+        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(address)) ?? AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
+
         if (!prefab)
         {
             prefab = new GameObject(address);
@@ -355,11 +385,11 @@ public class DrawEditor : MonoBehaviour
             prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
         }
 
-        if(isHardpoint)
+        if (isHardpoint)
         {
             var hardpointPrefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
 
-            if(!hardpointPrefab)
+            if (!hardpointPrefab)
             {
                 var tempGO = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
                 PrefabUtility.SaveAsPrefabAsset(tempGO, $"Assets/EditorCache/{prefabToHardpoint[address]}.prefab");
@@ -387,7 +417,7 @@ public class DrawEditor : MonoBehaviour
         }
 
         var meshPath = $"Assets/EditorCache/{address}_mesh";
-        
+
         var shaderPath = $"Assets/EditorCache/{address}_sha";
 
         if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer))
@@ -404,20 +434,16 @@ public class DrawEditor : MonoBehaviour
             count++;
         }
 
-        if(inTransform.TryGetComponent<RoomSubVolumeDefinition>(out var roomVolume))
+        if (inTransform.TryGetComponent<RoomSubVolumeDefinition>(out var roomVolume))
         {
             var newRoomVolume = newPrefabChild.AddComponent<RoomSubVolumeDefinition>();
             EditorUtility.CopySerialized(roomVolume, newRoomVolume);
-            newRoomVolume.transform.localScale = roomVolume.Size;
-            newRoomVolume.transform.localPosition = roomVolume.Center;
         }
 
         if (inTransform.TryGetComponent<RoomOpeningDefinition>(out var roomOpening))
         {
             var newRoomOpening = newPrefabChild.AddComponent<RoomOpeningDefinition>();
             EditorUtility.CopySerialized(roomOpening, newRoomOpening);
-            // newRoomOpening.transform.localScale = roomOpening.Size;
-            // newRoomOpening.transform.localPosition = roomOpening.Center;
         }
 
         if (inTransform.TryGetComponent<HardPoint>(out var hardPoint))
@@ -453,7 +479,7 @@ public class DrawEditor : MonoBehaviour
     {
         var matPath = $"Assets/EditorCache/{address}_mat_{suffix}_{materialIndex}";
         var texturePath = $"/EditorCache/{address}_tex_{suffix}_{materialIndex}";
-        
+
         System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}.png", DuplicateTexture((Texture2D)material.GetTexture("_BaseColorMap")).EncodeToPNG());
         AssetDatabase.Refresh();
 

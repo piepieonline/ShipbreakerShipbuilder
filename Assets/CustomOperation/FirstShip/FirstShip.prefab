@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748529560077946857}
   m_LocalRotation: {x: -0, y: 0.7071069, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 8.539331, y: 22.265545, z: -7.104781}
+  m_LocalPosition: {x: 8.54, y: 22.265545, z: -12.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3146893420640635709}
@@ -2702,6 +2702,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1961025609391615700}
     m_Modifications:
+    - target: {fileID: 2801798367358711483, guid: 4281a05237c20ed44bde25569b0fddbe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4375291932440043590, guid: 4281a05237c20ed44bde25569b0fddbe, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2746,9 +2750,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6439601754522049310, guid: 4281a05237c20ed44bde25569b0fddbe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8652903586284542849, guid: 4281a05237c20ed44bde25569b0fddbe, type: 3}
       propertyPath: m_Name
       value: OuterWallStraight (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188455881357926040, guid: 4281a05237c20ed44bde25569b0fddbe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4281a05237c20ed44bde25569b0fddbe, type: 3}

@@ -14,7 +14,7 @@ public class LoadGameAssets
         EditorApplication.hierarchyChanged += OnHierarchyChanged;
     }
 
-    [MenuItem("Shipbreaker/Reload Assets", priority = 3)]
+    [MenuItem("Shipbreaker/Reload Assets", priority = 4)]
     public static void ReloadAssets()
     {
         if (LoadAddressables.handle1.IsValid()) Addressables.Release(LoadAddressables.handle1);
@@ -23,8 +23,8 @@ public class LoadGameAssets
         LoadAddressables.handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
         LoadAddressables.handle2 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
 
-        LoadAddressables.handle1.Completed += status => { Debug.Log($"Loading 1 complete: Valid: {status.IsValid()}"); };
-        LoadAddressables.handle2.Completed += status => { Debug.Log($"Loading 2 complete: Valid: {status.IsValid()}"); };
+        LoadAddressables.handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
+        LoadAddressables.handle2.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
     }
 
     [MenuItem("Shipbreaker/Clear Asset Cache", priority = 20)]
@@ -48,7 +48,7 @@ public class LoadGameAssets
     {
         if(lastNumRoot != UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount)
         {
-            // ViewRefresh();
+            ViewRefresh();
         }
     }
 }

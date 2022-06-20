@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,17 +12,14 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class LoadAddressables : MonoBehaviour
 {
-    public bool loadCata = false;
     public bool loadGO = false;
+    public bool loadSO = false;
+    public bool loadBundle = false;
 
     public string address;
 
     public GameObject loaded;
     public ScriptableObject toClone;
-
-    public bool loadSO = false;
-
-    public bool loadBundle = false;
 
     public static LoadAddressables instance;
 
@@ -32,18 +31,16 @@ public class LoadAddressables : MonoBehaviour
     public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle1;
     public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle2;
 
-    public static AsyncOperationHandle<GameObject> GameObjectReady(AsyncOperationHandle<GameObject> arg)
+    public static AsyncOperationHandle<GameObject> GameObjectInstantiateReady(AsyncOperationHandle<GameObject> arg)
     {
         Debug.Log($"doin' work {System.DateTime.Now}");
-
-        // arg.Result.transform.localPosition = Vector3.zero;
 
         if(arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
         {
             for(int i = 0; i < loader.refs.Count; i++)
             {
                 Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(
-                    Addressables.InstantiateAsync(new AssetReferenceGameObject(loader.refs[i]), arg.Result.transform.GetChild(i)), GameObjectReady)
+                    Addressables.InstantiateAsync(new AssetReferenceGameObject(loader.refs[i]), arg.Result.transform.GetChild(i)), GameObjectInstantiateReady)
                 ;
             }
         }
@@ -55,30 +52,50 @@ public class LoadAddressables : MonoBehaviour
         return Addressables.ResourceManager.CreateCompletedOperation(arg.Result, string.Empty);
     }
 
+    /*
+    public static AsyncOperationHandle<GameObject> GameObjectLoadReady(AsyncOperationHandle<GameObject> arg)
+    {
+        Debug.Log($"doin' work {System.DateTime.Now}");
+
+        if (arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
+        {
+            for (int i = 0; i < loader.refs.Count; i++)
+            {
+                Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(
+                    Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(loader.refs[i]), arg.Result.transform.GetChild(i)), GameObjectLoadReady)
+                ;
+            }
+        }
+
+        arg.Result.hideFlags = HideFlags.DontSaveInEditor;
+
+        Debug.Log($"done work {System.DateTime.Now}");
+
+        return Addressables.ResourceManager.CreateCompletedOperation(arg.Result, string.Empty);
+    }
+    */
+
     void OnValidate()
     {
         instance = this;
 
         address = address.Trim();
 
-        if (loadCata)
-        {
-            ReleaseHandles();
-
-            // Addressables.LoadContentCatalogAsync("D:\\Games\\Xbox\\Hardspace- Shipbreaker\\Content\\Shipbreaker_Data\\StreamingAssets\\aa\\catalog.json");
-            // handle1 = Addressables.LoadContentCatalogAsync("D:\\Games\\Xbox\\Hardspace- Shipbreaker\\Content\\BepInEx\\plugins\\TestProj\\catalog.json", false);
-            // handle2 = Addressables.LoadContentCatalogAsync("D:\\UnityDev\\ShipbreakerModding\\modded_catalog.json", false);
-            
-            // handle1.Completed += status => { Debug.Log($"Loading 1 complete: Valid: {status.IsValid()}"); };
-            // handle2.Completed += status => { Debug.Log($"Loading 2 complete: Valid: {status.IsValid()}"); };
-            
-            loadCata = false;
-        }
-
         if (loadGO)
         {
-            Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(Addressables.InstantiateAsync(new AssetReferenceGameObject(address)), GameObjectReady);
+            // Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(Addressables.InstantiateAsync(new AssetReferenceGameObject(address)), GameObjectInstantiateReady);
+            // Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(address)), GameObjectLoadReady);
 
+            UnityEditor.SceneManagement.StageUtility.GoToStage(new CustomStage(), true);
+
+            
+            Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(address)).Completed += res =>
+            {
+                CustomStage.go = res.Result;
+                UnityEditor.SceneManagement.StageUtility.GoToStage(new CustomStage(), true);
+                // UnityEditor.AssetDatabase.OpenAsset(res.Result);
+            };
+            
             /*
             Addressables.ResourceManager.StartOperation<GameObject>(new CustomOp(), Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(address))).Completed += res =>
             {
@@ -109,17 +126,6 @@ public class LoadAddressables : MonoBehaviour
                 Debug.Log(res.Result);
             };
         }
-    }
-
-    void OnDestroy()
-    {
-        ReleaseHandles();
-    }
-
-    void ReleaseHandles()
-    {
-        // if(handle1.IsValid()) Addressables.Release(handle1);
-        // if(handle2.IsValid()) Addressables.Release(handle2);
     }
 
     public static string[] bundles = new string[] {
@@ -263,3 +269,5 @@ public class LoadAddressables : MonoBehaviour
 "vfx_assets_all_c692fb56334ed7cb88d603164776d8d9.bundle"
     };
 }
+
+#endif

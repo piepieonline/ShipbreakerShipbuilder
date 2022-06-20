@@ -63,6 +63,13 @@ public class BuildContent
         }
     }
 
+    [MenuItem("Shipbreaker/Build and run", priority = 3)]
+    static void BuildAndRun()
+    {
+        RunBuild();
+        System.Diagnostics.Process.Start(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe"));
+    }
+
     [MenuItem("Shipbreaker/Update game catalog", priority = 1000)]
     static void UpdateGameCatalog()
     {

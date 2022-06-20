@@ -61,7 +61,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: f2ade62975d33c5408fc695ba5be1d27
-    m_Address: Assets/CustomOperation/BoxRef.prefab
+    m_Address: Assets/CustomOperation/BoxRef/BoxRef.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 3075522616fd26a4ea5283b81585c3a6
