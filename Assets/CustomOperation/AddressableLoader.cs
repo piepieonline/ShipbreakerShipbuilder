@@ -7,5 +7,7 @@ namespace BBI.Unity.Game
     public class AddressableLoader : MonoBehaviour
     {
         public List<string> refs;
+
+        public string childPath = "";
     }
 }

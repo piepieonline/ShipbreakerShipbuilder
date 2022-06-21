@@ -188,7 +188,7 @@ public class DrawEditor : MonoBehaviour
         rooms.Clear();
         roomOverlaps.Clear();
         bool needToRefreshCache = false;
-        List<(string, Transform)> addressablesToLoad = new List<(string, Transform)>();
+        List<AddressableLoader> addressablesToLoad = new List<AddressableLoader>();
         List<HardPoint> hardPoints = new List<HardPoint>();
 
         var rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
@@ -199,14 +199,11 @@ public class DrawEditor : MonoBehaviour
             {
                 foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
                 {
-                    foreach (var addressRef in addressable.refs)
-                    {
-                        addressablesToLoad.Add((addressRef, addressable.transform));
+                    addressablesToLoad.Add(addressable);
 
-                        if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressRef}.prefab")))
-                        {
-                            needToRefreshCache = true;
-                        }
+                    if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressable.refs[0]}.prefab")))
+                    {
+                        needToRefreshCache = true;
                     }
                 }
 
@@ -224,13 +221,13 @@ public class DrawEditor : MonoBehaviour
                 {
                     foreach (var addressable in addressablesToLoad)
                     {
-                        await LoadAddress(addressable.Item1, addressable.Item2, false, true);
+                        await LoadAddress(addressable.refs[0], addressable.transform, false, addressable.childPath);
                     }
 
                     foreach (var hardpoint in hardPoints)
                     {
                         var realID = await LoadHardpoint(hardpoint);
-                        await LoadAddress(realID, hardpoint.transform, true, true);
+                        await LoadAddress(realID, hardpoint.transform, true);
                     }
                 }
                 else
@@ -291,7 +288,7 @@ public class DrawEditor : MonoBehaviour
         throw new System.Exception("LoadHardpointGuidFromModuleListAsset");
     }
 
-    async static System.Threading.Tasks.Task<GameObject> LoadAddress(string addressRef, Transform parent, bool isHardpoint, bool addToRenderList)
+    async static System.Threading.Tasks.Task<GameObject> LoadAddress(string addressRef, Transform parent, bool isHardpoint, string assetPath = "")
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(addressRef));
 
@@ -302,7 +299,7 @@ public class DrawEditor : MonoBehaviour
         }
         else
         {
-            prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef}.prefab");
+            prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{addressRef + assetPath.Replace("/", "_")}.prefab");
         }
 
         if (!prefab)
@@ -312,20 +309,35 @@ public class DrawEditor : MonoBehaviour
 
             if (res.IsValid())
             {
-                if (res.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
+                GameObject result;
+
+                Vector3 cachedPosition;
+
+                if (string.IsNullOrEmpty(assetPath))
                 {
-                    for (int i = 0; i < loader.refs.Count; i++)
-                    {
-                        await LoadAddress(loader.refs[i], res.Result.transform, false, addToRenderList);
-                    }
+                    result = res.Result;
+                    cachedPosition = result.transform.localPosition;
+                }
+                else
+                {
+                    result = res.Result.transform.Find(assetPath).gameObject;
+                    cachedPosition = result.transform.localPosition;
+                    result.transform.localPosition = Vector3.zero;
                 }
 
-                await TryCacheAsset(addressRef, res.Result, parent, isHardpoint);
+                if (result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
+                {
+                     await LoadAddress(loader.refs[0], res.Result.transform, false, loader.childPath);
+                }
 
-                foreach (var hardpoint in res.Result.GetComponentsInChildren<HardPoint>())
+                await TryCacheAsset(addressRef, result, isHardpoint, addressRef + assetPath.Replace("/", "_"));
+
+                result.transform.localPosition = cachedPosition;
+
+                foreach (var hardpoint in result.GetComponentsInChildren<HardPoint>())
                 {
                     var hardpointAddress = await LoadHardpoint(hardpoint);
-                    await LoadAddress(hardpointAddress, hardpoint.transform, isHardpoint, addToRenderList);
+                    await LoadAddress(hardpointAddress, hardpoint.transform, isHardpoint);
                 }
 
                 return res.Result;
@@ -361,7 +373,7 @@ public class DrawEditor : MonoBehaviour
 
             foreach (var hardpoint in temp.GetComponentsInChildren<FakeHardpoint>())
             {
-                var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true, false);
+                var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true);
             }
         }
 
@@ -369,20 +381,20 @@ public class DrawEditor : MonoBehaviour
     }
 
     static int count = 0;
-    async static System.Threading.Tasks.Task TryCacheAsset(string address, GameObject obj, Transform parent, bool isHardpoint)
+    async static System.Threading.Tasks.Task TryCacheAsset(string address, GameObject obj, bool isHardpoint, string cachePath)
     {
         count = 0;
-        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(address)) ?? AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
+        var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(address)) ?? AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{cachePath}.prefab");
 
         if (!prefab)
         {
             prefab = new GameObject(address);
 
-            await CloneMeshTree(address, obj.transform, prefab.transform);
+            await CloneMeshTree(address, obj.transform, prefab.transform, cachePath);
 
-            PrefabUtility.SaveAsPrefabAsset(prefab, $"Assets/EditorCache/{address}.prefab");
+            PrefabUtility.SaveAsPrefabAsset(prefab, $"Assets/EditorCache/{cachePath}.prefab");
             DestroyImmediate(prefab);
-            prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{address}.prefab");
+            prefab = AssetDatabase.LoadAssetAtPath<GameObject>($"Assets/EditorCache/{cachePath}.prefab");
         }
 
         if (isHardpoint)
@@ -399,11 +411,11 @@ public class DrawEditor : MonoBehaviour
 
         foreach (var hardpoint in prefab.GetComponentsInChildren<FakeHardpoint>())
         {
-            await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, isHardpoint, true);
+            await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, isHardpoint);
         }
     }
 
-    private async static System.Threading.Tasks.Task CloneMeshTree(string address, Transform inTransform, Transform outParent)
+    private async static System.Threading.Tasks.Task CloneMeshTree(string address, Transform inTransform, Transform outParent, string cachePath)
     {
         var newPrefabChild = new GameObject($"{inTransform.name}_{address}");
         newPrefabChild.transform.parent = outParent;
@@ -413,12 +425,12 @@ public class DrawEditor : MonoBehaviour
         newPrefabChild.AddComponent<SelectAddressableParent>();
         foreach (Transform child in inTransform)
         {
-            await CloneMeshTree(address, child, newPrefabChild.transform);
+            await CloneMeshTree(address, child, newPrefabChild.transform, cachePath);
         }
 
-        var meshPath = $"Assets/EditorCache/{address}_mesh";
+        var meshPath = $"Assets/EditorCache/{cachePath}_mesh";
 
-        var shaderPath = $"Assets/EditorCache/{address}_sha";
+        var shaderPath = $"Assets/EditorCache/{cachePath}_sha";
 
         if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer))
         {
