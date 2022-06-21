@@ -226,8 +226,9 @@ public class DrawEditor : MonoBehaviour
 
                     foreach (var hardpoint in hardPoints)
                     {
-                        var realID = await LoadHardpoint(hardpoint);
-                        await LoadAddress(realID, hardpoint.transform, true);
+                        var assetGUID = await LoadHardpoint(hardpoint);
+                        if(!string.IsNullOrEmpty(assetGUID))
+                            await LoadAddress(assetGUID, hardpoint.transform, true);
                     }
                 }
                 else
@@ -259,7 +260,8 @@ public class DrawEditor : MonoBehaviour
         else
         {
             var guid = await LoadHardpointGuidFromModuleListAsset(hardPoint.AssetRef.AssetGUID);
-            prefabToHardpoint[guid] = hardPoint.AssetRef.AssetGUID;
+            if(!string.IsNullOrEmpty(guid))
+                prefabToHardpoint[guid] = hardPoint.AssetRef.AssetGUID;
             return guid;
         }
 
@@ -282,6 +284,10 @@ public class DrawEditor : MonoBehaviour
             else if (moduleEntry.GetType() == typeof(ModuleEntryList))
             {
                 return await LoadHardpointGuidFromModuleListAsset(((ModuleEntryList)moduleEntry).ModuleListRef.AssetGUID);
+            }
+            else if (moduleEntry.GetType() == typeof(ModuleEntryEmpty))
+            {
+                return "";
             }
         }
 
@@ -336,8 +342,9 @@ public class DrawEditor : MonoBehaviour
 
                 foreach (var hardpoint in result.GetComponentsInChildren<HardPoint>())
                 {
-                    var hardpointAddress = await LoadHardpoint(hardpoint);
-                    await LoadAddress(hardpointAddress, hardpoint.transform, isHardpoint);
+                    var assetGUID = await LoadHardpoint(hardpoint);
+                    if (!string.IsNullOrEmpty(assetGUID))
+                        await LoadAddress(assetGUID, hardpoint.transform, isHardpoint);
                 }
 
                 return res.Result;
@@ -461,9 +468,11 @@ public class DrawEditor : MonoBehaviour
         if (inTransform.TryGetComponent<HardPoint>(out var hardPoint))
         {
             var assetGUID = await LoadHardpoint(hardPoint);
-
-            var newHardpoint = newPrefabChild.AddComponent<FakeHardpoint>();
-            newHardpoint.AssetGUID = assetGUID;
+            if (!string.IsNullOrEmpty(assetGUID))
+            {
+                var newHardpoint = newPrefabChild.AddComponent<FakeHardpoint>();
+                newHardpoint.AssetGUID = assetGUID;
+            }
         }
     }
 

@@ -6,8 +6,8 @@ namespace BBI.Unity.Game
 {
     public class AddressableSOLoader : MonoBehaviour
     {
-        public List<string> comp;
-        public List<string> field;
-        public List<string> refs;
+        public List<string> comp = new List<string>();
+        public List<string> field = new List<string>();
+        public List<string> refs = new List<string>();
     }
 }

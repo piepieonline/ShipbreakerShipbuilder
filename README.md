@@ -11,7 +11,7 @@
 * Open SampleScene
 * Navigate to "CustomOperation/BoxRef"
 * Drag "BoxRef.prefab" into the scene
-* * If this doesn't look right, when the Editor has finished loading, click "Addressables" then "Draw Editor", "Clear Addressables" and then "Update View" 
+ * If this doesn't look right, when the Editor has finished loading, click "Addressables" then "Draw Editor", "Clear Addressables" and then "Update View" 
 * Move the atmospheric regulator into the box
 * Click the BoxRef prefab, and apply overrides
 * Discard changes to the scene
@@ -23,7 +23,7 @@
 * 
 
 ## Custom ship notes
-* To inspect an object from the game, 
+*
 
 ## Joints
 * Joints are how the game knows to connect multiple separate assets
@@ -34,7 +34,7 @@
 * RoomContainerDefinition: Define how the room works. At the moment, I am reusing existing definitions only. The same room doesn't appear to be able to be used twice on the same ship?
 * RoomSubVolumeDefinition: (green transparent boxes) should fully encompass that piece's internal area - multiple can potentially be used for complex shapes? Must be a child of a RoomContainerDefinition
 * RoomOpeningDefinition: (red transparent boxes), define how the volumes connect - including blocking (walls), allowing expansion (overlap) and doors (portals)
-** Flow axis (red arrows) defines which direction should the air flow upon breaching
+ * Flow axis (red arrows) defines which direction should the air flow upon breaching
 
 ## Inspecting game content
 * Find the '.prefab' in keys.txt, and copy it's address from the line below
@@ -42,6 +42,7 @@
 * Click 'Load GO'
 
 ## Other important gotachyas
+* If something doesn't load correctly, make sure that everything that needs to be marked as addressable, is!
 * I am caching all (game based) addressables at the moment. This means that the view of an addressable prefab won't update unless you remove it's prefab from "Assets/EditorCache"
 * When using asset references, it must be the assets GUID, not the addressable name/path
 * Currently, there is no way to reuse the shader from the game, so we are stuck with a default lit shader, which doesn't behave the same
