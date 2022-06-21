@@ -108,6 +108,22 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallCorner_Room.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d012d3c4980592f4480573db127c92b0
+    m_Address: Assets/CustomOperation/FirstShip/Components/Entryway/Entryway_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 93743c5330d28d047b9111e424ec4290
+    m_Address: Assets/CustomOperation/FirstShip/Components/Entryway/Entryway_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: df5818fdc4d9dbe4d85f23243e9f58d7
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 906b4e594b934754b8ad0b51d1a9ee3a
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/Cockpit_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

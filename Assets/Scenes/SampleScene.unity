@@ -780,7 +780,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1846878153}
-  - component: {fileID: 1846878152}
   - component: {fileID: 1846878154}
   - component: {fileID: 1846878155}
   m_Layer: 0
@@ -790,26 +789,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1846878152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846878151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4310367b61b78740a7a54dd619c1e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadCata: 0
-  loadGO: 0
-  address: fd038d23f35b59747a22dec2f214b11f
-  loaded: {fileID: 0}
-  toClone: {fileID: 0}
-  loadSO: 0
-  loadBundle: 0
-  loadedObjects: []
 --- !u!4 &1846878153
 Transform:
   m_ObjectHideFlags: 0
@@ -839,6 +818,8 @@ MonoBehaviour:
   updateView: 0
   clearAddressables: 0
   drawRooms: 1
+  drawRoomOverlaps: 1
+  drawRoomOverlapFlows: 1
   roomOpacity: 0.1
 --- !u!114 &1846878155
 MonoBehaviour:

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3424149970205463468}
   - component: {fileID: 7471791832755102880}
   m_Layer: 0
-  m_Name: Port Overlap (1)
+  m_Name: Side Overlap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 1758159812711355628}
   - component: {fileID: 2316734316247022331}
   m_Layer: 0
-  m_Name: Port Overlap
+  m_Name: Front Overlap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 7941010437856111016}
   - component: {fileID: 5140121052753643252}
   m_Layer: 0
-  m_Name: Port
+  m_Name: CornerRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1668440320
