@@ -217,7 +217,7 @@ public class DrawEditor : MonoBehaviour
                     }
                 }
 
-                if (!needToRefreshCache || LoadAddressables.handle1.IsValid() && LoadAddressables.handle2.IsValid())
+                if (!needToRefreshCache || GameInspectorWindow.handle1.IsValid() && GameInspectorWindow.handle2.IsValid())
                 {
                     foreach (var addressable in addressablesToLoad)
                     {

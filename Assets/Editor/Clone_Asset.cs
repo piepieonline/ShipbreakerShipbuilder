@@ -12,7 +12,8 @@ using System.IO;
 
 public class Clone_Asset : MonoBehaviour
 {
-    // [MenuItem("Example/Clone asset")]
+    /*
+    [MenuItem("Example/Clone asset")]
     static void BuildABs()
     {
         if(LoadAddressables.loadedBundles.Count() == 0)
@@ -43,7 +44,7 @@ public class Clone_Asset : MonoBehaviour
         {
             var compCopy = Instantiate(comp);
         }
-        */
+        *
 
 
 
@@ -60,6 +61,7 @@ public class Clone_Asset : MonoBehaviour
             // bundle.Value.Unload(false);
         }
     }
+*/
 
     static int i = 0;
 

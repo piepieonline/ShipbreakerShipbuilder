@@ -15,7 +15,6 @@ public class Create_RoomAssets : EditorWindow
         EditorWindow.CreateInstance<Create_RoomAssets>().Show();
     }
 
-    Rect buttonRect;
     string roomName;
 
     void OnGUI()
@@ -28,7 +27,6 @@ public class Create_RoomAssets : EditorWindow
             {
                 CreateAsset();
             }
-            if (Event.current.type == EventType.Repaint) buttonRect = GUILayoutUtility.GetLastRect();
         }
     }
 
