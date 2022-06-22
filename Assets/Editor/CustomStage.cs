@@ -11,7 +11,7 @@ public class CustomStage : PreviewSceneStage
 
     protected override GUIContent CreateHeaderContent()
     {
-        return GUIContent.none;
+        return new GUIContent(go.name);
     }
 
     protected override bool OnOpenStage()

@@ -8,6 +8,11 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 [InitializeOnLoad]
 public class LoadGameAssets
 {
+    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle1;
+    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle2;
+
+    public static Dictionary<string, string> knownVanillaGuids = new Dictionary<string, string>();
+    
     static LoadGameAssets()
     {
         ReloadAssets();
@@ -17,14 +22,16 @@ public class LoadGameAssets
     [MenuItem("Shipbreaker/Reload Assets", priority = 4)]
     public static void ReloadAssets()
     {
-        if (GameInspectorWindow.handle1.IsValid()) Addressables.Release(GameInspectorWindow.handle1);
-        if (GameInspectorWindow.handle2.IsValid()) Addressables.Release(GameInspectorWindow.handle2);
+        if (handle1.IsValid()) Addressables.Release(handle1);
+        if (handle2.IsValid()) Addressables.Release(handle2);
 
-        GameInspectorWindow.handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
-        GameInspectorWindow.handle2 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+        handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
+        handle2 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
 
-        GameInspectorWindow.handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
-        GameInspectorWindow.handle2.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
+        handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
+        handle2.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
+
+        knownVanillaGuids = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../knownAssets.json")));
     }
 
     [MenuItem("Shipbreaker/Clear Asset Cache", priority = 20)]
@@ -39,8 +46,7 @@ public class LoadGameAssets
     static void ViewRefresh()
     {
         lastNumRoot = UnityEngine.SceneManagement.SceneManager.GetActiveScene().rootCount;
-
-        DrawEditor.UpdateViewList();
+        AddressableRendering.UpdateViewList();
     }
 
     static int lastNumRoot;

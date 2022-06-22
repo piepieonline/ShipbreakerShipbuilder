@@ -21,7 +21,7 @@ public class BuildContent
     [MenuItem("Shipbreaker/Reload Build Settings", priority = 1001)]
     static void ReloadBuildSettings()
     {
-        var settingsText = File.ReadAllText(Path.Combine(Application.dataPath, "shipbreaker_settings.json"));
+        var settingsText = File.ReadAllText(Path.Combine(Application.dataPath, "../shipbreaker_settings.json"));
         buildSettings = Newtonsoft.Json.JsonConvert.DeserializeObject<BuildSettings>(settingsText);
 
         Debug.Log("Build settings reloaded");

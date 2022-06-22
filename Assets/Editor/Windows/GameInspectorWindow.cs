@@ -14,10 +14,7 @@ public class GameInspectorWindow : EditorWindow
 {
     public string address = "fd038d23f35b59747a22dec2f214b11f";
 
-    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle1;
-    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle2;
-
-    [MenuItem("Shipbreaker/Show Game Inspector")]
+    [MenuItem("Shipbreaker/Show Game Inspector", priority = 101)]
     public static void CreateRoomAsset()
     {
         EditorWindow.CreateInstance<GameInspectorWindow>().Show();

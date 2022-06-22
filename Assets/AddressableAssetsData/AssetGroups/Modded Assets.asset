@@ -124,6 +124,10 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/Cockpit_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: dd1b2b570178a4f41af8edfdcf70b56c
+    m_Address: Assets/CustomOperation/FirstShip/Components/Doorway/Doorway_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

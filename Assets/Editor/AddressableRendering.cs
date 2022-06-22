@@ -1,192 +1,47 @@
-#if UNITY_EDITOR
-
-using System.Linq;
+using BBI.Unity.Game;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using BBI.Unity.Game;
 
-/* TODO
- * Load from editor assets first, before checking addressables/cache
-*/
-
-[ExecuteInEditMode]
-public class DrawEditor : MonoBehaviour
+public class AddressableRendering : MonoBehaviour
 {
-    public static DrawEditor Instance;
+    public static bool drawRooms = true;
+    public static bool drawRoomOverlaps = true;
+    public static bool drawRoomOverlapFlows = true;
 
-    public bool updateView = false;
-    public bool clearAddressables = false;
+    public static float roomOpacity = .1f;
 
-    public bool drawRooms = true;
-    public bool drawRoomOverlaps = true;
-    public bool drawRoomOverlapFlows = true;
-    public float roomOpacity = .1f;
+    public static List<RenderableMapping> rooms = new List<RenderableMapping>();
+    public static List<RenderableMapping> roomOverlaps = new List<RenderableMapping>();
 
-    static List<RenderableMapping> addressables = new List<RenderableMapping>();
-    static List<RenderableMapping> rooms = new List<RenderableMapping>();
-    static List<RenderableMapping> roomOverlaps = new List<RenderableMapping>();
+    static bool isUpdating = false;
 
     static List<GameObject> fakes = new List<GameObject>();
 
     static Dictionary<string, string> prefabToHardpoint = new Dictionary<string, string>();
 
-    [ExecuteInEditMode]
-    void OnEnable()
+    public static void ClearView()
     {
-        Instance = this;
-    }
-
-    [ExecuteInEditMode]
-    void Update()
-    {
-        var cam = SceneView.currentDrawingSceneView ? SceneView.currentDrawingSceneView.camera : SceneView.lastActiveSceneView.camera;
-        Draw(cam);
-    }
-
-    void OnDrawGizmos()
-    {
-        if (drawRooms)
-        {
-            foreach (var room in rooms)
-            {
-                if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
-
-                if (room.parent.TryGetComponent<RoomSubVolumeDefinition>(out var roomSubVolumeDefinition))
-                {
-                    Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale);
-                    Matrix4x4 childMatrix = Matrix4x4.TRS(roomSubVolumeDefinition.Center, Quaternion.identity, roomSubVolumeDefinition.Size);
-
-                    Matrix4x4 transformMatrix = parentMatrix * childMatrix;
-
-                    Gizmos.matrix = transformMatrix;
-
-                    Gizmos.color = new Color(0, 1, 0, roomOpacity);
-                    Gizmos.DrawCube(Vector3.zero, Vector3.one);
-                }
-            }
-        }
-
-        if (drawRoomOverlaps)
-        {
-            foreach (var room in roomOverlaps)
-            {
-                if (room.parent == null || !room.parent.gameObject.activeInHierarchy) continue;
-
-                if (room.parent.TryGetComponent<RoomOpeningDefinition>(out var roomOpeningDefinition))
-                {
-                    Matrix4x4 parentMatrix = Matrix4x4.TRS(room.parent.position, room.parent.rotation, room.parent.lossyScale);
-                    Matrix4x4 childMatrix = Matrix4x4.TRS(roomOpeningDefinition.Center, Quaternion.identity, roomOpeningDefinition.Size);
-
-                    Matrix4x4 transformMatrix = parentMatrix * childMatrix;
-
-                    Gizmos.matrix = transformMatrix;
-
-                    Gizmos.color = new Color(1, 0, 0, roomOpacity);
-                    Gizmos.DrawCube(Vector3.zero, Vector3.one);
-
-                    if (drawRoomOverlapFlows)
-                    {
-                        Gizmos.color = new Color(1, 0, 0, 1);
-                        DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.up : Vector3.forward);
-                        DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.down : Vector3.back);
-                    }
-                }
-            }
-        }
-    }
-
-    private void Draw(Camera camera)
-    {
-        foreach (var addressable in addressables) DrawRenderable(addressable);
-    }
-
-    private void DrawRenderable(RenderableMapping renderableMapping)
-    {
-        if (renderableMapping.parent == null || !renderableMapping.parent.gameObject.activeInHierarchy) return;
-
-        Matrix4x4 parentMatrix = Matrix4x4.TRS(renderableMapping.parent.position, renderableMapping.parent.rotation, Vector3.one);
-        Matrix4x4 childMatrix = Matrix4x4.TRS(renderableMapping.offset, renderableMapping.rotation, renderableMapping.scale);
-
-        for (int i = 0; i < renderableMapping.mesh.subMeshCount; i++)
-        {
-            Graphics.DrawMeshInstanced(renderableMapping.mesh, i, renderableMapping.mats[i], new Matrix4x4[] { parentMatrix * childMatrix }, 1);
-        }
-    }
-
-    void OnDisable()
-    {
-        isUpdating = false;
-
         foreach (var fakePrefab in fakes)
         {
-            UnityEditor.EditorApplication.delayCall += () =>
-            {
-                DestroyImmediate(fakePrefab);
-            };
+            DestroyImmediate(fakePrefab.gameObject);
         }
+
+        fakes.Clear();
+        rooms.Clear();
+        roomOverlaps.Clear();
     }
-
-    void OnDestroy()
-    {
-        isUpdating = false;
-
-        foreach (var fakePrefab in fakes)
-        {
-            UnityEditor.EditorApplication.delayCall += () =>
-            {
-                DestroyImmediate(fakePrefab);
-            };
-        }
-    }
-
-    void OnValidate()
-    {
-        if (clearAddressables)
-        {
-            clearAddressables = false;
-            addressables.Clear();
-            rooms.Clear();
-            roomOverlaps.Clear();
-
-            foreach (var fakePrefab in fakes)
-            {
-                UnityEditor.EditorApplication.delayCall += () =>
-                {
-                    DestroyImmediate(fakePrefab);
-                };
-            }
-        }
-
-        if (updateView)
-        {
-            isUpdating = false;
-            updateView = false;
-            UnityEditor.EditorApplication.delayCall += () =>
-            {
-                UpdateViewList();
-            };
-        }
-    }
-
-    static bool isUpdating = false;
 
     public async static void UpdateViewList()
     {
         if (isUpdating) return;
         isUpdating = true;
 
-        foreach (var fakePrefab in fakes)
-        {
-            DestroyImmediate(fakePrefab);
-        }
+        ClearView();
 
-        addressables.Clear();
-        rooms.Clear();
-        roomOverlaps.Clear();
         bool needToRefreshCache = false;
         List<AddressableLoader> addressablesToLoad = new List<AddressableLoader>();
         List<HardPoint> hardPoints = new List<HardPoint>();
@@ -217,7 +72,7 @@ public class DrawEditor : MonoBehaviour
                     }
                 }
 
-                if (!needToRefreshCache || GameInspectorWindow.handle1.IsValid() && GameInspectorWindow.handle2.IsValid())
+                if (!needToRefreshCache || LoadGameAssets.handle1.IsValid() && LoadGameAssets.handle2.IsValid())
                 {
                     foreach (var addressable in addressablesToLoad)
                     {
@@ -227,7 +82,7 @@ public class DrawEditor : MonoBehaviour
                     foreach (var hardpoint in hardPoints)
                     {
                         var assetGUID = await LoadHardpoint(hardpoint);
-                        if(!string.IsNullOrEmpty(assetGUID))
+                        if (!string.IsNullOrEmpty(assetGUID))
                             await LoadAddress(assetGUID, hardpoint.transform, true);
                     }
                 }
@@ -260,7 +115,7 @@ public class DrawEditor : MonoBehaviour
         else
         {
             var guid = await LoadHardpointGuidFromModuleListAsset(hardPoint.AssetRef.AssetGUID);
-            if(!string.IsNullOrEmpty(guid))
+            if (!string.IsNullOrEmpty(guid))
                 prefabToHardpoint[guid] = hardPoint.AssetRef.AssetGUID;
             return guid;
         }
@@ -333,7 +188,7 @@ public class DrawEditor : MonoBehaviour
 
                 if (result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
                 {
-                     await LoadAddress(loader.refs[0], res.Result.transform, false, loader.childPath);
+                    await LoadAddress(loader.refs[0], res.Result.transform, false, loader.childPath);
                 }
 
                 await TryCacheAsset(addressRef, result, isHardpoint, addressRef + assetPath.Replace("/", "_"));
@@ -369,6 +224,7 @@ public class DrawEditor : MonoBehaviour
                 roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, isHardpoint));
             }
 
+            temp.AddComponent<FakePrefabDisplay>();
             fakes.Add(temp);
 
             /*
@@ -517,7 +373,7 @@ public class DrawEditor : MonoBehaviour
         return AssetDatabase.LoadAssetAtPath<Material>($"{matPath}.mat");
     }
 
-    class RenderableMapping
+    public class RenderableMapping
     {
         public Mesh mesh;
         public Material[] mats;
@@ -563,5 +419,3 @@ public class DrawEditor : MonoBehaviour
         }
     }
 }
-
-#endif

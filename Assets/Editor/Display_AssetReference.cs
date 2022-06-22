@@ -23,7 +23,7 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
 {
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return EditorGUIUtility.singleLineHeight * 2;
+        return EditorGUIUtility.singleLineHeight * 3;
     }
  
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -35,11 +35,27 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
         var labelRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
         EditorGUI.LabelField(labelRect, label);
      
-        var isLocalRect = new Rect(position.x + offset, position.y, position.width, EditorGUIUtility.singleLineHeight);
-        var path = AssetDatabase.GUIDToAssetPath(property.FindPropertyRelative("m_AssetGUID").stringValue);
-        EditorGUI.LabelField(isLocalRect, path == "" ? "Vanilla Asset" : path);
+        var refPathRect = new Rect(position.x + offset, position.y, position.width, EditorGUIUtility.singleLineHeight);
+        var isLocalRect = new Rect(position.x + offset, position.y + (EditorGUIUtility.singleLineHeight * 1), position.width, EditorGUIUtility.singleLineHeight);
 
-        var guidRect = new Rect(position.x + offset, position.y + (EditorGUIUtility.singleLineHeight * 1), position.width - offset, EditorGUIUtility.singleLineHeight);
+        var refPath = "Unknown Asset";
+        var knownPath = AssetDatabase.GUIDToAssetPath(property.FindPropertyRelative("m_AssetGUID").stringValue);
+        if(knownPath == "")
+        {
+            if(LoadGameAssets.knownVanillaGuids.TryGetValue(property.FindPropertyRelative("m_AssetGUID").stringValue, out knownPath))
+            {
+                refPath = "Vanilla Asset";
+            }
+        }
+        else
+        {
+            refPath = "Custom Asset";
+        }
+
+        EditorGUI.LabelField(refPathRect, refPath);
+        EditorGUI.LabelField(isLocalRect, knownPath == "" ? "Unknown Asset" : knownPath);
+
+        var guidRect = new Rect(position.x + offset, position.y + (EditorGUIUtility.singleLineHeight * 2), position.width - offset, EditorGUIUtility.singleLineHeight);
         EditorGUI.PropertyField(guidRect, property.FindPropertyRelative("m_AssetGUID"), GUIContent.none);
 
         EditorGUI.EndProperty(); 
