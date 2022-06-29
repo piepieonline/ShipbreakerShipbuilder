@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - bf19fdb5626cba34c8415ffc77e939be
+  assetGUID: bf19fdb5626cba34c8415ffc77e939be
+  childPath: 
+  removeChildren: []
 --- !u!1 &5535305624913899358
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - bf19fdb5626cba34c8415ffc77e939be
+  assetGUID: bf19fdb5626cba34c8415ffc77e939be
+  childPath: 
+  removeChildren: []
 --- !u!1 &5667298920779032964
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +141,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - 9a892cecf5257f64a96dabb4ecdf6643
+  assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
+  childPath: 
+  removeChildren: []
 --- !u!1 &6443860377020695468
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - bf19fdb5626cba34c8415ffc77e939be
+  assetGUID: bf19fdb5626cba34c8415ffc77e939be
+  childPath: 
+  removeChildren: []
 --- !u!1 &6625422221686364562
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +237,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - 3e31a183ca9501f4da051b1caaa74c24
+  assetGUID: 3e31a183ca9501f4da051b1caaa74c24
+  childPath: 
+  removeChildren: []
 --- !u!1 &7626507807881705019
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +285,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - bf19fdb5626cba34c8415ffc77e939be
+  assetGUID: bf19fdb5626cba34c8415ffc77e939be
+  childPath: 
+  removeChildren: []
 --- !u!1 &7913841183619334089
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7913841183619334089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.125, y: -0.655, z: 1.75}
+  m_LocalPosition: {x: 2.125, y: -0.17, z: 1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4375291932440043590}
@@ -458,3 +476,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refs:
   - 9a892cecf5257f64a96dabb4ecdf6643
+  assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
+  childPath: 
+  removeChildren: []

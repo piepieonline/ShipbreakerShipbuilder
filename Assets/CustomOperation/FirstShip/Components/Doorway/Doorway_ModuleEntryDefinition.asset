@@ -18,7 +18,7 @@ MonoBehaviour:
   m_Percent: 
   ModuleDef: {fileID: 0}
   ModuleDefRef:
-    m_AssetGUID: 8220a74572ebaf74dad5284c39a4de14
+    m_AssetGUID: de8dc9ad6d7d38840b7a1adfcbc7c4f6
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

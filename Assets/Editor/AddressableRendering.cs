@@ -42,56 +42,65 @@ public class AddressableRendering : MonoBehaviour
 
         ClearView();
 
-        bool needToRefreshCache = false;
-        List<AddressableLoader> addressablesToLoad = new List<AddressableLoader>();
-        List<HardPoint> hardPoints = new List<HardPoint>();
-
-        var rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
-
-        foreach (var rootGameObject in rootObjects)
+        try
         {
-            if (rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
+            bool needToRefreshCache = false;
+            List<AddressableLoader> addressablesToLoad = new List<AddressableLoader>();
+            List<HardPoint> hardPoints = new List<HardPoint>();
+
+            var rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+
+            foreach (var rootGameObject in rootObjects)
             {
-                foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
+                if (rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
                 {
-                    addressablesToLoad.Add(addressable);
-
-                    if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressable.refs[0]}.prefab")))
+                    foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
                     {
-                        needToRefreshCache = true;
-                    }
-                }
+                        addressablesToLoad.Add(addressable);
 
-                foreach (var hardpoint in rootGameObject.GetComponentsInChildren<HardPoint>())
-                {
-                    hardPoints.Add(hardpoint);
-
-                    if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardpoint.AssetRef.AssetGUID}.prefab")))
-                    {
-                        needToRefreshCache = true;
-                    }
-                }
-
-                if (!needToRefreshCache || LoadGameAssets.handle1.IsValid() && LoadGameAssets.handle2.IsValid())
-                {
-                    foreach (var addressable in addressablesToLoad)
-                    {
-                        await LoadAddress(addressable.refs[0], addressable.transform, false, addressable.childPath);
+                        if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{addressable.assetGUID ?? addressable.refs[0]}.prefab")))
+                        {
+                            needToRefreshCache = true;
+                        }
                     }
 
-                    foreach (var hardpoint in hardPoints)
+                    foreach (var hardpoint in rootGameObject.GetComponentsInChildren<HardPoint>())
                     {
-                        var assetGUID = await LoadHardpoint(hardpoint);
-                        if (!string.IsNullOrEmpty(assetGUID))
-                            await LoadAddress(assetGUID, hardpoint.transform, true);
+                        hardPoints.Add(hardpoint);
+
+                        if (string.IsNullOrEmpty(AssetDatabase.AssetPathToGUID($"Assets/EditorCache/{hardpoint.AssetRef.AssetGUID}.prefab")))
+                        {
+                            needToRefreshCache = true;
+                        }
                     }
-                }
-                else
-                {
-                    Debug.Log("Please load the catalogs");
+
+                    if (!needToRefreshCache || LoadGameAssets.handle1.IsValid() && LoadGameAssets.handle2.IsValid())
+                    {
+                        foreach (var addressable in addressablesToLoad)
+                        {
+                            await LoadAddress(addressable.assetGUID ?? addressable.refs[0], addressable.transform, false, addressable.childPath, addressable.disabledChildren);
+                        }
+
+                        foreach (var hardpoint in hardPoints)
+                        {
+                            var assetGUID = await LoadHardpoint(hardpoint);
+                            if (!string.IsNullOrEmpty(assetGUID))
+                                await LoadAddress(assetGUID, hardpoint.transform, true);
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Please load the catalogs");
+                    }
                 }
             }
         }
+        catch (System.Exception ex)
+        {
+            Debug.LogException(ex);
+        }
+
+
 
         isUpdating = false;
     }
@@ -149,7 +158,7 @@ public class AddressableRendering : MonoBehaviour
         throw new System.Exception("LoadHardpointGuidFromModuleListAsset");
     }
 
-    async static System.Threading.Tasks.Task<GameObject> LoadAddress(string addressRef, Transform parent, bool isHardpoint, string assetPath = "")
+    async static System.Threading.Tasks.Task<GameObject> LoadAddress(string addressRef, Transform parent, bool isHardpoint, string assetPath = "", List<string> disabledChildren = null)
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(addressRef));
 
@@ -181,14 +190,20 @@ public class AddressableRendering : MonoBehaviour
                 }
                 else
                 {
-                    result = res.Result.transform.Find(assetPath).gameObject;
+                    result = res.Result.transform.Find(assetPath)?.gameObject;
+
+                    if(result == null)
+                    {
+                        throw new System.Exception($"Can't find {assetPath} in {addressRef}.");
+                    }
+
                     cachedPosition = result.transform.localPosition;
                     result.transform.localPosition = Vector3.zero;
                 }
 
                 if (result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
                 {
-                    await LoadAddress(loader.refs[0], res.Result.transform, false, loader.childPath);
+                    await LoadAddress(loader.assetGUID ?? loader.refs[0], res.Result.transform, false, loader.childPath, loader.disabledChildren);
                 }
 
                 await TryCacheAsset(addressRef, result, isHardpoint, addressRef + assetPath.Replace("/", "_"));
@@ -222,6 +237,25 @@ public class AddressableRendering : MonoBehaviour
             foreach (var roomOverlap in temp.GetComponentsInChildren<RoomOpeningDefinition>())
             {
                 roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, isHardpoint));
+            }
+
+            if(disabledChildren != null)
+            {
+                foreach (var disabledChild in disabledChildren)
+                {
+                    GameObject foundChild = null;
+                    IEnumerable<Transform> children = temp.transform.GetChild(0).Cast<Transform>();
+                    var cList = children.ToList();
+                    foreach (var childPathPart in disabledChild.Split('/'))
+                    {
+                        foundChild = children.Where(c => c.name.StartsWith(childPathPart)).First()?.gameObject;
+                        children = foundChild.transform.Cast<Transform>();
+                    }
+                    if (foundChild != null)
+                        GameObject.DestroyImmediate(foundChild);
+                    
+                    
+                }
             }
 
             temp.AddComponent<FakePrefabDisplay>();
@@ -357,14 +391,25 @@ public class AddressableRendering : MonoBehaviour
         var matPath = $"Assets/EditorCache/{address}_mat_{suffix}_{materialIndex}";
         var texturePath = $"/EditorCache/{address}_tex_{suffix}_{materialIndex}";
 
-        System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}.png", DuplicateTexture((Texture2D)material.GetTexture("_BaseColorMap")).EncodeToPNG());
-        AssetDatabase.Refresh();
+        var hasTexture = material.HasProperty("_BaseColorMap");
+        Texture2D tempTexture = null;
 
-        var tempTexture = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}.png");
-        EditorUtility.SetDirty(tempTexture);
+        if (hasTexture)
+        {
+            System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}.png", DuplicateTexture((Texture2D)material.GetTexture("_BaseColorMap")).EncodeToPNG());
+            AssetDatabase.Refresh();
+
+            tempTexture = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}.png");
+            EditorUtility.SetDirty(tempTexture);
+        }
 
         var tempMaterial = new Material(Shader.Find("HDRP/Lit")); // Currently can't use the game's material, so just use the default
-        tempMaterial.SetTexture("_BaseColorMap", tempTexture);
+        
+        if(hasTexture)
+        {
+            tempMaterial.SetTexture("_BaseColorMap", tempTexture);
+        }
+
         tempMaterial.enableInstancing = true;
         AssetDatabase.CreateAsset(tempMaterial, $"{matPath}.mat");
         AssetDatabase.SaveAssets();

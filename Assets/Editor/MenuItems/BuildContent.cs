@@ -28,7 +28,7 @@ public class BuildContent
     }
 
     [MenuItem("Shipbreaker/Build", priority = 2)]
-    static void RunBuild()
+    static bool RunBuild()
     {
         AddressableAssetSettingsDefaultObject.Settings.activeProfileId = AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetProfileId("Default");
 
@@ -56,18 +56,20 @@ public class BuildContent
 
             LoadGameAssets.ReloadAssets();
             Debug.Log("Build Complete");
+            return true;
         }
         else
         {
             Debug.LogError("Addressables build error encountered: " + result.Error);
+            return false;
         }
     }
 
     [MenuItem("Shipbreaker/Build and run", priority = 3)]
     static void BuildAndRun()
     {
-        RunBuild();
-        System.Diagnostics.Process.Start(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe"));
+        if(RunBuild())
+            System.Diagnostics.Process.Start(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe"));
     }
 
     [MenuItem("Shipbreaker/Update game catalog", priority = 1000)]

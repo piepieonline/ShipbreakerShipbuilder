@@ -128,6 +128,82 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/Components/Doorway/Doorway_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 153a536e882efc44abd6c47308020222
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitFrontRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 11fd5c193b1fcf84abfe23795702a23e
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitFront_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 69b68048802f4c94180220ecc793a856
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitBackRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d15d4cfe640d29d4ebce4a0d99947e6d
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitBack_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f7b8cddbef8c7d649b293597caf9d018
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/4Side/4SidesRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 32f64d3b981812a498acef805e466b62
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/4Side/4Sides_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cf548e1b957620c40a0247de62501703
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Connector/ConnectorRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b06cd9806085ce4cb88fa5888eceebc
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Connector/Connector_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a67ba5c070a41cd429eacf7aa65986fd
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/1Side/1SideRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c0b84b518b5d034f87f02a534bbbe6e
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/1Side/1Side_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: de8dc9ad6d7d38840b7a1adfcbc7c4f6
+    m_Address: Assets/CustomOperation/FirstShip/Components/Doorway/Doorway.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99959a1d436e9014c8965ad6de8f240a
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/StraightTop/OuterWallTop_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 469cd82ba679ba648bf9421c1b551d1c
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/StraightTop/OuterWallTop_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7d35282044b9c124ea859f61dfd0ce15
+    m_Address: Assets/CustomOperation/FirstShip/Components/DummyPlug/DummyPlugRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7c3c18a607fd582499550565499428f5
+    m_Address: Assets/CustomOperation/FirstShip/Components/DummyPlug/DummyPlug_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0cde2e361cca1a04694fde8ced3e5b0a
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/CornerInverse/CornerInverseRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3837bc62181ad04c9660d8154a71b31
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/CornerInverse/CornerInverse_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f101ec863b4035543834a3fbbef1879b
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/NarrowPlugBlocker/NarrowPlugBlockerRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 679ba341e76238c4cadf9b23c5ce9053
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/NarrowPlugBlocker/NarrowPlugBlocker_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

@@ -13,11 +13,14 @@ namespace BBI.Unity.Game
         public string assetGUID = "";
         public string childPath = "";
 
+        public List<string> disabledChildren = new List<string>();
+
         void OnValidate()
         {
-            if (refs != null)
+            if (refs != null && refs.Count > 0 && assetGUID == "")
             {
                 assetGUID = refs[0];
+                refs.Clear();
             }
         }
     }

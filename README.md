@@ -23,7 +23,7 @@
 * 
 
 ## Custom ship notes
-*
+* The game doesn't work with negative scales
 
 ## Joints
 * Joints are how the game knows to connect multiple separate assets
@@ -35,6 +35,7 @@
 * RoomSubVolumeDefinition: (green transparent boxes) should fully encompass that piece's internal area - multiple can potentially be used for complex shapes? Must be a child of a RoomContainerDefinition
 * RoomOpeningDefinition: (red transparent boxes), define how the volumes connect - including blocking (walls), allowing expansion (overlap) and doors (portals)
  * Flow axis (red arrows) defines which direction should the air flow upon breaching
+* Room overlaps need to be carefully managed, as extra/misplaced overlaps will cause instant breaching when loading
 
 ## Inspecting game content
 * Find the '.prefab' in keys.txt, and copy it's address from the line below
