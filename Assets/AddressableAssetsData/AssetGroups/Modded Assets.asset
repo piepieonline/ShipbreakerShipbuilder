@@ -204,6 +204,22 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/NarrowPlugBlocker/NarrowPlugBlocker_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 25199cd7e4d62b0439879ca666683785
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Engine/EngineRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 91585e262f28b0d43936755b6cb95738
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Engine/Engine_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 94c5e952c9acb274ea91c95b9edf3011
+    m_Address: Assets/CustomOperation/FirstShip/Components/Shell/ShellConnector.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 464d328b37828dc43876aad799fb569c
+    m_Address: Assets/CustomOperation/FirstShip/Components/Shell/ShellConnector_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

@@ -31,7 +31,7 @@
 * StructurePartAsset - Joint setup asset: These work by attaching at runtime, whatever is connected to them - used by things like cutpoints?
 
 ## Rooms
-* RoomContainerDefinition: Define how the room works. At the moment, I am reusing existing definitions only. The same room doesn't appear to be able to be used twice on the same ship?
+* RoomContainerDefinition: Define how the room works. At the moment, I am reusing existing definitions only.
 * RoomSubVolumeDefinition: (green transparent boxes) should fully encompass that piece's internal area - multiple can potentially be used for complex shapes? Must be a child of a RoomContainerDefinition
 * RoomOpeningDefinition: (red transparent boxes), define how the volumes connect - including blocking (walls), allowing expansion (overlap) and doors (portals)
  * Flow axis (red arrows) defines which direction should the air flow upon breaching

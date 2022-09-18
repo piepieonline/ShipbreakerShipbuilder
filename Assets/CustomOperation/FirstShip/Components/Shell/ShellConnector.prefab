@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4408763116438483047}
   - component: {fileID: 6560861235705064492}
   - component: {fileID: 2810608168590685489}
-  - component: {fileID: 6394533716970285548}
   m_Layer: 0
   m_Name: ShellConnector
   m_TagString: Untagged
@@ -33,7 +32,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 8783217189932134282}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -156,13 +156,44 @@ MonoBehaviour:
   refs:
   - 5173116158d71b74fa747dd2dec0d1bb
   - cf130453c4db9e841bbd86bc87d8b7c8
---- !u!114 &6394533716970285548
+--- !u!1 &8974747910306379416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8783217189932134282}
+  - component: {fileID: 5471728697801874552}
+  m_Layer: 0
+  m_Name: Opening
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8783217189932134282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974747910306379416}
+  m_LocalRotation: {x: 0, y: 0, z: 0.16711292, w: 0.9859378}
+  m_LocalPosition: {x: 1.375, y: 0.375, z: -0.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3187798664468052461}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.24}
+--- !u!114 &5471728697801874552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823561601135285589}
+  m_GameObject: {fileID: 8974747910306379416}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1728645113, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
@@ -171,5 +202,5 @@ MonoBehaviour:
   m_Type: 1
   m_CanSeal: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_Size: {x: 3.25, y: 1.25, z: 1.25}
+  m_Size: {x: 1, y: 1, z: 3.5}
   m_FlowAxis: 1

@@ -28,7 +28,7 @@ public class RoomGizmos
 
                     Gizmos.matrix = transformMatrix;
 
-                    Gizmos.color = new Color(0, 1, 0, AddressableRendering.roomOpacity);
+                    Gizmos.color = roomSubVolumeDefinition.Mode == RoomSubVolumeDefinition.InclusionMode.Include ? new Color(0, 1, 0, AddressableRendering.roomOpacity) : new Color(1, 0, 0, AddressableRendering.roomOpacity);
                     Gizmos.DrawCube(Vector3.zero, Vector3.one);
                 }
             }
@@ -49,12 +49,12 @@ public class RoomGizmos
 
                     Gizmos.matrix = transformMatrix;
 
-                    Gizmos.color = new Color(1, 0, 0, AddressableRendering.roomOpacity);
+                    Gizmos.color = new Color(1, .5f, 0, AddressableRendering.roomOpacity);
                     Gizmos.DrawCube(Vector3.zero, Vector3.one);
 
                     if (AddressableRendering.drawRoomOverlapFlows)
                     {
-                        Gizmos.color = new Color(1, 0, 0, 1);
+                        Gizmos.color = new Color(1, .5f, 0, 1);
                         DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.up : Vector3.forward);
                         DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.down : Vector3.back);
                     }

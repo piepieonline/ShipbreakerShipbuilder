@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     LevelDisplayName: Demo Ship
-    LevelDescriptionShort: Demo Ship Short
-    LevelDescriptionFull: Demo Ship Long
+    LevelDescriptionShort: Piepieonline
+    LevelDescriptionFull: CUSTOM:e723eba8ae422e84190e2971c9c374f5
     LevelThumbnailImage: {fileID: 0}
     LevelFullImage: {fileID: 0}
     LevelThumbnailImageRef:
@@ -29,12 +29,12 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     SessionType: 4
-    SortOrder: 0
+    SortOrder: 100
     CompletionTimeInSeconds: 9999
     TimerCountsUp: 1
     StartingShip: {fileID: 0}
     StartingShipRef:
-      m_AssetGUID: 934391b755e9bba49ba646167e2c1d58
+      m_AssetGUID: 64a1a1f3e77574f468b15c16dfe0229f
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
