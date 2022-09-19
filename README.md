@@ -1,4 +1,5 @@
 ## Steps to get setup
+* Install Unity 2020.3.17f (https://unity3d.com/unity/whats-new/2020.3.17)
 * Copy (only those with waiting '.meta' files listed) game dlls from 'Shipbreaker_Data\Managed' into the Dll folder
 * Update "Assets/shipbreaker_settings.json" with the correct game path
 * Open unity, and run "Shipbreaker/Update game catalog"

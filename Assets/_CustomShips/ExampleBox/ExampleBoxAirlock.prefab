@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 5912670282891860072}
   - component: {fileID: 5912670282891860054}
   m_Layer: 0
-  m_Name: BoxRefAirlock
+  m_Name: ExampleBoxAirlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

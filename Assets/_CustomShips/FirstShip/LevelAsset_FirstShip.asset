@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1127858399, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
-  m_Name: LevelAsset
+  m_Name: LevelAsset_FirstShip
   m_EditorClassIdentifier: 
   Data:
     LevelDisplayName: Demo Ship
