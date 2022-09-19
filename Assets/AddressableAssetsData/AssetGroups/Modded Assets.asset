@@ -220,6 +220,10 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/Components/Shell/ShellConnector_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 46d85cd9ba50c714aa12c7252b1de398
+    m_Address: Assets/CustomOperation/FirstShip/ShipImage.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

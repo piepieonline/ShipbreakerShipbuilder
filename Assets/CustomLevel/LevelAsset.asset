@@ -19,7 +19,7 @@ MonoBehaviour:
     LevelThumbnailImage: {fileID: 0}
     LevelFullImage: {fileID: 0}
     LevelThumbnailImageRef:
-      m_AssetGUID: 5c58230aec577b14fb1c49aa7272637a
+      m_AssetGUID: 46d85cd9ba50c714aa12c7252b1de398
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
