@@ -10,15 +10,21 @@
 
 ## First steps
 * Open SampleScene
-* Navigate to "CustomOperation/BoxRef"
-* Drag "BoxRef.prefab" into the scene
- * If this doesn't look right, when the Editor has finished loading, click "Addressables" then "Draw Editor", "Clear Addressables" and then "Update View" 
-* Move the atmospheric regulator into the box
-* Click the BoxRef prefab, and apply overrides
+* Navigate to "_CustomShips/ExampleBox"
+* Drag "ExampleBox.prefab" into the scene hierarchy
+ * If this doesn't look right, when the Editor has finished loading, click the "Shipbreaker" menu, then "Force View Refresh" 
+* Move and rotate the atmospheric regulator into the box
+* Click the ExampleBox in the hierarchy, and apply overrides
 * Discard changes to the scene
 * Build ("Shipbreaker/Build")
-* Open "Hardspace - Shipbreaker\BepInEx\plugins\TestProj\settings.json" and change the "assetReferenceGameObject" to "f2ade62975d33c5408fc695ba5be1d27"
-* Run the game, and enter freeplay on an existing tile
+* Run the game, open the freeplay menu, and find "Example Box" at the end of the list
+* Close the game
+* In the hierarchy, disable "East", "CutPointER" and "CutPointEB"
+* Move the airlock such that the inner wall sits inline with the open space, but not touching any walls
+* Clone "CutPointEB", enable it, and move it so that it just touches the floor and the airlock inner wall (It'll need to be rotated 180 degrees)
+* Build
+* Open the ship in-game
+* Congratulations, you've created your first ship!
 
 ## Creating custom ships
 * 
@@ -41,7 +47,7 @@
 ## Inspecting game content
 * Find the '.prefab' in keys.txt, and copy it's address from the line below
 * Open SampleScene, and paste it into "Load Addressables/Address" (contains the mack airlock by default)
-* Click 'Load GO'
+* Click 'Load GameObject'
 
 ## Other important gotachyas
 * If something doesn't load correctly, make sure that everything that needs to be marked as addressable, is!
