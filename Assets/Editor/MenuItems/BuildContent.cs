@@ -24,6 +24,8 @@ public class BuildContent
         var settingsText = File.ReadAllText(Path.Combine(Application.dataPath, "../shipbreaker_settings.json"));
         buildSettings = Newtonsoft.Json.JsonConvert.DeserializeObject<BuildSettings>(settingsText);
 
+        VerifyBuildSettings();    
+
         Debug.Log("Build settings reloaded");
     }
 
@@ -35,14 +37,34 @@ public class BuildContent
         AddressableAssetSettings.BuildPlayerContent(out AddressablesPlayerBuildResult result);
         bool success = string.IsNullOrEmpty(result.Error);
 
-        if (success)
+        if (success && VerifyBuildSettings())
         {
+            var modPath = "BepInEx\\plugins\\ModdedShipLoader\\Ships";
+            var shipPath = $"{buildSettings.ShipPath}.{buildSettings.Author}";
+
+            Debug.Log("Creating or clearing build directory");
+
+            if(Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath)))
+            {
+                foreach(var file in Directory.EnumerateFiles(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath)))
+                {
+                    if(file.EndsWith(".json") || file.EndsWith(".bundle"))
+                    {
+                        File.Delete(file);
+                    }
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath));
+            }
+
             Debug.Log("Moving bundle");
 
             var contentBundle = Directory.GetFiles(Application.dataPath + "\\..\\BuiltShipContent")[0];
             File.Copy(
                 contentBundle,
-                Path.Combine(buildSettings.ShipbreakerPath, "BepInEx\\plugins\\TestProj", buildSettings.ShipPath, contentBundle.Split('\\').Last()),
+                Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath, contentBundle.Split('\\').Last()),
                 true
             );
             File.Delete(contentBundle);
@@ -50,9 +72,9 @@ public class BuildContent
             Debug.Log("Moving and modifying catalog");
             var catalog = File.ReadAllText(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json");
 
-            catalog = catalog.Replace("BuiltShipContent\\\\", (Path.Combine(buildSettings.ShipbreakerPath, "BepInEx\\plugins\\TestProj\\", buildSettings.ShipPath) + "\\").Replace("\\", "\\\\"));
+            catalog = catalog.Replace("BuiltShipContent\\\\", (Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath) + "\\").Replace("\\", "\\\\"));
 
-            File.WriteAllText(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx\\plugins\\TestProj", buildSettings.ShipPath, "catalog.json"), catalog);
+            File.WriteAllText(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath, "catalog.json"), catalog);
 
             LoadGameAssets.ReloadAssets();
             Debug.Log("Build Complete");
@@ -82,9 +104,36 @@ public class BuildContent
         File.WriteAllText(Application.dataPath + "\\..\\modded_catalog.json", catalog);
     }
 
+    static bool VerifyBuildSettings()
+    {
+        if(buildSettings.Author == null || buildSettings.Author == "")
+        {
+            Debug.LogError("Please provide an author name");
+            return false;
+        }
+        else if(buildSettings.ShipPath == null || buildSettings.ShipPath == "")
+        {
+            Debug.LogError("Please provide a Ship Path");
+            return false;
+        }
+        else if(buildSettings.ShipbreakerPath == null || buildSettings.ShipbreakerPath == "")
+        {
+            Debug.LogError("Please provide a path to Hardspace: Shipbreaker");
+            return false;
+        }
+        else if (!File.Exists(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe")))
+        {
+            Debug.LogError("Please provide a valid path to Hardspace: Shipbreaker (EXE not found)");
+            return false;
+        }
+
+        return true;
+    }
+
     class BuildSettings
     {
         public string ShipbreakerPath;
+        public string Author;
         public string ShipPath;
     }
 }
