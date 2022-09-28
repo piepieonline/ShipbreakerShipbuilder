@@ -99,7 +99,7 @@ public class BuildContent
     {
         var catalog = File.ReadAllText(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\catalog.json"));
 
-        catalog = catalog.Replace(@"{UnityEngine.AddressableAssets.Addressables.RuntimePath}/StandaloneWindows64\\", (Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\StandaloneWindows64") + "\\").Replace("\\", "\\\\"));
+        catalog = catalog.Replace(@"{UnityEngine.AddressableAssets.Addressables.RuntimePath}\\StandaloneWindows64\\", (Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\StandaloneWindows64") + "\\").Replace("\\", "\\\\"));
 
         File.WriteAllText(Application.dataPath + "\\..\\modded_catalog.json", catalog);
     }
