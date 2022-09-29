@@ -14,7 +14,7 @@
 ## First steps
 * Open SampleScene
 * Navigate to "_CustomShips/ExampleBox"
-* Drag "ExampleBox.prefab" into the scene hierarchy
+* Drag "ExampleBox.prefab" into the scene hierarchy (This will take a while on first attempt, as it is caching all used game assets - takes about a minute on my midrange machine)
  * If this doesn't look right, when the Editor has finished loading, `Shipbreaker/Force View Refresh`
 * Move and rotate the atmospheric regulator into the box (Hint: Hold ctrl to snap to the grid)
 * Click the ExampleBox in the hierarchy, and apply overrides
@@ -78,5 +78,9 @@ Read it to get a better understanding of how the systems fit together (especiall
 
 ## Expected Unity Exceptions
 There are a bunch of exceptions that I haven't managed to clean up yet, but will not impact the process, as follows:
-* "Broken text PPtr. GUID 000..." - Appears when something is referring directly to in-game content that needs to be cached.
-* "Could not extract GUID in text file" - As above
+* "Broken text PPtr. GUID 000...": Appears when something is referring directly to in-game content that needs to be properly referenced or cloned.
+* "Could not extract GUID in text file": As above
+* "Burst error BC1054: Unable to resolve type": Unknown, harmless
+* "System.Reflection.ReflectionTypeLoadException" followed by "System.NullReferenceException": Unknown, harmless
+* "Could not Move to directory Library/com.unity.addressables/aa/Windows, directory arlready exists.": Unknown, harmless
+* "Cannot instantiate objects with a parent which is persistent. New object will be created without a parent.": Due to the way I am caching game assets, harmless

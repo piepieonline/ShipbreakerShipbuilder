@@ -23,6 +23,8 @@ public class AddressableRendering : MonoBehaviour
 
     static Dictionary<string, string> prefabToHardpoint = new Dictionary<string, string>();
 
+    static Dictionary<string, Mesh> meshCache = new Dictionary<string, Mesh>();
+
     public static void ClearView()
     {
         foreach (var fakePrefab in fakes)
@@ -192,7 +194,7 @@ public class AddressableRendering : MonoBehaviour
                 {
                     result = res.Result.transform.Find(assetPath)?.gameObject;
 
-                    if(result == null)
+                    if (result == null)
                     {
                         throw new System.Exception($"Can't find {assetPath} in {addressRef}.");
                     }
@@ -239,7 +241,7 @@ public class AddressableRendering : MonoBehaviour
                 roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, isHardpoint));
             }
 
-            if(disabledChildren != null)
+            if (disabledChildren != null)
             {
                 foreach (var disabledChild in disabledChildren)
                 {
@@ -253,8 +255,6 @@ public class AddressableRendering : MonoBehaviour
                     }
                     if (foundChild != null)
                         GameObject.DestroyImmediate(foundChild);
-                    
-                    
                 }
             }
 
@@ -325,20 +325,29 @@ public class AddressableRendering : MonoBehaviour
             await CloneMeshTree(address, child, newPrefabChild.transform, cachePath);
         }
 
-        var meshPath = $"Assets/EditorCache/{cachePath}_mesh";
-
-        var shaderPath = $"Assets/EditorCache/{cachePath}_sha";
+        var meshPath = $"Assets/EditorCache/";
 
         if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer))
         {
             var meshFilter = inTransform.GetComponent<MeshFilter>();
-            var suffix = $"_{count}";
 
-            AssetDatabase.CreateAsset(Instantiate(meshFilter.sharedMesh), $"{meshPath}{suffix}.asset");
-            newPrefabChild.AddComponent<MeshFilter>().sharedMesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{suffix}.asset");
+            // TODO: Is this stable enough?
+            var meshHashText = meshFilter.sharedMesh.GetInstanceID().ToString();
+
+            if(!System.IO.File.Exists($"{Application.dataPath}/EditorCache/{meshHashText}.asset"))
+            {
+                AssetDatabase.CreateAsset(Instantiate(meshFilter.sharedMesh), $"{meshPath}{meshHashText}.asset");
+                var newMesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{meshHashText}.asset");
+                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = newMesh;
+                meshCache.Add(meshHashText, newMesh);
+            }
+            else
+            {
+                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = meshCache[meshHashText];
+            }
 
             MeshRenderer newRenderer = newPrefabChild.AddComponent<MeshRenderer>();
-            newRenderer.sharedMaterials = meshRenderer.sharedMaterials.Select((mat, matIndex) => CloneMaterial(address, suffix, mat, matIndex)).ToArray();
+            newRenderer.sharedMaterials = meshRenderer.sharedMaterials.Select((mat, matIndex) => CloneMaterial(mat)).ToArray();
 
             count++;
         }
@@ -386,36 +395,64 @@ public class AddressableRendering : MonoBehaviour
         return readableText;
     }
 
-    static Material CloneMaterial(string address, string suffix, Material material, int materialIndex)
+    static Material CloneMaterial(Material material)
     {
-        var matPath = $"Assets/EditorCache/{address}_mat_{suffix}_{materialIndex}";
-        var texturePath = $"/EditorCache/{address}_tex_{suffix}_{materialIndex}";
+        var matPath = $"EditorCache/{material.ComputeCRC()}.mat";
 
-        var hasTexture = material.HasProperty("_BaseColorMap");
-        Texture2D tempTexture = null;
-
-        if (hasTexture)
+        if (!System.IO.File.Exists($"{Application.dataPath}/{matPath}"))
         {
-            System.IO.File.WriteAllBytes($"{Application.dataPath}{texturePath}.png", DuplicateTexture((Texture2D)material.GetTexture("_BaseColorMap")).EncodeToPNG());
+            Dictionary<string, Texture2D> textureCache = new Dictionary<string, Texture2D>();
+            Dictionary<string, string> validTextures = new Dictionary<string, string>();
+
+            foreach (var textureName in material.GetTexturePropertyNames())
+            {
+                var orgTexture = (Texture2D)material.GetTexture(textureName);
+                if (orgTexture != null)
+                {
+                    Texture2D newTexture = DuplicateTexture(orgTexture);
+                    if (!System.IO.File.Exists($"{Application.dataPath}/EditorCache/{newTexture.imageContentsHash.ToString()}.png"))
+                        System.IO.File.WriteAllBytes($"{Application.dataPath}/EditorCache/{newTexture.imageContentsHash.ToString()}.png", newTexture.EncodeToPNG());
+
+                    validTextures.Add(textureName, newTexture.imageContentsHash.ToString());
+                }
+            }
+
             AssetDatabase.Refresh();
 
-            tempTexture = AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/{texturePath}.png");
-            EditorUtility.SetDirty(tempTexture);
+            foreach (var textureName in validTextures)
+            {
+                if (!textureCache.ContainsKey(textureName.Key))
+                {
+                    textureCache.Add(textureName.Key, AssetDatabase.LoadAssetAtPath<Texture2D>($"Assets/EditorCache/{textureName.Value}.png"));
+                    EditorUtility.SetDirty(textureCache[textureName.Key]);
+                }
+            }
+
+            Material tempMaterial;
+            switch (material.shader.name)
+            {
+                case "_Lynx/Surface/HDRP/Lit":
+                    tempMaterial = new Material(Shader.Find("Fake/_Lynx/Surface/HDRP/Lit"));
+                    tempMaterial.CopyPropertiesFromMaterial(material);
+                    break;
+                default:
+                    tempMaterial = new Material(Shader.Find("HDRP/Lit")); // Unknown material, use the default
+                    Debug.LogWarning($"Unknown shader {material.shader.name}");
+                    break;
+            }
+
+            foreach (var textureName in validTextures)
+            {
+                tempMaterial.SetTexture(textureName.Key, textureCache[textureName.Key]);
+            }
+
+            tempMaterial.enableInstancing = true;
+            AssetDatabase.CreateAsset(tempMaterial, $"Assets/{matPath}");
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
 
-        var tempMaterial = new Material(Shader.Find("HDRP/Lit")); // Currently can't use the game's material, so just use the default
-        
-        if(hasTexture)
-        {
-            tempMaterial.SetTexture("_BaseColorMap", tempTexture);
-        }
-
-        tempMaterial.enableInstancing = true;
-        AssetDatabase.CreateAsset(tempMaterial, $"{matPath}.mat");
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-
-        return AssetDatabase.LoadAssetAtPath<Material>($"{matPath}.mat");
+        return AssetDatabase.LoadAssetAtPath<Material>($"Assets/{matPath}");
     }
 
     public class RenderableMapping
