@@ -25,13 +25,27 @@ public class LoadGameAssets
         if (handle1.IsValid()) Addressables.Release(handle1);
         if (handle2.IsValid()) Addressables.Release(handle2);
 
-        handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
-        handle2 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+        if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
+        {
+            handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+            handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
+        }
+        else
+        {
+            Debug.LogWarning("No custom assets loaded - assuming none have been built yet");
+        }
 
-        handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
-        handle2.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
+        if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
+        {
+            handle2 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+            handle2.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
+        }
+        else
+        {
+            Debug.LogError("No game assets loaded - Make sure you have built the catalog!");
+        }
 
-        knownVanillaGuids = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../knownAssets.json")));
+        knownVanillaGuids = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../known_assets.json")));
     }
 
     [MenuItem("Shipbreaker/Clear Asset Cache", priority = 20)]
