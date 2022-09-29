@@ -20,7 +20,7 @@
 * Click the ExampleBox in the hierarchy, and apply overrides
 ![Applying overrides](Docs/ApplyingOverrides.png?raw=true)
 * Discard changes to the scene
-* Build ("Shipbreaker/Build")
+* Build `Shipbreaker/Build`
 * Run the game, open the freeplay menu, and find "Example Box" at the end of the list
 * Close the game
 * In the hierarchy, disable "East", "CutPointER" and "CutPointEB"
