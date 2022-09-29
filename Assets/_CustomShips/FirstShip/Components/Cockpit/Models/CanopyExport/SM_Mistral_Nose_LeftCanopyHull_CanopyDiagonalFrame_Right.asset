@@ -6,7 +6,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SM_Mistral_Nose_LeftCanopyHull_CanopyDiagonalFrame
+  m_Name: SM_Mistral_Nose_LeftCanopyHull_CanopyDiagonalFrame_Right
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

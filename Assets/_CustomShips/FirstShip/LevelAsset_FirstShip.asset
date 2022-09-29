@@ -34,7 +34,7 @@ MonoBehaviour:
     TimerCountsUp: 1
     StartingShip: {fileID: 0}
     StartingShipRef:
-      m_AssetGUID: 64a1a1f3e77574f468b15c16dfe0229f
+      m_AssetGUID: 5e42e2c3f2323df48b5c6dda27db1824
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
