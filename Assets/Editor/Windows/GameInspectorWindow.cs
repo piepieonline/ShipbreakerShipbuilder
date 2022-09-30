@@ -3,6 +3,7 @@
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -12,7 +13,13 @@ using BBI.Unity.Game;
 
 public class GameInspectorWindow : EditorWindow
 {
-    public string address = "fd038d23f35b59747a22dec2f214b11f";
+    public string searchTerm = "fd038d23f35b59747a22dec2f214b11f";
+    Vector2 currentScrollPosition;
+    string lastAddress;
+    List<string> searchResultGUIDs = new List<string>();
+    string selectedGuid;
+    string foundGuid;
+    bool inspectOnClick = true;
 
     [MenuItem("Shipbreaker/Show Game Inspector", priority = 101)]
     public static void CreateRoomAsset()
@@ -22,27 +29,63 @@ public class GameInspectorWindow : EditorWindow
 
     void OnGUI()
     {
+        inspectOnClick = EditorGUILayout.Toggle("Inspect asset on click", inspectOnClick);
+
+        GUILayout.Label("Asset Search", EditorStyles.label);
+        searchTerm = GUILayout.TextField(searchTerm).Trim();
+
+        int max = 100;
+
+        if(lastAddress != searchTerm)
         {
-            // GUILayout.Label("Create room asset", EditorStyles.boldLabel);
-            GUILayout.Label("Asset GUID", EditorStyles.label);
-            address = GUILayout.TextField(address).Trim();
-
-            if (GUILayout.Button("Load GameObject") && !string.IsNullOrWhiteSpace(address))
+            selectedGuid = "";
+            searchResultGUIDs.Clear();
+            var matches = Regex.Matches(LoadGameAssets.knownAssetString, $"\r\n(.*{searchTerm}.*)\r\n", RegexOptions.IgnoreCase);
+            if(matches.Count > 0)
             {
-                Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(address)).Completed += res =>
+                for(int i = 0; i < Mathf.Min(matches.Count, max); i++)
                 {
-                    CustomStage.go = res.Result;
-                    UnityEditor.SceneManagement.StageUtility.GoToStage(new CustomStage(), true);
-                };
+                    searchResultGUIDs.Add(matches[i].Value.Substring(3, 32));
+                }
             }
 
-            if (GUILayout.Button("Inspect Asset") && !string.IsNullOrWhiteSpace(address))
+            lastAddress = searchTerm;
+        }
+
+        GUILayout.Label("Selected GUID", EditorStyles.label);
+        foundGuid = selectedGuid != "" ? selectedGuid : searchResultGUIDs.Count == 1 ? searchResultGUIDs[0] : "";
+        GUILayout.TextField(foundGuid);
+
+        currentScrollPosition = EditorGUILayout.BeginScrollView(currentScrollPosition);
+        int count = 0;
+
+        foreach(var assetGUID in searchResultGUIDs)
+        {
+            if(GUILayout.Button($"{LoadGameAssets.knownAssetMap[assetGUID]} ({assetGUID})", EditorStyles.label))
             {
-                Addressables.LoadAssetAsync<UnityEngine.Object>(new AssetReference(address)).Completed += res =>
+                selectedGuid = assetGUID;
+
+                if(inspectOnClick)
                 {
-                    Selection.activeObject = res.Result;
-                };
+                    Addressables.LoadAssetAsync<UnityEngine.Object>(new AssetReference(selectedGuid)).Completed += res =>
+                    {
+                        Selection.activeObject = res.Result;
+                        Repaint();
+                    };
+                }
             }
+            count++;
+            if(count > max) break;
+        }
+        EditorGUILayout.EndScrollView();
+
+        if (foundGuid != "" && LoadGameAssets.knownAssetMap[foundGuid].EndsWith(".prefab") && GUILayout.Button("Open prefab in preview scene (readonly)") && !string.IsNullOrWhiteSpace(searchTerm))
+        {
+            Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(searchTerm)).Completed += res =>
+            {
+                CustomStage.go = res.Result;
+                UnityEditor.SceneManagement.StageUtility.GoToStage(new CustomStage(), true);
+            };
         }
     }
 
@@ -50,9 +93,9 @@ public class GameInspectorWindow : EditorWindow
     {
         Debug.Log($"doin' work {System.DateTime.Now}");
 
-        if(arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
+        if (arg.Result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
         {
-            for(int i = 0; i < loader.refs.Count; i++)
+            for (int i = 0; i < loader.refs.Count; i++)
             {
                 Addressables.ResourceManager.CreateChainOperation<GameObject, GameObject>(
                     Addressables.InstantiateAsync(new AssetReferenceGameObject(loader.refs[i]), arg.Result.transform.GetChild(i)), GameObjectInstantiateReady)
@@ -63,7 +106,7 @@ public class GameInspectorWindow : EditorWindow
         arg.Result.hideFlags = HideFlags.DontSaveInEditor;
 
         Debug.Log($"done work {System.DateTime.Now}");
-        
+
         return Addressables.ResourceManager.CreateCompletedOperation(arg.Result, string.Empty);
     }
 }

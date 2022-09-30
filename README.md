@@ -12,7 +12,7 @@
 * Run `Shipbreaker/Build`
 
 ## First steps
-* Open SampleScene
+* Open "Scenes/SampleScene"
 * Navigate to "_CustomShips/ExampleBox"
 * Drag "ExampleBox.prefab" into the scene hierarchy (This will take a while on first attempt, as it is caching all used game assets - takes about a minute on my midrange machine)
  * If this doesn't look right, when the Editor has finished loading, `Shipbreaker/Force View Refresh`
@@ -31,8 +31,19 @@
 * Open the ship in-game
 * Congratulations, you've created your first ship!
 
-## Creating custom ships
-* 
+## First ship from scratch
+* Open "Scenes/SampleScene"
+* Create a new folder in "_CustomShips", call it "ScratchShip"
+* Create a prefab named "ScratchShip" and drag it into the scene hierarchy
+* To the top level object, add a `Root Module Definition` component
+* Create an empty child, name it "Offset", position it to 20/5/30, with a rotation of 0/-90/0
+* Create an empty child of "Offset", name it "Floor"
+* To "Floor", add an `Addressable Loader` component, and set it's GUID to "15e523455b134fe40b33c5d6a4346fe8"
+* Add an image to use as the thumbnail to the "ScratchShip" folder
+* Right click your "ScratchShip" prefab, click `Create/Shipbreaker/Create level asset` (The shipbreaker menu is at the bottom of the create menu)
+* Fill in the details, and click Create
+  * The "Module Construction Asset" option will influence the triplaner texture that gets applied
+* Build and run
 
 ## Custom ship notes
 * The game doesn't work with negative scales

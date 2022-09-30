@@ -23,7 +23,7 @@ public class MyPreview : ObjectPreview
         }
 
         if(GUILayout.Button($"Save {target.name}")) {
-            //add everthing the button would do.
+            //add everything the button would do.
             var newobj = ScriptableObject.CreateInstance(target.GetType());
             EditorUtility.CopySerialized(target, newobj);
 

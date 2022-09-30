@@ -182,6 +182,11 @@ public class BuildContent
         return true;
     }
 
+    public static string GetAuthorName()
+    {
+        return buildSettings.Author;
+    }
+
     class BuildSettings
     {
         public string ShipbreakerPath;

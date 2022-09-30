@@ -11,7 +11,8 @@ public class LoadGameAssets
     public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle1;
     public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle2;
 
-    public static Dictionary<string, string> knownVanillaGuids = new Dictionary<string, string>();
+    public static string knownAssetString;
+    public static Dictionary<string, string> knownAssetMap = new Dictionary<string, string>();
     
     static LoadGameAssets()
     {
@@ -22,8 +23,18 @@ public class LoadGameAssets
     [MenuItem("Shipbreaker/Reload Assets", priority = 4)]
     public static void ReloadAssets()
     {
-        if (handle1.IsValid()) Addressables.Release(handle1);
-        if (handle2.IsValid()) Addressables.Release(handle2);
+        if (handle1.IsValid())
+        {
+            Addressables.RemoveResourceLocator(handle1.Result);
+            Addressables.Release(handle1);
+        }
+        if (handle2.IsValid())
+        {
+            Addressables.RemoveResourceLocator(handle2.Result);
+            Addressables.Release(handle2); 
+        }
+
+        Addressables.ClearResourceLocators(); 
 
         if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
         {
@@ -45,7 +56,8 @@ public class LoadGameAssets
             Debug.LogError("No game assets loaded - Make sure you have built the catalog!");
         }
 
-        knownVanillaGuids = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../known_assets.json")));
+        knownAssetString = System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../known_assets.json"));
+        knownAssetMap = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(knownAssetString);
     }
 
     [MenuItem("Shipbreaker/Clear Asset Cache", priority = 20)]

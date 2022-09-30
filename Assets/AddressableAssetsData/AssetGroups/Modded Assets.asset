@@ -234,6 +234,20 @@ MonoBehaviour:
     m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.png
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: fc2e971fb0de5cb4ab6c8b6ab01bdedd
+    m_Address: Assets/_CustomShips/ScratchShip/ScratchShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3fcb871ec03744409b7b7108642423c
+    m_Address: Assets/_CustomShips/ScratchShip/Pic.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 81ed94fdcf1f794438ead895d84e48eb
+    m_Address: Assets/_CustomShips/ScratchShip/LevelAsset_ScratchShip.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

@@ -42,7 +42,7 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
         var knownPath = AssetDatabase.GUIDToAssetPath(property.FindPropertyRelative("m_AssetGUID").stringValue);
         if(knownPath == "")
         {
-            if(LoadGameAssets.knownVanillaGuids.TryGetValue(property.FindPropertyRelative("m_AssetGUID").stringValue, out knownPath))
+            if(LoadGameAssets.knownAssetMap.TryGetValue(property.FindPropertyRelative("m_AssetGUID").stringValue, out knownPath))
             {
                 refPath = "Vanilla Asset";
             }
