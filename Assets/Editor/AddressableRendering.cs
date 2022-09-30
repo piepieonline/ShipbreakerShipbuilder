@@ -337,13 +337,17 @@ public class AddressableRendering : MonoBehaviour
             if(!System.IO.File.Exists($"{Application.dataPath}/EditorCache/{meshHashText}.asset"))
             {
                 AssetDatabase.CreateAsset(Instantiate(meshFilter.sharedMesh), $"{meshPath}{meshHashText}.asset");
-                var newMesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{meshHashText}.asset");
-                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = newMesh;
-                meshCache.Add(meshHashText, newMesh);
+            }
+
+            if(meshCache.ContainsKey(meshHashText))
+            {
+                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = meshCache[meshHashText];
             }
             else
             {
-                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = meshCache[meshHashText];
+                var newMesh = AssetDatabase.LoadAssetAtPath<Mesh>($"{meshPath}{meshHashText}.asset");
+                newPrefabChild.AddComponent<MeshFilter>().sharedMesh = newMesh;
+                meshCache.Add(meshHashText, newMesh);
             }
 
             MeshRenderer newRenderer = newPrefabChild.AddComponent<MeshRenderer>();
