@@ -1,8 +1,12 @@
 ## Steps to get setup
 * Install Unity 2020.3.35f (https://unity3d.com/unity/whats-new/2020.3.35)
+* Install ModdedShipLoader as per any other BepInEx mod, putting "ModdedShipLoader" into "plugins" and "ModdedShipLoaderPatcher" into "patchers"
+* Install the ShipbreakerShipbuilder project wherever you want
 * Copy (only those with waiting '.meta' files listed) game dlls from 'Shipbreaker_Data\Managed' into the Dll folder
 * Update "shipbreaker_settings.json" with the correct game path (note that you need to use double backslash in the path, eg: "D:\\\\SteamGames\\\\steamapps\\\\common\\\\Hardspace Shipbreaker")
-* Open unity, and run `Shipbreaker/Update game catalog`
+* Open the ShipbreakerShipbuilder project in unity
+* Run `Shipbreaker/Update game catalog`
+![Shipbreaker menu](Docs/ShipbreakerMenu.png?raw=true)
 * Restart unity
 * Run `Shipbreaker/Update known assets`
 * Delete the folder "FirstShip.Piepieonline" in "BepInEx\plugins\ModdedShipLoader\Ships"
@@ -86,6 +90,9 @@ The top half of this texture will get the triplaner texture applied (as the outs
 The BBI devs did us a massive favour, and released a bunch of documentation on their tools: https://drive.google.com/file/d/12gYTLHTgoeJLBlpVMsv4WfJC9cMHxcd5/view
 While extremely interesting, it's direct application is limited.
 Read it to get a better understanding of how the systems fit together (especially pressurisation), but don't expect processes detailed by them to work for us.
+
+## Contact
+Find me on the [Shipbreaker discord - #modding-discussion](https://discord.gg/shipbreakergame)
 
 ## Expected Unity Exceptions
 There are a bunch of exceptions that I haven't managed to clean up yet, but will not impact the process, as follows:
