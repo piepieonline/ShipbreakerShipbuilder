@@ -53,7 +53,22 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
         }
 
         EditorGUI.LabelField(refPathRect, refPath);
-        EditorGUI.LabelField(isLocalRect, knownPath == "" ? "Unknown Asset" : knownPath);
+
+        if(knownPath != "")
+        {
+            if(EditorGUI.DropdownButton(isLocalRect, new GUIContent(knownPath), FocusType.Keyboard, EditorStyles.label))
+            {
+                Addressables.LoadAssetAsync<UnityEngine.Object>(new AssetReference(property.FindPropertyRelative("m_AssetGUID").stringValue)).Completed += res =>
+                {
+                    Selection.activeObject = res.Result;
+                };
+            }
+        }
+        else
+        {
+            EditorGUI.LabelField(isLocalRect, "Unknown Asset");
+        }
+
 
         var guidRect = new Rect(position.x + offset, position.y + (EditorGUIUtility.singleLineHeight * 2), position.width - offset, EditorGUIUtility.singleLineHeight);
         EditorGUI.PropertyField(guidRect, property.FindPropertyRelative("m_AssetGUID"), GUIContent.none);

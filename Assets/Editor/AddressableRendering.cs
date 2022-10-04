@@ -328,7 +328,15 @@ public class AddressableRendering : MonoBehaviour
             var meshFilter = inTransform.GetComponent<MeshFilter>();
 
             // TODO: Is this stable enough?
-            var meshHashText = meshFilter.sharedMesh.GetInstanceID().ToString();
+            var dataArray = Mesh.AcquireReadOnlyMeshData(meshFilter.sharedMesh);
+
+            var meshHashText = "";
+            for(int i = 0; i < dataArray.Length; i++)
+            {
+                var data = dataArray[0];
+                meshHashText += Hash128.Compute(ref data).ToString();
+            }
+            dataArray.Dispose();
 
             if(!System.IO.File.Exists($"{Application.dataPath}/EditorCache/{meshHashText}.asset"))
             {
