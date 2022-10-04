@@ -13,7 +13,7 @@ public class RoomGizmos
         if (!UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects().Contains(scr.gameObject))
             return;
 
-        if (AddressableRendering.drawRooms)
+        if (GameRenderWindow.drawRooms)
         {
             foreach (var room in AddressableRendering.rooms)
             {
@@ -28,13 +28,13 @@ public class RoomGizmos
 
                     Gizmos.matrix = transformMatrix;
 
-                    Gizmos.color = roomSubVolumeDefinition.Mode == RoomSubVolumeDefinition.InclusionMode.Include ? new Color(0, 1, 0, AddressableRendering.roomOpacity) : new Color(1, 0, 0, AddressableRendering.roomOpacity);
+                    Gizmos.color = roomSubVolumeDefinition.Mode == RoomSubVolumeDefinition.InclusionMode.Include ? GameRenderWindow.roomColorInclude : GameRenderWindow.roomColorExclude;
                     Gizmos.DrawCube(Vector3.zero, Vector3.one);
                 }
             }
         }
 
-        if (AddressableRendering.drawRoomOverlaps)
+        if (GameRenderWindow.drawRoomOverlaps)
         {
             foreach (var room in AddressableRendering.roomOverlaps)
             {
@@ -49,12 +49,19 @@ public class RoomGizmos
 
                     Gizmos.matrix = transformMatrix;
 
-                    Gizmos.color = new Color(1, .5f, 0, AddressableRendering.roomOpacity);
-                    Gizmos.DrawCube(Vector3.zero, Vector3.one);
+                    Gizmos.color = GameRenderWindow.roomOverlapColor;
+                    
+                    float overlapBorderSize = 0.02f;
 
-                    if (AddressableRendering.drawRoomOverlapFlows)
+                    Gizmos.DrawCube(new Vector3(-.5f, 0, 0), new Vector3(overlapBorderSize, 1f, 1f));
+                    Gizmos.DrawCube(new Vector3(.5f, 0, 0), new Vector3(overlapBorderSize, 1f, 1f));
+                    
+                    Gizmos.DrawCube(new Vector3(0, 0, -.5f), new Vector3(1f, 1f, overlapBorderSize));
+                    Gizmos.DrawCube(new Vector3(0, 0, .5f), new Vector3(1f, 1f, overlapBorderSize));
+
+                    if (GameRenderWindow.drawRoomOverlapFlows)
                     {
-                        Gizmos.color = new Color(1, .5f, 0, 1);
+                        Gizmos.color = GameRenderWindow.roomOverlapFlowColor;
                         DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.up : Vector3.forward);
                         DrawArrow.ForGizmo(Vector3.zero, roomOpeningDefinition.FlowAxis == 1 ? Vector3.down : Vector3.back);
                     }

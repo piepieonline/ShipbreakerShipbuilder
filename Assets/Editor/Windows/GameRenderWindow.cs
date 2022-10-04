@@ -6,6 +6,14 @@ using BBI.Unity.Game;
 
 public class GameRenderWindow : EditorWindow
 {
+    public static bool drawRooms = true;
+    public static Color roomColorInclude = new Color(0, 1, 0, .2f);
+    public static Color roomColorExclude = new Color(1, 0, 0, .2f);
+    public static bool drawRoomOverlaps = true;
+    public static Color roomOverlapColor = new Color(.14f, .63f, .58f, .35f);
+    public static bool drawRoomOverlapFlows = false;
+    public static Color roomOverlapFlowColor = new Color(1, .5f, 0, 1);
+
     [MenuItem("Shipbreaker/Show Render Controller", priority = 100)]
     public static void ShowRenderController()
     {
@@ -14,9 +22,6 @@ public class GameRenderWindow : EditorWindow
     
     void OnGUI()
     {
-        // GUILayout.Label("Create room asset", EditorStyles.boldLabel);
-        GUILayout.Label("Asset GUID", EditorStyles.label);
-
         if (GUILayout.Button("Redraw"))
         {
             AddressableRendering.UpdateViewList();
@@ -27,9 +32,18 @@ public class GameRenderWindow : EditorWindow
             AddressableRendering.ClearView();
         }
 
-        AddressableRendering.drawRooms = GUILayout.Toggle(AddressableRendering.drawRooms, "Draw Rooms");
-        AddressableRendering.drawRoomOverlaps = GUILayout.Toggle(AddressableRendering.drawRoomOverlaps, "Draw Room Overlaps");
-        AddressableRendering.drawRoomOverlapFlows = GUILayout.Toggle(AddressableRendering.drawRoomOverlapFlows, "Draw Room Overlap Flows");
-        AddressableRendering.roomOpacity = float.Parse(GUILayout.TextField(AddressableRendering.roomOpacity.ToString(), "Rooms Opacity"));
+        GUILayout.Label("Room volumes", EditorStyles.boldLabel);
+        drawRooms = GUILayout.Toggle(drawRooms, "Draw Rooms");
+        GUILayout.Label("Room volume colors", EditorStyles.label);
+        roomColorInclude = EditorGUILayout.ColorField(roomColorInclude);
+        roomColorExclude = EditorGUILayout.ColorField(roomColorExclude);
+
+        GUILayout.Label("Room overlaps", EditorStyles.boldLabel);
+        drawRoomOverlaps = GUILayout.Toggle(drawRoomOverlaps, "Draw Room Overlaps");
+        GUILayout.Label("Overlap Color", EditorStyles.label);
+        roomOverlapColor = EditorGUILayout.ColorField(roomOverlapColor);
+        drawRoomOverlapFlows = GUILayout.Toggle(drawRoomOverlapFlows, "Draw Room Overlap Flows");
+        GUILayout.Label("Overlap Color", EditorStyles.label);
+        roomOverlapFlowColor = EditorGUILayout.ColorField(roomOverlapFlowColor);
     }
 }

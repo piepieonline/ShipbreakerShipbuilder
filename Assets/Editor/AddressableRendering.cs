@@ -8,11 +8,7 @@ using UnityEngine.AddressableAssets;
 
 public class AddressableRendering : MonoBehaviour
 {
-    public static bool drawRooms = true;
-    public static bool drawRoomOverlaps = true;
-    public static bool drawRoomOverlapFlows = true;
-
-    public static float roomOpacity = .1f;
+    
 
     public static List<RenderableMapping> rooms = new List<RenderableMapping>();
     public static List<RenderableMapping> roomOverlaps = new List<RenderableMapping>();
