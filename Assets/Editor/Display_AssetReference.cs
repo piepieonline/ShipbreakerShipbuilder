@@ -58,10 +58,21 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
         {
             if(EditorGUI.DropdownButton(isLocalRect, new GUIContent(knownPath), FocusType.Keyboard, EditorStyles.label))
             {
-                Addressables.LoadAssetAsync<UnityEngine.Object>(new AssetReference(property.FindPropertyRelative("m_AssetGUID").stringValue)).Completed += res =>
+                if(refPath == "Vanilla Asset")
                 {
-                    Selection.activeObject = res.Result;
-                };
+                    Addressables.LoadAssetAsync<UnityEngine.Object>(new AssetReference(property.FindPropertyRelative("m_AssetGUID").stringValue)).Completed += res =>
+                    {
+                        Selection.activeObject = res.Result;
+                    };
+                }
+                else
+                {
+                    var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(AssetDatabase.GUIDToAssetPath(property.FindPropertyRelative("m_AssetGUID").stringValue));
+                    if(asset is GameObject)
+                        AssetDatabase.OpenAsset(asset);
+                    else
+                        Selection.activeObject = asset;
+                }
             }
         }
         else

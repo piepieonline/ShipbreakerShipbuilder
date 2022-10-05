@@ -72,6 +72,16 @@ public class AddressableRendering : MonoBehaviour
                         }
                     }
 
+                    foreach (var room in rootGameObject.GetComponentsInChildren<RoomSubVolumeDefinition>())
+                    {
+                        rooms.Add(RenderableMapping.RoomMapping(room.transform, false));
+                    }
+
+                    foreach (var roomOverlap in rootGameObject.GetComponentsInChildren<RoomOpeningDefinition>())
+                    {
+                        roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, false));
+                    }
+
                     if (!needToRefreshCache || LoadGameAssets.handle1.IsValid() && LoadGameAssets.handle2.IsValid())
                     {
                         foreach (var addressable in addressablesToLoad)
@@ -333,7 +343,7 @@ public class AddressableRendering : MonoBehaviour
             var meshHashText = "";
             for(int i = 0; i < dataArray.Length; i++)
             {
-                var data = dataArray[0];
+                var data = dataArray[i];
                 meshHashText += Hash128.Compute(ref data).ToString();
             }
             dataArray.Dispose();

@@ -234,20 +234,18 @@ MonoBehaviour:
     m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: fc2e971fb0de5cb4ab6c8b6ab01bdedd
-    m_Address: Assets/_CustomShips/ScratchShip/ScratchShip.prefab
+  - m_GUID: 18b8d93c4dd825740a9f9368e5e2fd21
+    m_Address: Assets/_CustomShips/FirstShip/Components/Reactor/Reactor_ModuleEntryContainer.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: e3fcb871ec03744409b7b7108642423c
-    m_Address: Assets/_CustomShips/ScratchShip/Pic.png
+  - m_GUID: 03661bd39ae62f3498efaf01d4a10326
+    m_Address: Assets/_CustomShips/FirstShip/Components/Reactor/Reactor_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 81ed94fdcf1f794438ead895d84e48eb
-    m_Address: Assets/_CustomShips/ScratchShip/LevelAsset_ScratchShip.asset
+  - m_GUID: 1fc10ad1214547646bce68b12631c14d
+    m_Address: Assets/_CustomShips/FirstShip/FirstShipSpawner/FirstShipSpawner_ModuleListAsset.asset
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - GameMode_Free
-    - Release
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

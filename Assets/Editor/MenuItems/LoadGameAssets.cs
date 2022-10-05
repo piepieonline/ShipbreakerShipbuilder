@@ -14,8 +14,11 @@ public class LoadGameAssets
     public static string knownAssetString;
     public static Dictionary<string, string> knownAssetMap = new Dictionary<string, string>();
     
+    static Finalizer finalizer;
+
     static LoadGameAssets()
     {
+        finalizer = new Finalizer();
         ReloadAssets();
         EditorApplication.hierarchyChanged += OnHierarchyChanged;
     }
@@ -23,18 +26,7 @@ public class LoadGameAssets
     [MenuItem("Shipbreaker/Reload Assets", priority = 4)]
     public static void ReloadAssets()
     {
-        if (handle1.IsValid())
-        {
-            Addressables.RemoveResourceLocator(handle1.Result);
-            Addressables.Release(handle1);
-        }
-        if (handle2.IsValid())
-        {
-            Addressables.RemoveResourceLocator(handle2.Result);
-            Addressables.Release(handle2); 
-        }
-
-        Addressables.ClearResourceLocators(); 
+        UnloadAssets();
 
         if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
         {
@@ -83,4 +75,28 @@ public class LoadGameAssets
             ViewRefresh();
         }
     }
+
+    static void UnloadAssets()
+    {
+        if (handle1.IsValid())
+        {
+            Addressables.RemoveResourceLocator(handle1.Result);
+            Addressables.Release(handle1);
+        }
+        if (handle2.IsValid())
+        {
+            Addressables.RemoveResourceLocator(handle2.Result);
+            Addressables.Release(handle2); 
+        }
+
+        Addressables.ClearResourceLocators(); 
+    }
+
+    sealed class Finalizer {
+        ~Finalizer()
+        {
+            Debug.Log("Unloading");
+            LoadGameAssets.UnloadAssets();
+        }
+    } 
 }

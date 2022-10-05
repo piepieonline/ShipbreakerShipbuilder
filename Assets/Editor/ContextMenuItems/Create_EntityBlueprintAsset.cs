@@ -131,6 +131,7 @@ public class Create_EntityBlueprintAsset : MonoBehaviour
 [MenuItem("Assets/Create/Scriptable Objects/ModuleConstructionAsset")] public static void CreateModuleConstructionAsset() { CreateMyAsset(typeof(BBI.Unity.Game.ModuleConstructionAsset)); }
 [MenuItem("Assets/Create/Scriptable Objects/ModuleEntryContainer")] public static void CreateModuleEntryContainer() { CreateMyAsset(typeof(BBI.Unity.Game.ModuleEntryContainer)); }
 [MenuItem("Assets/Create/Scriptable Objects/ModuleEntryDefinition")] public static void CreateModuleEntryDefinition() { CreateMyAsset(typeof(BBI.Unity.Game.ModuleEntryDefinition)); }
+[MenuItem("Assets/Create/Scriptable Objects/ModuleEntryEmpty")] public static void CreateModuleEntryEmpty() { CreateMyAsset(typeof(BBI.Unity.Game.ModuleEntryEmpty)); }
 [MenuItem("Assets/Create/Scriptable Objects/ModuleListAsset")] public static void CreateModuleListAsset() { CreateMyAsset(typeof(BBI.Unity.Game.ModuleListAsset)); }
 [MenuItem("Assets/Create/Scriptable Objects/ModulePropertyAsset")] public static void CreateModulePropertyAsset() { CreateMyAsset(typeof(BBI.Unity.Game.ModulePropertyAsset)); }
 [MenuItem("Assets/Create/Scriptable Objects/ModuleSkinAsset")] public static void CreateModuleSkinAsset() { CreateMyAsset(typeof(BBI.Unity.Game.ModuleSkinAsset)); }

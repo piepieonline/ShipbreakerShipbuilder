@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -720041354, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: Reactor_ModuleEntryDefinition
+  m_EditorClassIdentifier: 
+  m_PolymorphicParentAsset: {fileID: 0}
+  Weight: 0.2
+  Properties: []
+  m_Percent: 
+  ModuleDef: {fileID: 0}
+  ModuleDefRef:
+    m_AssetGUID: 2c2cdfb4015a3254388cee8d77d62280
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   Data:
     LevelDisplayName: Demo Ship
     LevelDescriptionShort: Piepieonline
-    LevelDescriptionFull: CUSTOM:e723eba8ae422e84190e2971c9c374f5
+    LevelDescriptionFull: CUSTOM:792652162aeed3342810ad6a261da3d2
     LevelThumbnailImage: {fileID: 0}
     LevelFullImage: {fileID: 0}
     LevelThumbnailImageRef:
@@ -34,7 +34,7 @@ MonoBehaviour:
     TimerCountsUp: 1
     StartingShip: {fileID: 0}
     StartingShipRef:
-      m_AssetGUID: 5e42e2c3f2323df48b5c6dda27db1824
+      m_AssetGUID: ffe15ab63fd88174786869d70ce973c3
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

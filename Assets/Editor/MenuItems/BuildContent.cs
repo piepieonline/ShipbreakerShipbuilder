@@ -15,6 +15,7 @@ public class BuildContent
     static BuildSettings buildSettings;
     static BuildContent()
     {
+        LogHandler.Setup();
         ReloadBuildSettings();
     }
 
@@ -176,6 +177,26 @@ public class BuildContent
         else if (!File.Exists(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe")))
         {
             Debug.LogError("Please provide a valid path to Hardspace: Shipbreaker (EXE not found)");
+            return false;
+        }
+        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx")))
+        {
+            Debug.LogError("Please ensure BepInEx is installed (BepInEx folder not found)");
+            return false;
+        }
+        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx")))
+        {
+            Debug.LogError("Please ensure BepInEx is installed (BepInEx folder not found)");
+            return false;
+        }
+        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx", "plugins", "ModdedShipLoader")))
+        {
+            Debug.LogError("Please ensure the ModdedShipLoader is installed (plugin folder not found)");
+            return false;
+        }
+        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher")))
+        {
+            Debug.LogError("Please ensure the ModdedShipLoaderPatcher is installed (patcher folder not found)");
             return false;
         }
 
