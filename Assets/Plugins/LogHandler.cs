@@ -10,7 +10,6 @@ public class LogHandler : ILogHandler
 
     public static void Setup()
     {
-        Debug.Log("Setup");
         m_DefaultLogHandler = Debug.unityLogger.logHandler;
         Debug.unityLogger.logHandler = new LogHandler();
     }

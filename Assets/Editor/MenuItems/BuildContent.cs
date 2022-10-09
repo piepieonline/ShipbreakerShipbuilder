@@ -8,17 +8,10 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Build;
+using System;
 
-[InitializeOnLoad]
 public class BuildContent
 {
-    static BuildSettings buildSettings;
-    static BuildContent()
-    {
-        LogHandler.Setup();
-        ReloadBuildSettings();
-    }
-
     [MenuItem("Shipbreaker/Build", priority = 2)]
     static bool RunBuild()
     {
@@ -27,16 +20,16 @@ public class BuildContent
         AddressableAssetSettings.BuildPlayerContent(out AddressablesPlayerBuildResult result);
         bool success = string.IsNullOrEmpty(result.Error);
 
-        if (success && VerifyBuildSettings())
+        if (success && Settings.VerifyBuildSettings())
         {
             var modPath = "BepInEx\\plugins\\ModdedShipLoader\\Ships";
-            var shipPath = $"{buildSettings.ShipPath}.{buildSettings.Author}";
+            var shipPath = $"{Settings.buildSettings.ShipPath}.{Settings.buildSettings.Author}";
 
             Debug.Log("Creating or clearing build directory");
 
-            if(Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath)))
+            if(Directory.Exists(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath)))
             {
-                foreach(var file in Directory.EnumerateFiles(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath)))
+                foreach(var file in Directory.EnumerateFiles(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath)))
                 {
                     if(file.EndsWith(".json") || file.EndsWith(".bundle"))
                     {
@@ -46,7 +39,7 @@ public class BuildContent
             }
             else
             {
-                Directory.CreateDirectory(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath));
+                Directory.CreateDirectory(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath));
             }
 
             Debug.Log("Moving bundle");
@@ -54,7 +47,7 @@ public class BuildContent
             var contentBundle = Directory.GetFiles(Application.dataPath + "\\..\\BuiltShipContent")[0];
             File.Copy(
                 contentBundle,
-                Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath, contentBundle.Split('\\').Last()),
+                Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, contentBundle.Split('\\').Last()),
                 true
             );
             File.Delete(contentBundle);
@@ -62,9 +55,25 @@ public class BuildContent
             Debug.Log("Moving and modifying catalog");
             var catalog = File.ReadAllText(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json");
 
-            catalog = catalog.Replace("BuiltShipContent\\\\", (Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath) + "\\").Replace("\\", "\\\\"));
+            catalog = catalog.Replace("BuiltShipContent\\\\", (Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath) + "\\").Replace("\\", "\\\\"));
 
-            File.WriteAllText(Path.Combine(buildSettings.ShipbreakerPath, modPath, shipPath, "catalog.json"), catalog);
+            File.WriteAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "catalog.json"), catalog);
+
+            Debug.Log("Writing asset templates");
+
+            var baseVersionList = new List<string>();
+            string[] typesToSearch = File.ReadAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher", "TypesToModify.txt"));
+
+            foreach(var type in typesToSearch)
+            {
+                foreach(var asset in Resources.FindObjectsOfTypeAll(Type.GetType($"BBI.Unity.Game.{type}, BBI.Unity.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", true)))
+                {
+                    AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out string guid, out long _);
+                    baseVersionList.Add($"[{guid}]");
+                }
+            }
+            
+            File.WriteAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "baseOverrides.txt"), baseVersionList);
 
             LoadGameAssets.ReloadAssets();
             Debug.Log("Build Complete");
@@ -72,7 +81,9 @@ public class BuildContent
         }
         else
         {
+            Debug.LogError("Build Failed!");
             Debug.LogError("Addressables build error encountered: " + result.Error);
+            Debug.LogError("If you are stuck, contact Piepieonline on the Shipbreaker discord (#modding-discussion)");
             return false;
         }
     }
@@ -81,15 +92,15 @@ public class BuildContent
     static void BuildAndRun()
     {
         if(RunBuild())
-            System.Diagnostics.Process.Start(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe"));
+            System.Diagnostics.Process.Start(Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker.exe"));
     }
 
     [MenuItem("Shipbreaker/Update game catalog", priority = 1000)]
     static void UpdateGameCatalog()
     {
-        var catalog = File.ReadAllText(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\catalog.json"));
+        var catalog = File.ReadAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\catalog.json"));
 
-        catalog = catalog.Replace(@"{UnityEngine.AddressableAssets.Addressables.RuntimePath}\\StandaloneWindows64\\", (Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\StandaloneWindows64") + "\\").Replace("\\", "\\\\"));
+        catalog = catalog.Replace(@"{UnityEngine.AddressableAssets.Addressables.RuntimePath}\\StandaloneWindows64\\", (Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\StandaloneWindows64") + "\\").Replace("\\", "\\\\"));
 
         var path = System.IO.Path.GetFullPath(Application.dataPath + "\\..\\modded_catalog.json");
 
@@ -128,90 +139,6 @@ public class BuildContent
     [MenuItem("Shipbreaker/Reload Build Settings", priority = 1002)]
     static void ReloadBuildSettings()
     {
-        var settingsText = File.ReadAllText(Path.Combine(Application.dataPath, "../shipbreaker_settings.json"));
-
-        buildSettings = null;
-        try
-        {
-            buildSettings = Newtonsoft.Json.JsonConvert.DeserializeObject<BuildSettings>(settingsText);
-        }
-        catch (Newtonsoft.Json.JsonReaderException)
-        {
-            Debug.LogError("Invalid settings file (failed to read)");
-            return;
-        }
-
-        if(VerifyBuildSettings())
-        {
-            Debug.Log("Build settings reloaded");
-        }
-        else
-        {
-            Debug.LogError("Build settings failed to load");
-        }
-
-    }
-
-    static bool VerifyBuildSettings()
-    {
-        if(buildSettings.Author == null || buildSettings.Author == "")
-        {
-            Debug.LogError("Please provide an author name");
-            return false;
-        }
-        else if(buildSettings.ShipPath == null || buildSettings.ShipPath == "")
-        {
-            Debug.LogError("Please provide a Ship Path");
-            return false;
-        }
-        else if(buildSettings.ShipbreakerPath == null || buildSettings.ShipbreakerPath == "")
-        {
-            Debug.LogError("Please provide a path to Hardspace: Shipbreaker");
-            return false;
-        }
-        else if(buildSettings.ShipbreakerPath[2] != '\\')
-        {
-            Debug.LogError("Please escape the path to Hardspace: Shipbreaker (Double backslashes \\\\, not single \\)");
-            return false;
-        }
-        else if (!File.Exists(Path.Combine(buildSettings.ShipbreakerPath, "Shipbreaker.exe")))
-        {
-            Debug.LogError("Please provide a valid path to Hardspace: Shipbreaker (EXE not found)");
-            return false;
-        }
-        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx")))
-        {
-            Debug.LogError("Please ensure BepInEx is installed (BepInEx folder not found)");
-            return false;
-        }
-        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx")))
-        {
-            Debug.LogError("Please ensure BepInEx is installed (BepInEx folder not found)");
-            return false;
-        }
-        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx", "plugins", "ModdedShipLoader")))
-        {
-            Debug.LogError("Please ensure the ModdedShipLoader is installed (plugin folder not found)");
-            return false;
-        }
-        else if (!Directory.Exists(Path.Combine(buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher")))
-        {
-            Debug.LogError("Please ensure the ModdedShipLoaderPatcher is installed (patcher folder not found)");
-            return false;
-        }
-
-        return true;
-    }
-
-    public static string GetAuthorName()
-    {
-        return buildSettings.Author;
-    }
-
-    class BuildSettings
-    {
-        public string ShipbreakerPath;
-        public string Author;
-        public string ShipPath;
+        Settings.ReloadBuildSettings();
     }
 }

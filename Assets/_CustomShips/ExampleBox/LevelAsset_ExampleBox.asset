@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 1127858399, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
   m_Name: LevelAsset_ExampleBox
   m_EditorClassIdentifier: 
+  AssetBasis: c2bb453130217034dbc3d68f3ab36b73
   Data:
     LevelDisplayName: Example Box
     LevelDescriptionShort: Piepieonline
@@ -34,7 +35,7 @@ MonoBehaviour:
     TimerCountsUp: 1
     StartingShip: {fileID: 0}
     StartingShipRef:
-      m_AssetGUID: 64a1a1f3e77574f468b15c16dfe0229f
+      m_AssetGUID: 908a60a7a9952564eb211adb31e7c956
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

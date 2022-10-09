@@ -25,11 +25,6 @@ MonoBehaviour:
     m_Address: Assets/Sphere.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 985e889cb1a325c4ba92855918db3bcf
-    m_Address: Assets/CustomCrate.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Release
   - m_GUID: d69920c4182e4ff4e9af35699f874ca5
     m_Address: Assets/DemoButton.prefab
     m_ReadOnly: 0
@@ -58,22 +53,6 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 102453e3bd4709c41b25e2fc6f6fe3f7
     m_Address: Assets/CustomOperation/AirlockRef.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f2ade62975d33c5408fc695ba5be1d27
-    m_Address: Assets/CustomOperation/BoxRef/BoxRef.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3075522616fd26a4ea5283b81585c3a6
-    m_Address: Assets/CustomOperation/BoxRef/ModuleListAsset.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 651889da8c02ede4a88f34efec8d762f
-    m_Address: Assets/CustomOperation/BoxRef/PRF_Room.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 41de0a0595534cc4eb29ba7c4baf3a46
-    m_Address: Assets/CustomOperation/BoxRef/BoxRefAirlock.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: e723eba8ae422e84190e2971c9c374f5
@@ -224,16 +203,6 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/FirstShip/ShipImage.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 885f3cd422be53a4b84e2fb07b5a77ec
-    m_Address: Assets/_CustomShips/ExampleBox/LevelAsset_ExampleBox.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - GameMode_Free
-    - Release
-  - m_GUID: 4855fca3e68e046429b7d7cbc69269bf
-    m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 18b8d93c4dd825740a9f9368e5e2fd21
     m_Address: Assets/_CustomShips/FirstShip/Components/Reactor/Reactor_ModuleEntryContainer.asset
     m_ReadOnly: 0
@@ -246,6 +215,50 @@ MonoBehaviour:
     m_Address: Assets/_CustomShips/FirstShip/FirstShipSpawner/FirstShipSpawner_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: f2ade62975d33c5408fc695ba5be1d27
+    m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 885f3cd422be53a4b84e2fb07b5a77ec
+    m_Address: Assets/_CustomShips/ExampleBox/LevelAsset_ExampleBox.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+  - m_GUID: 4855fca3e68e046429b7d7cbc69269bf
+    m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 41de0a0595534cc4eb29ba7c4baf3a46
+    m_Address: Assets/_CustomShips/ExampleBox/ExampleBoxAirlock.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 25f88292451b449409ff2fcd30b6568c
+    m_Address: Assets/_CustomShips/ExampleBox/ModuleEntryContainer.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c6f2d4c6dd348b34a9e54c9b7f977111
+    m_Address: Assets/_CustomShips/ExampleBox/ModuleEntryDefinition.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3075522616fd26a4ea5283b81585c3a6
+    m_Address: Assets/_CustomShips/ExampleBox/ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 651889da8c02ede4a88f34efec8d762f
+    m_Address: Assets/_CustomShips/ExampleBox/PRF_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 908a60a7a9952564eb211adb31e7c956
+    m_Address: Assets/_CustomShips/ExampleBox/CustomModule.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
+  - m_GUID: 52445c10e45068c4ca1e5a6f9a9d86a1
+    m_Address: Assets/_CustomShips/FirstShip/ModuleConstructionAsset_FirstShip.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

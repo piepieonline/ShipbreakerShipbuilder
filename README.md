@@ -1,15 +1,18 @@
 ## Steps to get setup
 * Install Unity 2020.3.35f (https://unity3d.com/unity/whats-new/2020.3.35)
 * Install ModdedShipLoader as per any other BepInEx mod, putting "ModdedShipLoader" into "plugins" and "ModdedShipLoaderPatcher" into "patchers"
+* Delete the folder "FirstShip.Piepieonline" in "BepInEx\plugins\ModdedShipLoader\Ships"
 * Install the ShipbreakerShipbuilder project wherever you want
 * Copy (only those with waiting '.meta' files listed) game dlls from 'Shipbreaker_Data\Managed' into the Dll folder
-* Update "shipbreaker_settings.json" with the correct game path (note that you need to use double backslash in the path, eg: "D:\\\\SteamGames\\\\steamapps\\\\common\\\\Hardspace Shipbreaker")
+* Update "shipbreaker_settings.json"
+  * Add the correct game path (note that you need to use double backslash in the path, eg: "D:\\\\SteamGames\\\\steamapps\\\\common\\\\Hardspace Shipbreaker")
+  * Add your username as the author, eg: "Piepieonline" 
 * Open the ShipbreakerShipbuilder project in unity
 * Run `Shipbreaker/Update game catalog`
 ![Shipbreaker menu](Docs/ShipbreakerMenu.png?raw=true)
 * Restart unity
 * Run `Shipbreaker/Update known assets`
-* Delete the folder "FirstShip.Piepieonline" in "BepInEx\plugins\ModdedShipLoader\Ships"
+* Run `Shipbreaker/Build and run`, and ensure that the two custom ships appear at the end of the freeplay menu
 
 ## Steps to build
 * Discard all changes to the SampleScene

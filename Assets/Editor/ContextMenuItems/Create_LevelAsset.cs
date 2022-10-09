@@ -102,7 +102,7 @@ public class Create_LevelAssets : EditorWindow
         var levelAsset = CreateInstance<LevelAsset>();
 
         levelAsset.Data.LevelDisplayName = levelName;
-        levelAsset.Data.LevelDescriptionShort = BuildContent.GetAuthorName();
+        levelAsset.Data.LevelDescriptionShort = Settings.GetAuthorName();
         levelAsset.Data.LevelDescriptionFull = $"CUSTOM:{levelPrefabGuid}";
         levelAsset.Data.LevelThumbnailImageRef = new AssetReferenceTexture(thumbnailGuid);
         levelAsset.Data.BaseSceneRef = new AssetReferenceScene("be5ef977dfbe2b344b39a1cd19df1fb1");
