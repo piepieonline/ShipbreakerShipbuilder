@@ -64,12 +64,17 @@ public class BuildContent
             var baseVersionList = new List<string>();
             string[] typesToSearch = File.ReadAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher", "TypesToModify.txt"));
 
-            foreach(var type in typesToSearch)
+            foreach(var typeString in typesToSearch)
             {
-                foreach(var asset in Resources.FindObjectsOfTypeAll(Type.GetType($"BBI.Unity.Game.{type}, BBI.Unity.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", true)))
+                var type = Type.GetType($"BBI.Unity.Game.{typeString}, BBI.Unity.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", true);
+                foreach(var assetGUID in AssetDatabase.FindAssets($"t:{typeString}", null))
                 {
-                    AssetDatabase.TryGetGUIDAndLocalFileIdentifier(asset, out string guid, out long _);
-                    baseVersionList.Add($"[{guid}]");
+                    var asset = AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(assetGUID), type);
+                    var val = ((string)type.GetField("AssetBasis").GetValue(asset));
+                    if(val != null && val != "")
+                    {
+                        baseVersionList.Add($"[{assetGUID}]");
+                    }
                 }
             }
             

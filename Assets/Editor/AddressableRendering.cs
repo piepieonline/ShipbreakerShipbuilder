@@ -8,12 +8,11 @@ using UnityEngine.AddressableAssets;
 
 public class AddressableRendering : MonoBehaviour
 {
-    
-
     public static List<RenderableMapping> rooms = new List<RenderableMapping>();
     public static List<RenderableMapping> roomOverlaps = new List<RenderableMapping>();
 
     static bool isUpdating = false;
+    static int currentRecursiveDepth = 0;
 
     static List<GameObject> fakes = new List<GameObject>();
 
@@ -50,6 +49,7 @@ public class AddressableRendering : MonoBehaviour
 
             foreach (var rootGameObject in rootObjects)
             {
+                currentRecursiveDepth = 0;
                 if (rootGameObject.TryGetComponent<BBI.Unity.Game.ModuleDefinition>(out var moduleDefinition))
                 {
                     foreach (var addressable in rootGameObject.GetComponentsInChildren<BBI.Unity.Game.AddressableLoader>())
@@ -211,7 +211,11 @@ public class AddressableRendering : MonoBehaviour
 
                 if (result.TryGetComponent<BBI.Unity.Game.AddressableLoader>(out var loader))
                 {
-                    await LoadAddress(loader.assetGUID ?? loader.refs[0], res.Result.transform, false, loader.childPath, loader.disabledChildren);
+                    if(currentRecursiveDepth++ < GameRenderWindow.maxLoopDepth)
+                    {
+                        await LoadAddress(loader.assetGUID ?? loader.refs[0], res.Result.transform, false, loader.childPath, loader.disabledChildren);
+                    }
+                    currentRecursiveDepth--;
                 }
 
                 await TryCacheAsset(addressRef, result, isHardpoint, addressRef + assetPath.Replace("/", "_"));
@@ -222,7 +226,13 @@ public class AddressableRendering : MonoBehaviour
                 {
                     var assetGUID = await LoadHardpoint(hardpoint);
                     if (!string.IsNullOrEmpty(assetGUID))
-                        await LoadAddress(assetGUID, hardpoint.transform, isHardpoint);
+                    {
+                        if(currentRecursiveDepth++ < GameRenderWindow.maxLoopDepth)
+                        {
+                            await LoadAddress(assetGUID, hardpoint.transform, isHardpoint);
+                        }
+                        currentRecursiveDepth--;
+                    }
                 }
 
                 return res.Result;
@@ -267,16 +277,13 @@ public class AddressableRendering : MonoBehaviour
             temp.AddComponent<FakePrefabDisplay>();
             fakes.Add(temp);
 
-            /*
-            foreach (var hardpoint in temp.GetComponentsInChildren<HardPoint>())
-            {
-                var hardpointPrefab = await LoadAddress(hardpoint.AssetRef.AssetGUID, hardpoint.transform, true, false);
-            }
-            */
-
             foreach (var hardpoint in temp.GetComponentsInChildren<FakeHardpoint>())
             {
-                var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true);
+                if(currentRecursiveDepth++ < GameRenderWindow.maxLoopDepth)
+                {
+                    var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true);
+                }
+                currentRecursiveDepth--;
             }
         }
 
@@ -343,6 +350,8 @@ public class AddressableRendering : MonoBehaviour
             var meshHashText = "";
             for(int i = 0; i < dataArray.Length; i++)
             {
+                if(dataArray[i].vertexCount == 0) continue;
+
                 var data = dataArray[i];
                 meshHashText += Hash128.Compute(ref data).ToString();
             }

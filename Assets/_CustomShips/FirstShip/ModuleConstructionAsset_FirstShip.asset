@@ -49,7 +49,10 @@ MonoBehaviour:
     m_ShipAudioSize: {fileID: 0}
     m_VitalityData: {fileID: 0}
     m_ShipIcon: {fileID: 0}
-    m_Restrictions: []
+    m_Restrictions:
+    - Type: {fileID: 11400000, guid: 8263e1b9bafae874dbc08d8bb04dbf83, type: 2}
+      Max: 3
+      Properties: []
     m_NoRandomSeed: 0
     m_SeedToSet: 0
     m_ShipEncounteredPlayerAction: {fileID: 0}

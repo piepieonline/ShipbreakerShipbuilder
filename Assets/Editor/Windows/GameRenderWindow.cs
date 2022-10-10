@@ -6,6 +6,7 @@ using BBI.Unity.Game;
 
 public class GameRenderWindow : EditorWindow
 {
+    public static int maxLoopDepth = 8;
     public static bool drawRooms = true;
     public static Color roomColorInclude = new Color(0, 1, 0, .2f);
     public static Color roomColorExclude = new Color(1, 0, 0, .2f);
@@ -31,6 +32,9 @@ public class GameRenderWindow : EditorWindow
         {
             AddressableRendering.ClearView();
         }
+
+        GUILayout.Label("Max render depth", EditorStyles.boldLabel);
+        maxLoopDepth = EditorGUILayout.IntField(maxLoopDepth);
 
         GUILayout.Label("Room volumes", EditorStyles.boldLabel);
         drawRooms = GUILayout.Toggle(drawRooms, "Draw Rooms");
