@@ -18,7 +18,7 @@ public class SavePrefabOverride : AssetModificationProcessor
                     if(obj.TryGetComponent(out ModuleDefinition module))
                     {
                         PrefabUtility.ApplyPrefabInstance(obj, InteractionMode.UserAction);
-                        Debug.Log(obj.name);
+                        // Debug.Log(obj.name);
                     }
                 }
             }
