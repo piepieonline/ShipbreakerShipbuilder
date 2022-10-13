@@ -17,44 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ac6adf41935d3ba4ea6462428e98e6f3
   m_SerializeEntries:
-  - m_GUID: 0bf9509d41b55564ea5e63474c6e6439
-    m_Address: Assets/CustomRootModule.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 6b6dd887e0738b54cbbc02ced494c701
-    m_Address: Assets/Sphere.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: d69920c4182e4ff4e9af35699f874ca5
-    m_Address: Assets/DemoButton.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 253d8ebc32dc5ff4bb79b98cdd931718
     m_Address: Assets/CustomLevel/LevelAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - GameMode_Free
     - Release
-  - m_GUID: 5c58230aec577b14fb1c49aa7272637a
-    m_Address: Assets/CustomLevel/fees.jpg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 934391b755e9bba49ba646167e2c1d58
-    m_Address: Assets/CustomLevel/ModuleConstructionAsset.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 41ec03b2a742f9d43bf0a13bb5ba8fe2
-    m_Address: Assets/CustomOperation/CuttableDemo.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a6c97fb2efb3bb14faac21c54b561293
-    m_Address: Assets/CustomOperation/MackNoseRefs.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 102453e3bd4709c41b25e2fc6f6fe3f7
-    m_Address: Assets/CustomOperation/AirlockRef.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: e723eba8ae422e84190e2971c9c374f5
     m_Address: Assets/CustomOperation/BoxRef/FirstShip.prefab
     m_ReadOnly: 0
@@ -269,6 +237,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 57a8eacce8527da47ac3f5e3545a08d0
     m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/Fuel_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c920a0917f768134189ece8f300a4f0e
+    m_Address: Assets/_CustomShips/FirstShip/Components/PowerCell/PowerCell_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0567d30019f4f84c934b58936431058
+    m_Address: Assets/_CustomShips/FirstShip/Components/PowerCell/DefaultPowerCell_ModuleListAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

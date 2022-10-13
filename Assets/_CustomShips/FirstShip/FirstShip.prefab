@@ -4322,6 +4322,70 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Metric: 0.25
   m_Type: {fileID: 0}
+--- !u!1 &1150840505691789844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2110433123579028194}
+  - component: {fileID: 5101578041110246277}
+  m_Layer: 0
+  m_Name: PowerCell (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2110433123579028194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150840505691789844}
+  m_LocalRotation: {x: -0, y: 0.7071083, z: -0, w: -0.7071053}
+  m_LocalPosition: {x: -17.839344, y: 2.1079998, z: 21.727259}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2199806853554775556}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &5101578041110246277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150840505691789844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: c920a0917f768134189ece8f300a4f0e
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &1153660383773333774
 GameObject:
   m_ObjectHideFlags: 0
@@ -9120,6 +9184,70 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Metric: 0.25
   m_Type: {fileID: 0}
+--- !u!1 &2722508169738456808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2748499051152964873}
+  - component: {fileID: 5656983636298811603}
+  m_Layer: 0
+  m_Name: PowerCell (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2748499051152964873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722508169738456808}
+  m_LocalRotation: {x: -0, y: 0.7071083, z: -0, w: -0.7071053}
+  m_LocalPosition: {x: -17.83931, y: 2.1079998, z: 13.727259}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2199806853554775556}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &5656983636298811603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722508169738456808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: c920a0917f768134189ece8f300a4f0e
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &2743413987790333310
 GameObject:
   m_ObjectHideFlags: 0
@@ -9446,9 +9574,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7425605225141415039}
-  - {fileID: 7598617804453268135}
   - {fileID: 8625751292456657025}
+  - {fileID: 7425605225141415039}
+  - {fileID: 2748499051152964873}
+  - {fileID: 2110433123579028194}
+  - {fileID: 5478462602208660038}
+  - {fileID: 7598617804453268135}
   m_Father: {fileID: 7021532704154280128}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18926,6 +19057,70 @@ MonoBehaviour:
   childPath: 
   disabledChildren:
   - HP Nav Terminal
+--- !u!1 &5626629246358062953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5478462602208660038}
+  - component: {fileID: 573802010660116027}
+  m_Layer: 0
+  m_Name: PowerCell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5478462602208660038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626629246358062953}
+  m_LocalRotation: {x: -0, y: -0.0000018179414, z: -0, w: 1}
+  m_LocalPosition: {x: -5.247, y: 1.8579998, z: 25.388}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2199806853554775556}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
+--- !u!114 &573802010660116027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626629246358062953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: c920a0917f768134189ece8f300a4f0e
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &5644382937601538987
 GameObject:
   m_ObjectHideFlags: 0
@@ -27077,7 +27272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8625751292456657025
 Transform:
   m_ObjectHideFlags: 0
@@ -27090,7 +27285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2199806853554775556}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &1483615863559152630
 MonoBehaviour:
@@ -28087,7 +28282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7598617804453268135
 Transform:
   m_ObjectHideFlags: 0
@@ -28095,12 +28290,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8849976380093706000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.0000022947788}
+  m_LocalPosition: {x: -2.2469997, y: 1.8579998, z: 21.135}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2199806853554775556}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4301088438101363948
 MonoBehaviour:
@@ -28116,7 +28311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: 0}
   m_AssetRef:
-    m_AssetGUID: 822d4f9cab101b640a73ec4126e04da7
+    m_AssetGUID: d0567d30019f4f84c934b58936431058
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
@@ -28694,13 +28889,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7425605225141415039}
+  - component: {fileID: 1454356323422090082}
   m_Layer: 0
   m_Name: PowerCell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7425605225141415039
 Transform:
   m_ObjectHideFlags: 0
@@ -28708,13 +28904,46 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9093430851880609388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.707105, z: -0, w: -0.7071086}
+  m_LocalPosition: {x: -5.654664, y: 1.8579998, z: 20.72732}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2199806853554775556}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1454356323422090082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9093430851880609388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: c920a0917f768134189ece8f300a4f0e
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &9098782709290177240
 GameObject:
   m_ObjectHideFlags: 0
