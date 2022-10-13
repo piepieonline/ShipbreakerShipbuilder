@@ -5,12 +5,23 @@ using UnityEngine;
 
 public class SelectAddressableParent : MonoBehaviour
 {
+    public bool selectParent = false;
+
     GameObject parent;
 
 #if UNITY_EDITOR
-    void OnDrawGizmosSelected()
+    void OnValidate()
     {
-        parent = GetComponentInParent<BBI.Unity.Game.AddressableLoader>()?.gameObject ?? GetComponentInParent<FakeHardpoint>()?.gameObject;
+        if(selectParent)
+        {
+            selectParent = false;
+            SelectParent();
+        }
+    }
+
+    void SelectParent()
+    {
+        parent = GetComponentsInParent<BBI.Unity.Game.AddressableLoader>().FirstOrDefault()?.gameObject ?? GetComponentsInParent<FakeHardpoint>().FirstOrDefault()?.gameObject;
 
         if (parent == null) return;
 
@@ -18,6 +29,11 @@ public class SelectAddressableParent : MonoBehaviour
 
         if (UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() == null)
             UnityEditor.Selection.objects = new Object[] { parent };
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        SelectParent();
     }
 #endif
 }

@@ -81,7 +81,7 @@ public class GameInspectorWindow : EditorWindow
 
         if (foundGuid != "" && LoadGameAssets.knownAssetMap[foundGuid].EndsWith(".prefab") && GUILayout.Button("Open prefab in preview scene (readonly)") && !string.IsNullOrWhiteSpace(searchTerm))
         {
-            Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(searchTerm)).Completed += res =>
+            Addressables.LoadAssetAsync<GameObject>(new AssetReferenceGameObject(foundGuid)).Completed += res =>
             {
                 CustomStage.go = res.Result;
                 UnityEditor.SceneManagement.StageUtility.GoToStage(new CustomStage(), true);

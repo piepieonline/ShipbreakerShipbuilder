@@ -34,7 +34,7 @@ public class LogHandler : ILogHandler
     bool ShouldLogMessage(string message)
     {
         if(message.Contains("Could not Move to directory Library/com.unity.addressables/aa/Windows, directory arlready exists.")) return false;
-        if(message.Contains("Burst error BC1054: Unable to resolve type `Unity.Entities.TransformStash. Reason: Unknown.`")) return false;
+        if(message.Contains("Unable to resolve type `Unity.Entities.TransformStash. Reason: Unknown.`")) return false;
 
         return true;
     }

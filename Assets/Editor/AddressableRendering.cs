@@ -340,13 +340,11 @@ public class AddressableRendering : MonoBehaviour
 
         var meshPath = $"Assets/EditorCache/";
 
-        if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer))
+        if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer) && inTransform.TryGetComponent<MeshFilter>(out var meshFilter))
         {
-            var meshFilter = inTransform.GetComponent<MeshFilter>();
-
             // TODO: Is this stable enough?
             var dataArray = Mesh.AcquireReadOnlyMeshData(meshFilter.sharedMesh);
-
+//
             var meshHashText = "";
             for(int i = 0; i < dataArray.Length; i++)
             {
@@ -433,14 +431,17 @@ public class AddressableRendering : MonoBehaviour
 
             foreach (var textureName in material.GetTexturePropertyNames())
             {
-                var orgTexture = (Texture2D)material.GetTexture(textureName);
-                if (orgTexture != null)
+                if(material.GetTexture(textureName) is Texture2D)
                 {
-                    Texture2D newTexture = DuplicateTexture(orgTexture);
-                    if (!System.IO.File.Exists($"{Application.dataPath}/EditorCache/{newTexture.imageContentsHash.ToString()}.png"))
-                        System.IO.File.WriteAllBytes($"{Application.dataPath}/EditorCache/{newTexture.imageContentsHash.ToString()}.png", newTexture.EncodeToPNG());
+                    var orgTexture = (Texture2D)material.GetTexture(textureName);
+                    if (orgTexture != null)
+                    {
+                        Texture2D newTexture = DuplicateTexture(orgTexture);
+                        if (!System.IO.File.Exists($"{Application.dataPath}/EditorCache/{newTexture.imageContentsHash.ToString()}.png"))
+                            System.IO.File.WriteAllBytes($"{Application.dataPath}/EditorCache/{newTexture.imageContentsHash.ToString()}.png", newTexture.EncodeToPNG());
 
-                    validTextures.Add(textureName, newTexture.imageContentsHash.ToString());
+                        validTextures.Add(textureName, newTexture.imageContentsHash.ToString());
+                    }
                 }
             }
 
