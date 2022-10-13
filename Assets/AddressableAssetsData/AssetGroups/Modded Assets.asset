@@ -259,6 +259,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - ModdedLevel
+  - m_GUID: ab4f8c2d84a2bf541afbc362b10e88ab
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 704e5628c2d829f45b2c2cc942b50ebb
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/O2_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 57a8eacce8527da47ac3f5e3545a08d0
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/Fuel_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

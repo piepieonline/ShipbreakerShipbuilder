@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AssetBasis: 
   Data:
-    LevelDisplayName: Demo Ship
+    LevelDisplayName: The Wombat
     LevelDescriptionShort: Piepieonline
     LevelDescriptionFull: CUSTOM:792652162aeed3342810ad6a261da3d2
     LevelThumbnailImage: {fileID: 0}
@@ -30,7 +30,7 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     SessionType: 4
-    SortOrder: 100
+    SortOrder: 0
     CompletionTimeInSeconds: 9999
     TimerCountsUp: 1
     StartingShip: {fileID: 0}

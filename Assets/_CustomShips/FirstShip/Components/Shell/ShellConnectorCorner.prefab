@@ -320,7 +320,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4477175595134004987}
   - component: {fileID: 7297599528503434566}
-  - component: {fileID: 1667887653230504312}
   m_Layer: 0
   m_Name: ShellConnectorCorner
   m_TagString: Untagged
@@ -356,20 +355,3 @@ MonoBehaviour:
   m_Script: {fileID: 853384519, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1667887653230504312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6180640038530064450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1728645113, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Type: 1
-  m_CanSeal: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Size: {x: 3.25, y: 1.25, z: 1.25}
-  m_FlowAxis: 1
