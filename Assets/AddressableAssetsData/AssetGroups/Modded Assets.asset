@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: ac6adf41935d3ba4ea6462428e98e6f3
   m_SerializeEntries:
   - m_GUID: 253d8ebc32dc5ff4bb79b98cdd931718
-    m_Address: Assets/CustomLevel/LevelAsset.asset
+    m_Address: Assets/_CustomShips/FirstShip/Level/FirstShip_LevelAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - GameMode_Free
@@ -27,12 +27,8 @@ MonoBehaviour:
     m_Address: Assets/CustomOperation/BoxRef/FirstShip.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: a7cd277cdb529a94db5fce8b1ddb990f
-    m_Address: Assets/CustomOperation/FirstShip/FirstShip_Room.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e3b4c0bc8e1989641b359c0f00d0d118
-    m_Address: Assets/CustomOperation/FirstShip/FirstShip_ModuleListAsset.asset
+  - m_GUID: 7520bc2b2600662419c6851b162d9012
+    m_Address: Assets/_CustomShips/FirstShip/Level/FirstShip_ShipArchetypeAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 792652162aeed3342810ad6a261da3d2
@@ -223,7 +219,7 @@ MonoBehaviour:
     m_SerializedLabels:
     - ModdedLevel
   - m_GUID: 52445c10e45068c4ca1e5a6f9a9d86a1
-    m_Address: Assets/_CustomShips/FirstShip/ModuleConstructionAsset_FirstShip.asset
+    m_Address: Assets/_CustomShips/FirstShip/Level/FirstShip_ModuleConstructionAsset.asset
     m_ReadOnly: 0
     m_SerializedLabels:
     - ModdedLevel

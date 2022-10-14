@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -71,15 +72,15 @@ public class Create_LevelAssets : EditorWindow
 
     void OnGUI()
     {
-        GUILayout.Label("Create level asset", EditorStyles.boldLabel);
+        GUILayout.Label("Create custom level", EditorStyles.boldLabel);
 
-        levelName = Selection.activeObject.name ?? "";
+        levelName = AssetDatabase.GetAssetPath(Selection.activeInstanceID).Split('/').Last();
 
         levelName = EditorGUILayout.TextField("Display name", levelName);
         thumbnail = (Texture2D)EditorGUILayout.ObjectField("Thumbnail", thumbnail, typeof(Texture2D), false);
         moduleConstructionAssetIndex = EditorGUILayout.Popup("Module Construction Asset", moduleConstructionAssetIndex, moduleConstructionOptions);
 
-        if (GUILayout.Button($"Create {levelName} LevelAsset") &&
+        if (GUILayout.Button($"Create {levelName}") &&
             !string.IsNullOrWhiteSpace(levelName) &&
             thumbnail != null
         )
@@ -87,26 +88,55 @@ public class Create_LevelAssets : EditorWindow
             CreateAsset();
             window.Close();
         }
-}
+    }
 
     void CreateAsset()
     {
         string assetName = Selection.activeObject.name;
         string assetPath = AssetDatabase.GetAssetPath(Selection.activeInstanceID);
-        string folderPath = assetPath.Remove(assetPath.LastIndexOf('/')); ;
+        string folderPath = assetPath.Remove(assetPath.LastIndexOf('/')) + "/" + levelName;
+        string spawnFolderName = "Spawn";
+        string spawnerFolderPath = folderPath + "/" + spawnFolderName;
 
-        string levelPrefabGuid = AssetDatabase.GUIDFromAssetPath(assetPath).ToString();
         string thumbnailGuid = AssetDatabase.GUIDFromAssetPath(AssetDatabase.GetAssetPath(thumbnail)).ToString();
 
-        // Selection.activeObject
+        AssetDatabase.CreateFolder(folderPath, spawnFolderName);
+
+        // Create the ship prefab
+        GameObject prefab = new GameObject($"{levelName}", new System.Type[] { typeof(ModuleDefinition) });
+        PrefabUtility.SaveAsPrefabAsset(prefab, GetPathForAsset("", folderPath, "prefab"));
+        DestroyImmediate(prefab);
+        string prefabGuid = AssetDatabase.GUIDFromAssetPath(GetPathForAsset("", folderPath, "prefab")).ToString();
+
+        // Create the hardpoint (Root prefab > Prefab hardpoint)
+        string prefabHardpointGuid = Create_Hardpoint.CreateHardpointAsset(spawnerFolderPath, spawnFolderName, prefabGuid, 1, -1);
+
+        // Create the root prefab ref (Construction Asset > Root prefab)
+        GameObject rootPrefab = new GameObject($"{levelName}_RootRef", new System.Type[] { typeof(RootModuleDefinition) });
+        var rootHardpoint = new GameObject($"{levelName}_Hardpoint", new System.Type[] { typeof(HardPoint) });
+        rootHardpoint.transform.parent = rootPrefab.transform;
+        
+        typeof(HardPoint).GetField("m_AssetRef", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(rootHardpoint.GetComponent<HardPoint>(), new AssetReferenceModuleListAsset(prefabHardpointGuid));
+        var newPrefab = PrefabUtility.SaveAsPrefabAsset(rootPrefab, GetPathForAsset("RootRef", spawnerFolderPath, "prefab"));
+        DestroyImmediate(rootPrefab);
+        string rootPrefabGuid = AssetDatabase.GUIDFromAssetPath(GetPathForAsset("RootRef", spawnerFolderPath, "prefab")).ToString();
+
+        // Create the ModuleConstructionAsset, based on the given type (Level Asset > Construction Asset)
+        var moduleConstructionAsset = CreateInstance<ModuleConstructionAsset>();
+        typeof(ModuleConstructionAsset).GetField("AssetBasis").SetValue(moduleConstructionAsset, moduleConstructionRefs[moduleConstructionAssetIndex]);
+        typeof(ModuleConstructionAsset.ModuleConstructionData).GetField("m_RootModuleRef", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).SetValue(moduleConstructionAsset.Data, new AssetReferenceGameObject(rootPrefabGuid));
+
+        AssetDatabase.CreateAsset(moduleConstructionAsset, GetPathForAsset("ModuleConstructionAsset", folderPath));
+        var moduleConstructionAssetGuid = AssetDatabase.GUIDFromAssetPath(GetPathForAsset("ModuleConstructionAsset", folderPath)).ToString();
+
         var levelAsset = CreateInstance<LevelAsset>();
 
         levelAsset.Data.LevelDisplayName = levelName;
         levelAsset.Data.LevelDescriptionShort = Settings.GetAuthorName();
-        levelAsset.Data.LevelDescriptionFull = $"CUSTOM:{levelPrefabGuid}";
+        levelAsset.Data.LevelDescriptionFull = $"CUSTOM:{rootPrefabGuid}";
         levelAsset.Data.LevelThumbnailImageRef = new AssetReferenceTexture(thumbnailGuid);
         levelAsset.Data.BaseSceneRef = new AssetReferenceScene("be5ef977dfbe2b344b39a1cd19df1fb1");
-        levelAsset.Data.StartingShipRef = new AssetReferenceModuleConstructionAsset(moduleConstructionRefs[moduleConstructionAssetIndex]);
+        levelAsset.Data.StartingShipRef = new AssetReferenceModuleConstructionAsset(moduleConstructionAssetGuid);
 
         levelAsset.Data.SessionType = GameSession.SessionType.FreeMode;
         levelAsset.Data.SortOrder = 100;
@@ -114,19 +144,27 @@ public class Create_LevelAssets : EditorWindow
         levelAsset.Data.TimerCountsUp = true;
         levelAsset.Data.IsUnlocked = true;
 
-        AssetDatabase.CreateAsset(levelAsset, $"{folderPath}/LevelAsset_{levelName}.asset");
-        var levelAssetGuid = AssetDatabase.GUIDFromAssetPath($"{folderPath}/LevelAsset_{levelName}.asset").ToString();
+        AssetDatabase.CreateAsset(levelAsset, GetPathForAsset("LevelAsset", folderPath));
+        var levelAssetGuid = AssetDatabase.GUIDFromAssetPath(GetPathForAsset("LevelAsset", folderPath)).ToString();
 
         // Addressables
         var addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
         var entriesAdded = new List<AddressableAssetEntry>();
-        entriesAdded.Add(addressableSettings.CreateOrMoveEntry(levelPrefabGuid, addressableSettings.DefaultGroup));
-        entriesAdded.Add(addressableSettings.CreateOrMoveEntry(thumbnailGuid, addressableSettings.DefaultGroup));
+
+        entriesAdded.Add(addressableSettings.CreateOrMoveEntry(prefabGuid, addressableSettings.DefaultGroup));
+        entriesAdded.Add(addressableSettings.CreateOrMoveEntry(prefabHardpointGuid, addressableSettings.DefaultGroup));
+        entriesAdded.Add(addressableSettings.CreateOrMoveEntry(rootPrefabGuid, addressableSettings.DefaultGroup));
 
         var levelAssetEntry = addressableSettings.CreateOrMoveEntry(levelAssetGuid, addressableSettings.DefaultGroup);
         levelAssetEntry.labels.Add("GameMode_Free");
         levelAssetEntry.labels.Add("Release");
         entriesAdded.Add(levelAssetEntry);
+
+        entriesAdded.Add(addressableSettings.CreateOrMoveEntry(thumbnailGuid, addressableSettings.DefaultGroup));
+
+        var moduleConstructionAssetEntry = addressableSettings.CreateOrMoveEntry(moduleConstructionAssetGuid, addressableSettings.DefaultGroup);
+        moduleConstructionAssetEntry.labels.Add("ModdedLevel");
+        entriesAdded.Add(moduleConstructionAssetEntry);
 
         addressableSettings.DefaultGroup.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entriesAdded, false, true);
         addressableSettings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entriesAdded, true, false);
@@ -135,5 +173,10 @@ public class Create_LevelAssets : EditorWindow
         Selection.activeObject = levelAsset;
 
         EditorUtility.FocusProjectWindow();
+    }
+
+    string GetPathForAsset(string asset, string folderPath, string ext = "asset")
+    {
+        return $"{folderPath}/{levelName}{(asset != "" ? "_" : "")}{asset}.{ext}";
     }
 }

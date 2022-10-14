@@ -82,6 +82,7 @@ MonoBehaviour:
     - GameMode_Free
     - Release
     - ModdedLevel
+    - Archetype_Mackerel
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: dc32d31bdc9914e4a947cbaa5ea97549, type: 2}

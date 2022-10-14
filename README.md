@@ -24,13 +24,11 @@
 * Drag "ExampleBox.prefab" into the scene hierarchy (This will take a while on first attempt, as it is caching all used game assets - takes about a minute on my midrange machine)
  * If this doesn't look right, when the Editor has finished loading, `Shipbreaker/Force View Refresh`
 * Move and rotate the atmospheric regulator into the box (Hint: Hold ctrl to snap to the grid)
-* Click the ExampleBox in the hierarchy, and apply overrides
-![Applying overrides](Docs/ApplyingOverrides.png?raw=true)
-* Discard changes to the scene
-* Build `Shipbreaker/Build`
+* Save and build - `Shipbreaker/Build`
 * Run the game, open the freeplay menu, and find "Example Box" at the end of the list
 * Close the game
 * In the hierarchy, disable "East", "CutPointER" and "CutPointEB"
+* Enable "AirlockHardpoint", then run `Shipbreaker/Force View Refresh` (twice)
 * Move the airlock such that the inner wall sits inline with the open space, but not touching any walls
 ![Airlock position](Docs/AirlockPlacement.jpg?raw=true)
 * Clone "CutPointEB", enable it, and move it so that it just touches the floor and the airlock inner wall (It'll need to be rotated 180 degrees)
@@ -41,19 +39,25 @@
 ## First ship from scratch
 * Open "Scenes/SampleScene"
 * Create a new folder in "_CustomShips", call it "ScratchShip"
-* Create a prefab named "ScratchShip" and drag it into the scene hierarchy
-* To the top level object, add a `Root Module Definition` component
-* Create an empty child, name it "Offset", position it to 20/5/30, with a rotation of 0/-90/0
-* Create an empty child of "Offset", name it "Floor"
-* To "Floor", add an `Addressable Loader` component, and set it's GUID to "15e523455b134fe40b33c5d6a4346fe8"
 * Add an image to use as the thumbnail to the "ScratchShip" folder
-* Right click your "ScratchShip" prefab, click `Create/Shipbreaker/Create level asset` (The shipbreaker menu is at the bottom of the create menu)
+* Right click an empty space inside your "ScratchShip" folder, click `Create/Shipbreaker/Create custom level` (The shipbreaker menu is at the bottom of the create menu)
 * Fill in the details, and click Create
-  * The "Module Construction Asset" option will influence the triplaner texture that gets applied
-* Build and run
+  * The "Module Construction Asset" option will influence the exterior (triplaner) texture that gets applied
+* The new prefab named "ScratchShip" is now selected in the project window. Drag it into the scene hierarchy
+* Create an empty child, name it "Floor", give it a rotation of 0/-90/0
+* To "Floor", add an `Addressable Loader` component, and set it's GUID to "15e523455b134fe40b33c5d6a4346fe8"
+* Save, build and run
+
+## Positioning a ship in the bay
+* With your prefab in the bay, at position 0/0/0
+* Click the "Bay" object in the hierarchy, click the checkbox next to "Reload"
+* Move your prefab to where you want it to sit in the bay
+* Right click your prefab's transform component, click `Copy World Placement` (at the bottom)
+* Double click to open your prefab's RootRef prefab (Inside the Spawn folder), click the Hardpoint, right click the transform component and `Paste World Placement`
+* Close the prefab editor
 
 ## Custom ship notes
-* The game doesn't work with negative scales
+* The game doesn't work with negative scales (Scaling is weird, tends to break things in general)
 
 ## Joints
 * Joints are how the game knows to connect multiple separate assets
@@ -87,7 +91,6 @@ The top half of this texture will get the triplaner texture applied (as the outs
 * If something doesn't load correctly, make sure that everything that needs to be marked as addressable, is!
 * I am caching all (game based) addressables at the moment. This means that the view of an addressable prefab won't update unless you remove it's prefab from "Assets/EditorCache"
 * When using asset references, it must be the assets GUID, not the addressable name/path
-* Spawnpoint hardpoint is not working
 
 ## Other interesting information
 The BBI devs did us a massive favour, and released a bunch of documentation on their tools: https://drive.google.com/file/d/12gYTLHTgoeJLBlpVMsv4WfJC9cMHxcd5/view

@@ -9,9 +9,12 @@ using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Build;
 using System;
+using Newtonsoft.Json;
 
 public class BuildContent
 {
+    public const int MANIFEST_VERSION = 1;
+
     [MenuItem("Shipbreaker/Build", priority = 2)]
     static bool RunBuild()
     {
@@ -78,7 +81,9 @@ public class BuildContent
                 }
             }
             
-            File.WriteAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "baseOverrides.txt"), baseVersionList);
+            var manifest = new Manifest();
+            manifest.baseOverrides = baseVersionList.ToArray();
+            File.WriteAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "manifest.json"), JsonConvert.SerializeObject(manifest));
 
             LoadGameAssets.ReloadAssets();
             Debug.Log("Build Complete");
@@ -145,5 +150,11 @@ public class BuildContent
     static void ReloadBuildSettings()
     {
         Settings.ReloadBuildSettings();
+    }
+
+    public class Manifest
+    {
+        public readonly int version = MANIFEST_VERSION;
+        public string[] baseOverrides;
     }
 }

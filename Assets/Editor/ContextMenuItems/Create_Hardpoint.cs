@@ -37,17 +37,21 @@ public class Create_Hardpoint : EditorWindow
 
             if (GUILayout.Button($"Create {hardpointName} hardpoint") && !string.IsNullOrWhiteSpace(hardpointName))
             {
-                CreateAsset();
+                string folderPath = AssetDatabase.GetAssetPath(Selection.activeInstanceID);
+                if (folderPath.Contains("."))
+                    folderPath = folderPath.Remove(folderPath.LastIndexOf('/'));
+                
+                var createdGUID = CreateHardpointAsset(folderPath, hardpointName, assetRef, weight, weightEmpty);
+                
+                Selection.activeObject = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(createdGUID));
+
+                EditorUtility.FocusProjectWindow();
             }
         }
     }
 
-    void CreateAsset()
+    public static string CreateHardpointAsset(string folderPath, string hardpointName, string assetRef, float weight, float weightEmpty)
     {
-        string folderPath = AssetDatabase.GetAssetPath(Selection.activeInstanceID);
-        if (folderPath.Contains("."))
-            folderPath = folderPath.Remove(folderPath.LastIndexOf('/'));
-
         var moduleEntryContainer = CreateInstance<ModuleEntryContainer>();
 
         var moduleEntryDefinition = CreateInstance<ModuleEntryDefinition>();
@@ -79,8 +83,7 @@ public class Create_Hardpoint : EditorWindow
         addressableSettings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, entriesAdded, true, false);
 
         AssetDatabase.SaveAssets();
-        Selection.activeObject = moduleListAsset;
 
-        EditorUtility.FocusProjectWindow();
+        return moduleListAssetGuid;
     }
 }
