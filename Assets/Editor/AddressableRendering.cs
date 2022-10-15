@@ -115,11 +115,7 @@ public class AddressableRendering : MonoBehaviour
 
     async static System.Threading.Tasks.Task<string> LoadHardpoint(HardPoint hardPoint)
     {
-        if (System.IO.File.Exists($"{Application.dataPath}/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab"))
-        {
-            return hardPoint.AssetRef.AssetGUID;
-        }
-        else if (!string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)))
+        if (!string.IsNullOrEmpty(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)))
         {
             var moduleEntry = AssetDatabase.LoadAssetAtPath<ModuleListAsset>(AssetDatabase.GUIDToAssetPath(hardPoint.AssetRef.AssetGUID)).Data.ModuleEntryContainer.Data.FirstOrDefault();
             // if (moduleEntry == null) return;
@@ -128,6 +124,10 @@ public class AddressableRendering : MonoBehaviour
                 prefabToHardpoint[((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID] = hardPoint.AssetRef.AssetGUID;
                 return ((ModuleEntryDefinition)moduleEntry).ModuleDefRef.AssetGUID;
             }
+        }
+        else if (System.IO.File.Exists($"{Application.dataPath}/EditorCache/{hardPoint.AssetRef.AssetGUID}.prefab"))
+        {
+            return hardPoint.AssetRef.AssetGUID;
         }
         else
         {

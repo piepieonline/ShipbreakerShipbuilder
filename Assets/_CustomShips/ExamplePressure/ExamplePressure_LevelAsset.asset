@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1127858399, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
-  m_Name: LevelAsset_ExampleBox
+  m_Name: ExamplePressure_LevelAsset
   m_EditorClassIdentifier: 
-  AssetBasis: c2bb453130217034dbc3d68f3ab36b73
+  AssetBasis: 
   Data:
-    LevelDisplayName: Example Box
+    LevelDisplayName: ExamplePressure
     LevelDescriptionShort: Piepieonline
-    LevelDescriptionFull: CUSTOM:f2ade62975d33c5408fc695ba5be1d27
+    LevelDescriptionFull: CUSTOM:e99e2c3c63886b44ba29e3c199287391
     LevelThumbnailImage: {fileID: 0}
     LevelFullImage: {fileID: 0}
     LevelThumbnailImageRef:
@@ -25,7 +25,7 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     LevelFullImageRef:
-      m_AssetGUID: 5c58230aec577b14fb1c49aa7272637a
+      m_AssetGUID: 
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     TimerCountsUp: 1
     StartingShip: {fileID: 0}
     StartingShipRef:
-      m_AssetGUID: 908a60a7a9952564eb211adb31e7c956
+      m_AssetGUID: 2777b9404255d434ea44ffb92c310a52
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

@@ -51,10 +51,12 @@
 ## Positioning a ship in the bay
 * With your prefab in the bay, at position 0/0/0
 * Click the "Bay" object in the hierarchy, click the checkbox next to "Reload"
+* Close or import TMPPro assets. It doesn't matter either way.
 * Move your prefab to where you want it to sit in the bay
 * Right click your prefab's transform component, click `Copy World Placement` (at the bottom)
 * Double click to open your prefab's RootRef prefab (Inside the Spawn folder), click the Hardpoint, right click the transform component and `Paste World Placement`
-* Close the prefab editor
+* Close the RootRef prefab editor
+* Reset your prefabs position
 
 ## Custom ship notes
 * The game doesn't work with negative scales (Scaling is weird, tends to break things in general)

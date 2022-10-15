@@ -480,6 +480,70 @@ MonoBehaviour:
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
   disabledChildren: []
+--- !u!1 &6598221573935263120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4084431937658320479}
+  - component: {fileID: 6239821894688632282}
+  m_Layer: 0
+  m_Name: HP_Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 4050281604
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4084431937658320479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598221573935263120}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1430043808853645060}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 2.5073688e+13, y: 3.5432202e-31, z: 2.850259e-15}
+--- !u!114 &6239821894688632282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6598221573935263120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: 042ca973c1b934343b688dbf5cb623b7
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0.125, y: 0.18750012, z: 1.0000001}
+  m_Offset: {x: 0, y: -0.095, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &6938744810359395179
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +827,7 @@ Transform:
   m_Children:
   - {fileID: 8464374654009941440}
   - {fileID: 2093447680250371439}
+  - {fileID: 4084431937658320479}
   m_Father: {fileID: 8197517499774844732}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -784,6 +849,7 @@ MonoBehaviour:
   disabledChildren:
   - PRF_ShipKit_Cutpoint_BxBxC0_Hardpoint
   - PRF_ShipKit_Cutpoint_BxBxC0_Hardpoint
+  - Light Group
 --- !u!1001 &64628685
 PrefabInstance:
   m_ObjectHideFlags: 0

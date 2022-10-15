@@ -1,3 +1,17 @@
+Must Fix:
+Side pieces can get wedged, and not free until are cut out
+Cockpit external parts don't all have weight
+Need to add lights
+Flicking between rooms in cabin, between angle and top/bottom
+
+Known Issues:
 Fix z-fighting corner
-Fix corner rooms (esp inner corner)
+Fix corner rooms (esp inner corner) and above the airlock
+Top and Bottom crawlspace cut points don't transmit power
+Window not cutting free
+Mounting plates are nanocarbon, on alu, is a :(
+If the crawlspace ever is depressurised, it counts as breached - both on spawn, or door open
+Trim doesn't match neatly near the engine
+
+Other TODO:
 More randomisation
