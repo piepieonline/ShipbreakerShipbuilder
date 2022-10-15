@@ -7,8 +7,7 @@ Flicking between rooms in cabin, between angle and top/bottom
 Known Issues:
 Fix z-fighting corner
 Fix corner rooms (esp inner corner) and above the airlock
-Top and Bottom crawlspace cut points don't transmit power
-Window not cutting free
+Window is too easy to free
 Mounting plates are nanocarbon, on alu, is a :(
 If the crawlspace ever is depressurised, it counts as breached - both on spawn, or door open
 Trim doesn't match neatly near the engine

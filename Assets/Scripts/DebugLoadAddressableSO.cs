@@ -26,7 +26,8 @@ public class DebugLoadAddressableSO : MonoBehaviour
             {
                 for (int i = 0; i < addressable.refs.Count; i++)
                 {
-                    var comp = addressable.GetComponents<Component>().Where(comp => comp.GetType().ToString() == addressable.comp[i]).First();
+                    var parent = (addressable.onChild.Count > 0 && addressable.onChild[i] != "") ? addressable.transform.Find(addressable.onChild[i]) : addressable.transform;
+                    var comp = parent.GetComponents<Component>().Where(comp => comp.GetType().ToString() == addressable.comp[i]).First();
                     FieldInfo fi = comp.GetType().GetField(addressable.field[i], BindingFlags.NonPublic | BindingFlags.Instance);
                     fieldToIndex[fi] = comp;
 
