@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4084431937658320479}
-  - component: {fileID: 6239821894688632282}
+  - component: {fileID: 8659362665845474505}
   m_Layer: 0
   m_Name: HP_Light
   m_TagString: Untagged
@@ -511,7 +511,7 @@ Transform:
   m_Father: {fileID: 1430043808853645060}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 2.5073688e+13, y: 3.5432202e-31, z: 2.850259e-15}
---- !u!114 &6239821894688632282
+--- !u!114 &8659362665845474505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -520,30 +520,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6598221573935263120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 80f628007aaa3b04ba14d3e7d011b83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Asset: {fileID: 0}
-  m_AssetRef:
-    m_AssetGUID: 042ca973c1b934343b688dbf5cb623b7
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  m_DisableInFreeMode: 0
-  m_UseGenerationLimit: 0
-  m_GenerationLimit: -1
-  m_ConsumedHardPoints: []
-  m_SpawnedModuleRotationOverride: 0
-  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
-  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
-  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
-  m_SpawnMultipleModulesWithThisHardPoint: 0
-  m_MinModulesToSpawn: 0
-  m_MaxModulesToSpawn: 0
-  m_Bounds: {x: 0.125, y: 0.18750012, z: 1.0000001}
-  m_Offset: {x: 0, y: -0.095, z: 0}
-  m_Metric: 0.25
-  m_Type: {fileID: 0}
+  refs: []
+  assetGUID: b67383dc97908cd4b872c40fc9a06d8d
+  childPath: 
+  disabledChildren: []
 --- !u!1 &6938744810359395179
 GameObject:
   m_ObjectHideFlags: 0
