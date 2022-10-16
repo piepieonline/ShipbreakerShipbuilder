@@ -278,6 +278,33 @@ MonoBehaviour:
     m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Radiation/RadiationFilterPositioned.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 8613578855b09ca4797309ee293ab694
+    m_Address: Assets/_CustomShips/ExampleClass2/Spawn/Spawn_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: acd53cc230bef7c478809e0d991ec314
+    m_Address: Assets/_CustomShips/ExampleClass2/ExampleClass2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1b5bc51d7ec63d74bb7b496ed80ea889
+    m_Address: Assets/_CustomShips/ExampleClass2/Spawn/ExampleClass2_RootRef.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 79f0dccb2f75d74429141b4364755c4d
+    m_Address: Assets/_CustomShips/ExampleClass2/ExampleClass2_LevelAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+  - m_GUID: aab7ff7e8168cdc4ab9f9603d61d8533
+    m_Address: Assets/_CustomShips/FirstShip/Materials/Glass/modifiedGlass.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee954277c628a2d4d9f5d9aff57e165e
+    m_Address: Assets/_CustomShips/ExampleClass2/ExampleClass2_ModuleConstructionAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1127858399, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: ExampleClass2_LevelAsset
+  m_EditorClassIdentifier: 
+  AssetBasis: 
+  Data:
+    LevelDisplayName: ExampleClass2
+    LevelDescriptionShort: Piepieonline
+    LevelDescriptionFull: CUSTOM:1b5bc51d7ec63d74bb7b496ed80ea889
+    LevelThumbnailImage: {fileID: 0}
+    LevelFullImage: {fileID: 0}
+    LevelThumbnailImageRef:
+      m_AssetGUID: aab7ff7e8168cdc4ab9f9603d61d8533
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    LevelFullImageRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    SessionType: 4
+    SortOrder: 100
+    CompletionTimeInSeconds: 9999
+    TimerCountsUp: 1
+    StartingShip: {fileID: 0}
+    StartingShipRef:
+      m_AssetGUID: ee954277c628a2d4d9f5d9aff57e165e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    SetSeed: 0
+    Seed: 0
+    BaseScene: 
+    BaseSceneRef:
+      m_AssetGUID: be5ef977dfbe2b344b39a1cd19df1fb1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    IsUnlocked: 1
+    IsDeveloperLevel: 1
+    SceneParts: []
+    ScenePartRefs: []
+    SoundBanks: []
+    StartingUpgrades: {fileID: 0}
+    PurchaseStartingUpgrades: 0
+    ObjectiveOverrides:
+      m_SequentialObjectives: []
+    LocksHabUntilObjectivesComplete: 0
+    UseSpawnLocationOverride: 0
+    SpawnLocation: {x: 0, y: 0, z: 0}
