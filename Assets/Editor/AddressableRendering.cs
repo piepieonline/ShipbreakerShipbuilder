@@ -340,7 +340,7 @@ public class AddressableRendering : MonoBehaviour
 
         var meshPath = $"Assets/EditorCache/";
 
-        if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer) && inTransform.TryGetComponent<MeshFilter>(out var meshFilter))
+        if (inTransform.TryGetComponent<MeshRenderer>(out var meshRenderer) && inTransform.TryGetComponent<MeshFilter>(out var meshFilter) && meshFilter.sharedMesh != null)
         {
             // TODO: Is this stable enough?
             var dataArray = Mesh.AcquireReadOnlyMeshData(meshFilter.sharedMesh);
