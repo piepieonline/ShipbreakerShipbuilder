@@ -21,8 +21,8 @@ public class Setup
 
         AssemblyResolver.ResolveDirectories = new string[]
         {
-            Path.GetFullPath(Application.dataPath + "\\Dlls\\"),
-            Path.GetFullPath(Application.dataPath + "\\..\\Bin\\ShipbreakerModding_Data\\Managed\\"),
+            Path.GetFullPath(Path.Combine(Application.dataPath, "Dlls")),
+            Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data", "Managed")
         };
 
         string[] typesToModify = File.ReadAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher", "TypesToModify.txt"));
@@ -40,7 +40,7 @@ public class Setup
                 fields.Add(foundField);
             }
         }
-//////
+
         readOnlyAssembly.Dispose();
 
         if(fields.Count != typesToModify.Length)
@@ -119,6 +119,6 @@ public class AssemblyResolver : IAssemblyResolver
 
     public AssemblyDefinition Resolve(AssemblyNameReference name, ReaderParameters parameters)
     {
-        throw new System.NotImplementedException();
+        return Resolve(name);
     }
 }

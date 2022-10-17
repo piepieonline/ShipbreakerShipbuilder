@@ -28,9 +28,9 @@ public class LoadGameAssets
     {
         UnloadAssets();
 
-        if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
+        if(System.IO.File.Exists(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json"))
         {
-            handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+            handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
             handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
         }
         else
