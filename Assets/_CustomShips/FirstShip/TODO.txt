@@ -1,4 +1,5 @@
 Known Issues:
+The ship can spawn decompressed, which is normal if a bit boring - just restart the level
 Inner corner (corner next to cockpit) is pressurisation doesn't reach the roof and floor
 Side pieces can get wedged, and not free until others cut (or pushed with a fully charged push)
 Window is too easy to free
