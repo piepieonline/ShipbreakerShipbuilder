@@ -1,6 +1,7 @@
 ## Steps to get setup
 * Install Unity 2020.3.35f (https://unity3d.com/unity/whats-new/2020.3.35)
-* Install ModdedShipLoader as per any other BepInEx mod, putting "ModdedShipLoader" into "plugins" and "ModdedShipLoaderPatcher" into "patchers"
+* Install ModdedShipLoader (https://www.nexusmods.com/hardspaceshipbreaker/mods/8?tab=description) as per the instructions on that page
+* Change the settings of "ModdedShipLoader", and set "enableDeveloperShips" to true 
 * Delete the folder "FirstShip.Piepieonline" in "BepInEx\plugins\ModdedShipLoader\Ships"
 * Install the ShipbreakerShipbuilder project wherever you want
 * Copy (only those with waiting '.meta' files listed) game dlls from 'Shipbreaker_Data\Managed' into the Dll folder
@@ -12,11 +13,7 @@
 ![Shipbreaker menu](Docs/ShipbreakerMenu.png?raw=true)
 * Restart unity
 * Run `Shipbreaker/Update known assets`
-* Run `Shipbreaker/Build and run`, and ensure that the two custom ships appear at the end of the freeplay menu
-
-## Steps to build
-* Discard all changes to the SampleScene
-* Run `Shipbreaker/Build`
+* Run `Shipbreaker/Build and run`, and ensure that the freeplay menu has update - the Wombat should appear first, and the developer ships should appear at the end
 
 ## First steps
 * Open "Scenes/SampleScene"
@@ -93,6 +90,7 @@ The top half of this texture will get the triplaner texture applied (as the outs
 * If something doesn't load correctly, make sure that everything that needs to be marked as addressable, is!
 * I am caching all (game based) addressables at the moment. This means that the view of an addressable prefab won't update unless you remove it's prefab from "Assets/EditorCache"
 * When using asset references, it must be the assets GUID, not the addressable name/path
+* Saving the scene will save all overrides to the top level prefabs that are loaded - this is normally very helpful, but it is something to be aware of.
 
 ## Other interesting information
 The BBI devs did us a massive favour, and released a bunch of documentation on their tools: https://drive.google.com/file/d/12gYTLHTgoeJLBlpVMsv4WfJC9cMHxcd5/view

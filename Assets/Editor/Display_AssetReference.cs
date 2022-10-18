@@ -21,9 +21,14 @@ public class ObsoleteAttributeHider : PropertyDrawer
 [CustomPropertyDrawer(typeof(AssetReference))]
 public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
 {
+    UnityEngine.Object previewObj;
+
+    float previewImageHeight = 256;
+    Texture2D previewImage;
+
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return EditorGUIUtility.singleLineHeight * 3;
+        return EditorGUIUtility.singleLineHeight * 3 + previewImageHeight;
     }
  
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -52,26 +57,42 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
             refPath = "Custom Asset";
         }
 
+        // Asset reference type (Custom/Vanilla)
         EditorGUI.LabelField(refPathRect, refPath);
 
         if(knownPath != "")
         {
-            if(EditorGUI.DropdownButton(isLocalRect, new GUIContent(knownPath), FocusType.Keyboard, EditorStyles.label))
+            if(previewObj == null) 
             {
                 if(refPath == "Vanilla Asset")
                 {
                     Addressables.LoadAssetAsync<UnityEngine.Object>(new AssetReference(property.FindPropertyRelative("m_AssetGUID").stringValue)).Completed += res =>
                     {
-                        Selection.activeObject = res.Result;
+                        previewObj = res.Result;
+             
+                            previewImage = AssetPreview.GetAssetPreview(res.Result);
                     };
                 }
                 else
                 {
-                    var asset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(AssetDatabase.GUIDToAssetPath(property.FindPropertyRelative("m_AssetGUID").stringValue));
-                    if(asset is GameObject)
-                        AssetDatabase.OpenAsset(asset);
+                    previewObj = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(AssetDatabase.GUIDToAssetPath(property.FindPropertyRelative("m_AssetGUID").stringValue));
+                    previewImage = AssetPreview.GetAssetPreview(previewObj);
+                }
+            }
+
+            // Path, clickable to load the asset
+            if(EditorGUI.DropdownButton(isLocalRect, new GUIContent(knownPath), FocusType.Keyboard, EditorStyles.label))
+            {
+                if(refPath == "Vanilla Asset")
+                {
+                    Selection.activeObject = previewObj;
+                }
+                else
+                {
+                    if(previewObj is GameObject)
+                        AssetDatabase.OpenAsset(previewObj);
                     else
-                        Selection.activeObject = asset;
+                        Selection.activeObject = previewObj;
                 }
             }
         }
@@ -82,7 +103,19 @@ public class AddressableAssetPropertyDrawerOverride : PropertyDrawer
 
 
         var guidRect = new Rect(position.x + offset, position.y + (EditorGUIUtility.singleLineHeight * 2), position.width - offset, EditorGUIUtility.singleLineHeight);
+
+        // GUID textbox
         EditorGUI.PropertyField(guidRect, property.FindPropertyRelative("m_AssetGUID"), GUIContent.none);
+
+        if(previewImage != null)
+        {
+            var previewBackgroundRect = new Rect(position.x + offset, guidRect.yMax + 2, position.width - offset, previewImage.height);
+            var previewRectXStart = position.x + offset + (((position.width - offset) / 2) - (previewImage.width / 2f));
+            var previewRect = new Rect(previewRectXStart, guidRect.yMax + 2, previewImage.width, previewImage.height);
+
+            EditorGUI.DrawRect(previewBackgroundRect, new Color(0.031f, 0.031f, 0.027f));
+            EditorGUI.DrawPreviewTexture(previewRect, previewImage);
+        }
 
         EditorGUI.EndProperty(); 
     } 

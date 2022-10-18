@@ -78,6 +78,8 @@ public class LoadGameAssets
 
     static void UnloadAssets()
     {
+        AssetBundle.UnloadAllAssetBundles(false);
+
         if (handle1.IsValid())
         {
             Addressables.RemoveResourceLocator(handle1.Result);
