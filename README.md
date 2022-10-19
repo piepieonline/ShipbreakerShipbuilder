@@ -9,10 +9,12 @@
   * Add the correct game path (note that you need to use double backslash in the path, eg: "D:\\\\SteamGames\\\\steamapps\\\\common\\\\Hardspace Shipbreaker")
   * Add your username as the author, eg: "Piepieonline" 
 * Open the ShipbreakerShipbuilder project in unity
+* Accept the popup to upgrade APIs
 * Run `Shipbreaker/Update game catalog`
 ![Shipbreaker menu](Docs/ShipbreakerMenu.png?raw=true)
 * Restart unity
 * Run `Shipbreaker/Update known assets`
+* Restart unity
 * Run `Shipbreaker/Build and run`, and ensure that the freeplay menu has update - the Wombat should appear first, and the developer ships should appear at the end
 
 ## First steps
