@@ -1,5 +1,6 @@
 ## Note
 A wiki has been created - https://shipbreakermodding.miraheze.org/wiki/Main_Page
+
 It will be a much better source of information moving forward
 
 ## Steps to get setup
