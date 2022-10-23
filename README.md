@@ -1,3 +1,7 @@
+## Note
+A wiki has been created - https://shipbreakermodding.miraheze.org/wiki/Main_Page
+It will be a much better source of information moving forward
+
 ## Steps to get setup
 * Install Unity 2020.3.35f (https://unity3d.com/unity/whats-new/2020.3.35)
 * Install ModdedShipLoader (https://www.nexusmods.com/hardspaceshipbreaker/mods/8?tab=description) as per the instructions on that page
