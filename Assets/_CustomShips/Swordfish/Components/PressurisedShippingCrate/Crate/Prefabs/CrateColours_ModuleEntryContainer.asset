@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 890801297, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: CrateColours_ModuleEntryContainer
+  m_EditorClassIdentifier: 
+  m_PolymorphicParentAsset: {fileID: 0}
+  m_Data:
+  - {fileID: 11400000, guid: 2fdd794872800c7499748309a87f6ee4, type: 2}
+  - {fileID: 11400000, guid: 8c72acedbe052b843a3f374663279720, type: 2}
+  - {fileID: 11400000, guid: c8f509d2f507e6b49b4879f0faffef6f, type: 2}
+  - {fileID: 11400000, guid: 281b55f7732b894438f5a7b7098e3c05, type: 2}
+  - {fileID: 11400000, guid: 8432dfbd71d477d4eb668934de022494, type: 2}

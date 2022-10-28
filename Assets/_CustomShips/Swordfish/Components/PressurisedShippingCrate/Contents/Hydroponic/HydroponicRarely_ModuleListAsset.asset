@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2124528656, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: HydroponicRarely_ModuleListAsset
+  m_EditorClassIdentifier: 
+  m_Data:
+    m_ModuleEntryContainer: {fileID: 11400000, guid: 8ab3408f4c27a5147afcb08259ace558, type: 2}
