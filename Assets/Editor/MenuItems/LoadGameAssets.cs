@@ -26,6 +26,7 @@ public class LoadGameAssets
     [MenuItem("Shipbreaker/Reload Assets", priority = 4)]
     public static void ReloadAssets()
     {
+        AssetBundle.UnloadAllAssetBundles(false);
         UnloadAssets();
 
         if(System.IO.File.Exists(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json"))
@@ -78,8 +79,6 @@ public class LoadGameAssets
 
     static void UnloadAssets()
     {
-        AssetBundle.UnloadAllAssetBundles(false);
-
         if (handle1.IsValid())
         {
             Addressables.RemoveResourceLocator(handle1.Result);

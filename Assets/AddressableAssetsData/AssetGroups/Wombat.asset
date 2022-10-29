@@ -1,0 +1,410 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Wombat
+  m_EditorClassIdentifier: 
+  m_GroupName: Wombat
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 228af8fd329b1294ca03e6c2c382da24
+  m_SerializeEntries:
+  - m_GUID: 7151b4118af3fc143acade43a7935919
+    m_Address: Assets/_CustomShips/Experiments/Experiments.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d2d8343bf47d5c4e92ba75334f8fb49
+    m_Address: Assets/_CustomShips/ExamplePressure/Spawn/Spawn_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e99e2c3c63886b44ba29e3c199287391
+    m_Address: Assets/_CustomShips/ExamplePressure/Spawn/ExamplePressure_RootRef.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2777b9404255d434ea44ffb92c310a52
+    m_Address: Assets/_CustomShips/ExamplePressure/ExamplePressure_ModuleConstructionAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 678c97fd0a66214488c9c69f60043d9c
+    m_Address: Assets/_CustomShips/ExamplePressure/ExamplePressure_LevelAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19ef51ee5f31fba428e7b8b64c650c99
+    m_Address: Assets/_CustomShips/ExamplePressure/ExamplePressure.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8613578855b09ca4797309ee293ab694
+    m_Address: Assets/_CustomShips/ExampleClass2/Spawn/Spawn_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b5bc51d7ec63d74bb7b496ed80ea889
+    m_Address: Assets/_CustomShips/ExampleClass2/Spawn/ExampleClass2_RootRef.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee954277c628a2d4d9f5d9aff57e165e
+    m_Address: Assets/_CustomShips/ExampleClass2/ExampleClass2_ModuleConstructionAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 79f0dccb2f75d74429141b4364755c4d
+    m_Address: Assets/_CustomShips/ExampleClass2/ExampleClass2_LevelAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acd53cc230bef7c478809e0d991ec314
+    m_Address: Assets/_CustomShips/ExampleClass2/ExampleClass2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 651889da8c02ede4a88f34efec8d762f
+    m_Address: Assets/_CustomShips/ExampleBox/PRF_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3075522616fd26a4ea5283b81585c3a6
+    m_Address: Assets/_CustomShips/ExampleBox/ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6f2d4c6dd348b34a9e54c9b7f977111
+    m_Address: Assets/_CustomShips/ExampleBox/ModuleEntryDefinition.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25f88292451b449409ff2fcd30b6568c
+    m_Address: Assets/_CustomShips/ExampleBox/ModuleEntryContainer.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 908a60a7a9952564eb211adb31e7c956
+    m_Address: Assets/_CustomShips/ExampleBox/CustomModule.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 885f3cd422be53a4b84e2fb07b5a77ec
+    m_Address: Assets/_CustomShips/ExampleBox/LevelAsset_ExampleBox.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41de0a0595534cc4eb29ba7c4baf3a46
+    m_Address: Assets/_CustomShips/ExampleBox/ExampleBoxAirlock.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2ade62975d33c5408fc695ba5be1d27
+    m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4855fca3e68e046429b7d7cbc69269bf
+    m_Address: Assets/_CustomShips/ExampleBox/ExampleBox.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83721bb20cbd562478bc79818f98666e
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Radiation/RadiationFilterPositioned.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3533f67d6878c19408d8b82a6ee139e6
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Radiation/RadiationFilter_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0567d30019f4f84c934b58936431058
+    m_Address: Assets/_CustomShips/FirstShip/Components/PowerCell/DefaultPowerCell_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 704e5628c2d829f45b2c2cc942b50ebb
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/O2_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c920a0917f768134189ece8f300a4f0e
+    m_Address: Assets/_CustomShips/FirstShip/Components/PowerCell/PowerCell_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd1b2b570178a4f41af8edfdcf70b56c
+    m_Address: Assets/CustomOperation/FirstShip/Components/Doorway/Doorway_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de8dc9ad6d7d38840b7a1adfcbc7c4f6
+    m_Address: Assets/CustomOperation/FirstShip/Components/Doorway/Doorway.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c3c18a607fd582499550565499428f5
+    m_Address: Assets/CustomOperation/FirstShip/Components/DummyPlug/DummyPlug_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df5818fdc4d9dbe4d85f23243e9f58d7
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d35282044b9c124ea859f61dfd0ce15
+    m_Address: Assets/CustomOperation/FirstShip/Components/DummyPlug/DummyPlugRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fed91a7584f175a4a9d980d956771a99
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallStraightRoom_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9789be75340bfc408fa626d21e982de
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallStraightRoom_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91585e262f28b0d43936755b6cb95738
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Engine/Engine_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0e62269f8873a24381cbe59e02ce7d9
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Airfilter/Airfilter_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93743c5330d28d047b9111e424ec4290
+    m_Address: Assets/CustomOperation/FirstShip/Components/Entryway/Entryway_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57a8eacce8527da47ac3f5e3545a08d0
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/Fuel_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d012d3c4980592f4480573db127c92b0
+    m_Address: Assets/CustomOperation/FirstShip/Components/Entryway/Entryway_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ab4f8c2d84a2bf541afbc362b10e88ab
+    m_Address: Assets/_CustomShips/FirstShip/Components/Internal/Pickups/ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99959a1d436e9014c8965ad6de8f240a
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/StraightTop/OuterWallTop_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 469cd82ba679ba648bf9421c1b551d1c
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/StraightTop/OuterWallTop_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25199cd7e4d62b0439879ca666683785
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Engine/EngineRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f101ec863b4035543834a3fbbef1879b
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/NarrowPlugBlocker/NarrowPlugBlockerRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 679ba341e76238c4cadf9b23c5ce9053
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/NarrowPlugBlocker/NarrowPlugBlocker_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 906b4e594b934754b8ad0b51d1a9ee3a
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/Cockpit_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48e7d7cff47868247aa811768678528a
+    m_Address: Assets/_CustomShips/Experiments/Experiments_LevelAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e408ee7847f0344796e867ca5d46ca9
+    m_Address: Assets/_CustomShips/Experiments/Experiments_ModuleConstructionAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ca561e0fadaed648888c05001bf4604
+    m_Address: Assets/_CustomShips/Experiments/Spawn/Experiments_RootRef.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edf10bd49e2d3a947afd63ee96ef5a98
+    m_Address: Assets/_CustomShips/Experiments/Spawn/Spawn_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69b68048802f4c94180220ecc793a856
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitBackRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 153a536e882efc44abd6c47308020222
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitFrontRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d15d4cfe640d29d4ebce4a0d99947e6d
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitBack_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11fd5c193b1fcf84abfe23795702a23e
+    m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitFront_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 464d328b37828dc43876aad799fb569c
+    m_Address: Assets/CustomOperation/FirstShip/Components/Shell/ShellConnector_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94c5e952c9acb274ea91c95b9edf3011
+    m_Address: Assets/CustomOperation/FirstShip/Components/Shell/ShellConnector.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2066f5af922a03648bb051f57655c52c
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallCorner_Room.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 939a359db52ea9d43a6fdcc63cd3e1e0
+    m_Address: Assets/CustomOperation/FirstShip/Components/OuterWallCornerRoom_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b06cd9806085ce4cb88fa5888eceebc
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Connector/Connector_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e723eba8ae422e84190e2971c9c374f5
+    m_Address: Assets/CustomOperation/BoxRef/FirstShip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 792652162aeed3342810ad6a261da3d2
+    m_Address: Assets/CustomOperation/FirstShip/FirstShjpSpawner/FirstShipSpawner.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52445c10e45068c4ca1e5a6f9a9d86a1
+    m_Address: Assets/_CustomShips/FirstShip/Level/FirstShip_ModuleConstructionAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - ModdedLevel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7520bc2b2600662419c6851b162d9012
+    m_Address: Assets/_CustomShips/FirstShip/Level/FirstShip_ShipArchetypeAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fc10ad1214547646bce68b12631c14d
+    m_Address: Assets/_CustomShips/FirstShip/FirstShipSpawner/FirstShipSpawner_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 253d8ebc32dc5ff4bb79b98cdd931718
+    m_Address: Assets/_CustomShips/FirstShip/Level/FirstShip_LevelAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - GameMode_Free
+    - Release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03661bd39ae62f3498efaf01d4a10326
+    m_Address: Assets/_CustomShips/FirstShip/Components/Reactor/Reactor_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c0b84b518b5d034f87f02a534bbbe6e
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/1Side/1Side_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a67ba5c070a41cd429eacf7aa65986fd
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/1Side/1SideRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32f64d3b981812a498acef805e466b62
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/4Side/4Sides_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf548e1b957620c40a0247de62501703
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/Connector/ConnectorRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18b8d93c4dd825740a9f9368e5e2fd21
+    m_Address: Assets/_CustomShips/FirstShip/Components/Reactor/Reactor_ModuleEntryContainer.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7b8cddbef8c7d649b293597caf9d018
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/4Side/4SidesRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0cde2e361cca1a04694fde8ced3e5b0a
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/CornerInverse/CornerInverseRoom.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3837bc62181ad04c9660d8154a71b31
+    m_Address: Assets/CustomOperation/FirstShip/Components/Rooms/CornerInverse/CornerInverse_ModuleListAsset.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aab7ff7e8168cdc4ab9f9603d61d8533
+    m_Address: Assets/_CustomShips/FirstShip/Materials/Glass/modifiedGlass.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46d85cd9ba50c714aa12c7252b1de398
+    m_Address: Assets/CustomOperation/FirstShip/ShipImage.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e638e3756213f4449acb427b29780efe, type: 2}
+    - {fileID: 11400000, guid: 599b5ffcbf675414db4f36ea25306236, type: 2}

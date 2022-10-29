@@ -1,18 +1,18 @@
 {
   "dependencies": {
     "com.unity.addressables": {
-      "version": "1.18.19",
+      "version": "https://github.com/juniordiscart/com.unity.addressables.git",
       "depth": 0,
-      "source": "registry",
+      "source": "git",
       "dependencies": {
-        "com.unity.scriptablebuildpipeline": "1.19.2",
+        "com.unity.scriptablebuildpipeline": "1.20.2",
         "com.unity.modules.assetbundle": "1.0.0",
         "com.unity.modules.imageconversion": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
       },
-      "url": "https://packages.unity.com"
+      "hash": "77f2d72ddd030f6777e0d498d9fb6176060f94e4"
     },
     "com.unity.burst": {
       "version": "1.4.1",
@@ -232,7 +232,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.19.2",
+      "version": "1.20.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},

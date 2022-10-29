@@ -10,6 +10,7 @@ using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Build;
 using System;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class BuildContent
 {
@@ -25,65 +26,21 @@ public class BuildContent
 
         if (success && Settings.VerifyBuildSettings())
         {
-            var modPath = "BepInEx\\plugins\\ModdedShipLoader\\Ships";
-            var shipPath = $"{Settings.buildSettings.ShipPath}.{Settings.buildSettings.Author}";
+            var manifest = GenerateManifest();
 
-            Debug.Log("Creating or clearing build directory");
-
-            if(Directory.Exists(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath)))
+            // Move the default bundle, if it exists
+            var defaultCatalogBundle = Directory.GetFiles(Application.dataPath + "\\..\\BuiltShipContent", "*.bundle", SearchOption.TopDirectoryOnly).FirstOrDefault();
+            if(defaultCatalogBundle != null)
             {
-                foreach(var file in Directory.EnumerateFiles(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath)))
-                {
-                    if(file.EndsWith(".json") || file.EndsWith(".bundle"))
-                    {
-                        File.Delete(file);
-                    }
-                }
-            }
-            else
-            {
-                Directory.CreateDirectory(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath));
+                MoveShipBundle("Common", Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", defaultCatalogBundle, manifest);
             }
 
-            Debug.Log("Moving bundle");
-
-            var contentBundle = Directory.GetFiles(Application.dataPath + "\\..\\BuiltShipContent")[0];
-            File.Copy(
-                contentBundle,
-                Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, contentBundle.Split('\\').Last()),
-                true
-            );
-            File.Delete(contentBundle);
-
-            Debug.Log("Moving and modifying catalog");
-            var catalog = File.ReadAllText(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json");
-
-            catalog = catalog.Replace("BuiltShipContent\\\\", (Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath) + "\\").Replace("\\", "\\\\"));
-
-            File.WriteAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "catalog.json"), catalog);
-
-            Debug.Log("Writing asset templates");
-
-            var baseVersionList = new List<string>();
-            string[] typesToSearch = File.ReadAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher", "TypesToModify.txt"));
-
-            foreach(var typeString in typesToSearch)
+            // Move each custom bundle
+            foreach(var shipDirectory in Directory.GetDirectories(Application.dataPath + "\\..\\BuiltShipContent"))
             {
-                var type = Type.GetType($"BBI.Unity.Game.{typeString}, BBI.Unity.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", true);
-                foreach(var assetGUID in AssetDatabase.FindAssets($"t:{typeString}", null))
-                {
-                    var asset = AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(assetGUID), type);
-                    var val = ((string)type.GetField("AssetBasis").GetValue(asset));
-                    if(val != null && val != "")
-                    {
-                        baseVersionList.Add($"[{assetGUID}]");
-                    }
-                }
+                var shipName = Path.GetFileName(shipDirectory);
+                MoveShipBundle(shipName, shipDirectory + "\\" + shipName + ".json", shipDirectory + "\\" + shipName + "_assets_all.bundle", manifest);
             }
-            
-            var manifest = new Manifest();
-            manifest.baseOverrides = baseVersionList.ToArray();
-            File.WriteAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "manifest.json"), JsonConvert.SerializeObject(manifest));
 
             LoadGameAssets.ReloadAssets();
             Debug.Log("Build Complete");
@@ -96,6 +53,72 @@ public class BuildContent
             Debug.LogError("If you are stuck, contact Piepieonline on the Shipbreaker discord (#modding-discussion)");
             return false;
         }
+    }
+
+    private static Manifest GenerateManifest()
+    {
+        var baseVersionList = new List<string>();
+        string[] typesToSearch = File.ReadAllLines(Path.Combine(Settings.buildSettings.ShipbreakerPath, "BepInEx", "patchers", "ModdedShipLoaderPatcher", "TypesToModify.txt"));
+
+        foreach(var typeString in typesToSearch)
+        {
+            var type = Type.GetType($"BBI.Unity.Game.{typeString}, BBI.Unity.Game, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", true);
+            foreach(var assetGUID in AssetDatabase.FindAssets($"t:{typeString}", null))
+            {
+                var asset = AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(assetGUID), type);
+                var val = ((string)type.GetField("AssetBasis").GetValue(asset));
+                if(val != null && val != "")
+                {
+                    baseVersionList.Add($"[{assetGUID}]");
+                }
+            }
+        }
+
+        return new Manifest() { baseOverrides = baseVersionList.ToArray() };
+    }
+
+    private static void MoveShipBundle(string shipName, string catalogPath, string bundlePath, Manifest manifest)
+    {
+        var modPath = "BepInEx\\plugins\\ModdedShipLoader\\Ships";
+        var shipPath = $"{shipName}.{Settings.buildSettings.Author}";
+
+        if(!Directory.Exists(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath)))
+        {
+            Debug.Log($"{shipName} - Creating build directory");
+            Directory.CreateDirectory(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath));
+        }
+
+        Debug.Log($"{shipName} - Moving bundle");
+
+        File.Copy(
+            bundlePath,
+            Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, bundlePath.Split('\\').Last()),
+            true
+        );
+        // File.Delete(bundlePath);
+
+        Debug.Log($"{shipName} - Moving and modifying catalog");
+        var catalog = JObject.Parse(File.ReadAllText(catalogPath));
+        var internalIds = (JArray)catalog.SelectToken("$.m_InternalIds");
+
+        for(int i = 0; i < internalIds.Count(); i++)
+        {
+            if(internalIds[i].ToString().Contains("common_assets_all.bundle"))
+            {
+                internalIds[i].Replace(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, $"Common.{Settings.buildSettings.Author}", "common_assets_all.bundle"));
+            }
+            else if(internalIds[i].ToString().Contains(".bundle"))
+            {
+                internalIds[i].Replace(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, shipName + "_assets_all.bundle"));
+            }
+        }
+
+        File.WriteAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "catalog.json"), catalog.ToString());
+
+        // File.Delete(catalogPath);
+
+        Debug.Log($"{shipName} - Writing manifest");
+        File.WriteAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, "manifest.json"), JsonConvert.SerializeObject(manifest));
     }
 
     [MenuItem("Shipbreaker/Build and run", priority = 3)]
