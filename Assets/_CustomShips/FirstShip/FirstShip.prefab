@@ -497,7 +497,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1e6143bf6acc0c74992f6e21c7f2160e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &18036122837021321
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +648,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &138766155930492778
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +698,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &176546652445532606
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +748,10 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &196015323041333484
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +835,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &242631105280636053
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +1014,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &298093422519655323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1064,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &307515312652457566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1114,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &319158809701017256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1624,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &443622223498211943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,8 +1675,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &444585878189635264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1726,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 963c6a2d349a34a42ba4700a305cd42e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &446499929482639316
 GameObject:
   m_ObjectHideFlags: 0
@@ -1831,7 +1864,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &451705568244918331
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1978,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &508019225160317828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,7 +2028,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1e6143bf6acc0c74992f6e21c7f2160e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &521438035837879134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2078,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Cap_StepperL_2x4x4/SM_Cap_2xBx4
   - PRF_Cap_StepperR_2x4x4/SM_Cap_2xBx4
@@ -2045,6 +2088,8 @@ MonoBehaviour:
   - PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_B/SM_Cap_Stepper_4x4X4_TrimStraightB
   - PRF_Cap_StepperL_2x4x4/SM_Trim_Corner_BxBxB1
   - PRF_Cap_StepperL_2x4x4/SM_Trim_Corner_BxBxB2
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &525055295755930882
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,7 +2137,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &528452813195323160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2187,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &535207820326233405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2186,7 +2237,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &538406425815366117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,7 +2321,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &560308767057677216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2371,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &589625076054541533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,7 +2455,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &641976368935955591
 GameObject:
   m_ObjectHideFlags: 0
@@ -2598,7 +2661,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &651388034757480772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2645,7 +2711,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &662108563729285677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,7 +2761,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &684079205574913797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2739,7 +2811,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &687629767813926158
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,7 +3021,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &758338744771984894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2993,7 +3071,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1e6143bf6acc0c74992f6e21c7f2160e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &810830119375816355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,7 +3121,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &841944401949710897
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,7 +3205,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &934624474304288445
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,11 +3257,14 @@ MonoBehaviour:
   refs: []
   assetGUID: c87c89709b1548d428a23ffc348e43d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Cutpoint_BxBxC0_Hardpoint
   - PRF_ShipKit_Cutpoint_BxBxC0_Hardpoint
   - Light Group
   - PRF_Reinforce_Chamfer_Bx2CxB
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &965736239490694510
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3311,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &974932204936892107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,7 +3462,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &995229619313498520
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,7 +3576,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1007971614179733940
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,7 +3672,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1022625904331800446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3722,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1030217524112235378
 GameObject:
   m_ObjectHideFlags: 0
@@ -3668,8 +3773,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1059868203371854995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,7 +3825,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: RoomVolumes
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1073745196002115622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,7 +3875,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1104785066477817997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3811,7 +3925,10 @@ MonoBehaviour:
   refs: []
   assetGUID: b92fadce52983b542a0cadac14f216a3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1107047898655369955
 GameObject:
   m_ObjectHideFlags: 0
@@ -3986,7 +4103,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1129856015070431790
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,7 +4486,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1224153075653234826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4413,7 +4536,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint/PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_A/SM_Cap_Stepper_4x4X4_TrimStraightA
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1269914752639914226
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,7 +4586,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1286637511186328578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,7 +4681,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 88700d49c8481f94dbd00bd28daf9095
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1328734011452453728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4698,7 +4830,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1385328415160771505
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,7 +5044,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1436674357681095693
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,7 +5094,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1437399344378287462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5132,7 +5273,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1505984031792804570
 GameObject:
   m_ObjectHideFlags: 0
@@ -5180,7 +5324,10 @@ MonoBehaviour:
   - 4e697143ef9945a4da5893eef61b3061
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1516044638985335348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5227,7 +5374,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 8220a74572ebaf74dad5284c39a4de14
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1517269511078812292
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,7 +5424,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1527979537822484882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5321,7 +5474,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1543274653674721950
 GameObject:
   m_ObjectHideFlags: 0
@@ -5368,7 +5524,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 542e620ff51e2504c9573b77e8d8dcd9
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1547550868041213385
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,7 +5575,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1562180308744693832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,7 +5735,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1576658173249809623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5620,7 +5785,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1585110820747403238
 GameObject:
   m_ObjectHideFlags: 0
@@ -5731,7 +5899,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1705138756390205322
 GameObject:
   m_ObjectHideFlags: 0
@@ -5921,7 +6092,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1765664165483852824
 GameObject:
   m_ObjectHideFlags: 0
@@ -5968,7 +6142,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1775657519975139169
 GameObject:
   m_ObjectHideFlags: 0
@@ -6015,7 +6192,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1792599468383872458
 GameObject:
   m_ObjectHideFlags: 0
@@ -6126,7 +6306,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1820604394817011025
 GameObject:
   m_ObjectHideFlags: 0
@@ -6173,7 +6356,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1857132059064870732
 GameObject:
   m_ObjectHideFlags: 0
@@ -6220,7 +6406,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1894819810933174381
 GameObject:
   m_ObjectHideFlags: 0
@@ -6331,7 +6520,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1913736342296174549
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,8 +6765,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1943916505719199023
 GameObject:
   m_ObjectHideFlags: 0
@@ -6712,7 +6907,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1990819987146265582
 GameObject:
   m_ObjectHideFlags: 0
@@ -6807,7 +7005,10 @@ MonoBehaviour:
   refs: []
   assetGUID: d2f29c8a46e2d0f4195ef901329f9e73
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2043600335163719108
 GameObject:
   m_ObjectHideFlags: 0
@@ -6964,7 +7165,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2113925987855106683
 GameObject:
   m_ObjectHideFlags: 0
@@ -7011,8 +7215,11 @@ MonoBehaviour:
   refs: []
   assetGUID: d77c98116e343a74581a8fa20ded36ee
   childPath: PRF_Mistral_Nose_FullAssembled/Cockpit/PRF_Mistral_AngledCutNoseCockpitTile_Prototype1
+  enableChildHardpoints: 0
   disabledChildren:
   - GameObject
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2118186858126422496
 GameObject:
   m_ObjectHideFlags: 0
@@ -7059,7 +7266,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1e6143bf6acc0c74992f6e21c7f2160e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2154784027870000060
 GameObject:
   m_ObjectHideFlags: 0
@@ -7224,7 +7434,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2196163375289463301
 GameObject:
   m_ObjectHideFlags: 0
@@ -7271,8 +7484,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 43fd403687533d8438f0813c5e068835
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP Nav Terminal
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2209393803717098994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7602,7 +7818,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2375928335417227390
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,7 +7868,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2377530199227479269
 GameObject:
   m_ObjectHideFlags: 0
@@ -7742,7 +7964,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2381664884235910690
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,7 +8233,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2429615166384664698
 GameObject:
   m_ObjectHideFlags: 0
@@ -8056,7 +8284,10 @@ MonoBehaviour:
   - 4e697143ef9945a4da5893eef61b3061
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2455489722706069661
 GameObject:
   m_ObjectHideFlags: 0
@@ -8135,7 +8366,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2486288053779069709
 GameObject:
   m_ObjectHideFlags: 0
@@ -8182,7 +8416,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2494326631949903511
 GameObject:
   m_ObjectHideFlags: 0
@@ -8229,7 +8466,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2498728957938999379
 GameObject:
   m_ObjectHideFlags: 0
@@ -8276,7 +8516,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2499016133367651147
 GameObject:
   m_ObjectHideFlags: 0
@@ -8323,7 +8566,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2500655871268360225
 GameObject:
   m_ObjectHideFlags: 0
@@ -8786,7 +9032,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2602435211021973129
 GameObject:
   m_ObjectHideFlags: 0
@@ -8888,7 +9137,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1e6143bf6acc0c74992f6e21c7f2160e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2656147631951958785
 GameObject:
   m_ObjectHideFlags: 0
@@ -8935,7 +9187,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2662109887446618040
 GameObject:
   m_ObjectHideFlags: 0
@@ -9101,8 +9356,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2677894700259971485
 GameObject:
   m_ObjectHideFlags: 0
@@ -9149,7 +9407,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2679093892751141795
 GameObject:
   m_ObjectHideFlags: 0
@@ -9324,7 +9585,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint/PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_A/SM_Cap_Stepper_4x4X4_TrimStraightA
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2686367005177435453
 GameObject:
   m_ObjectHideFlags: 0
@@ -9371,7 +9635,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2698363160809355438
 GameObject:
   m_ObjectHideFlags: 0
@@ -9631,7 +9898,10 @@ MonoBehaviour:
   refs: []
   assetGUID: e9ae6e04cf5a4254bac29ef6b596d84d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2746441325859516198
 GameObject:
   m_ObjectHideFlags: 0
@@ -9678,7 +9948,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2749209975174511445
 GameObject:
   m_ObjectHideFlags: 0
@@ -9725,7 +9998,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2765388796107185369
 GameObject:
   m_ObjectHideFlags: 0
@@ -9772,7 +10048,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2772097697682264208
 GameObject:
   m_ObjectHideFlags: 0
@@ -9883,7 +10162,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2814520135267829458
 GameObject:
   m_ObjectHideFlags: 0
@@ -9965,7 +10247,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 55e4543219d71284780dbbae02ff72e6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2817204374812624568
 GameObject:
   m_ObjectHideFlags: 0
@@ -10124,7 +10409,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2844345235645031118
 GameObject:
   m_ObjectHideFlags: 0
@@ -10327,7 +10615,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2943626751340128340
 GameObject:
   m_ObjectHideFlags: 0
@@ -10374,7 +10665,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2945924489295728715
 GameObject:
   m_ObjectHideFlags: 0
@@ -10421,7 +10715,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2959111768976294973
 GameObject:
   m_ObjectHideFlags: 0
@@ -10546,7 +10843,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &2994830428160300613
 GameObject:
   m_ObjectHideFlags: 0
@@ -10705,7 +11005,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3075183271485697029
 GameObject:
   m_ObjectHideFlags: 0
@@ -10786,7 +11089,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3087928850318699386
 GameObject:
   m_ObjectHideFlags: 0
@@ -11053,7 +11359,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3127545321884246581
 GameObject:
   m_ObjectHideFlags: 0
@@ -11256,7 +11565,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3184502544285977681
 GameObject:
   m_ObjectHideFlags: 0
@@ -11303,7 +11615,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3207634442611706285
 GameObject:
   m_ObjectHideFlags: 0
@@ -11350,7 +11665,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 3c940ad214141ac41a1df49a91bd4397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3259201884357023395
 GameObject:
   m_ObjectHideFlags: 0
@@ -11397,7 +11715,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3307540468768161703
 GameObject:
   m_ObjectHideFlags: 0
@@ -11509,7 +11830,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3314156715483436579
 GameObject:
   m_ObjectHideFlags: 0
@@ -11596,8 +11920,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3355303658473230844
 GameObject:
   m_ObjectHideFlags: 0
@@ -11644,7 +11971,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3455657366841479096
 GameObject:
   m_ObjectHideFlags: 0
@@ -11785,7 +12115,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3482353952375612467
 GameObject:
   m_ObjectHideFlags: 0
@@ -12015,8 +12348,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3511886507547335081
 GameObject:
   m_ObjectHideFlags: 0
@@ -12109,7 +12445,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint/PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_A/SM_Cap_Stepper_4x4X4_TrimStraightA
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3525800454097014395
 GameObject:
   m_ObjectHideFlags: 0
@@ -12156,7 +12495,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 631df4ac8c7365c46b23f70489128451
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3527079704529339145
 GameObject:
   m_ObjectHideFlags: 0
@@ -12203,7 +12545,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3551532870526326471
 GameObject:
   m_ObjectHideFlags: 0
@@ -12250,7 +12595,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3559164669632414245
 GameObject:
   m_ObjectHideFlags: 0
@@ -12297,7 +12645,10 @@ MonoBehaviour:
   refs: []
   assetGUID: f82407aa9f772e146b2612b48b21c4bb
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3559699382883050363
 GameObject:
   m_ObjectHideFlags: 0
@@ -12344,7 +12695,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3567349060289798542
 GameObject:
   m_ObjectHideFlags: 0
@@ -12391,7 +12745,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3589169491716562668
 GameObject:
   m_ObjectHideFlags: 0
@@ -12566,7 +12923,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3619711859989166886
 GameObject:
   m_ObjectHideFlags: 0
@@ -12833,7 +13193,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 8220a74572ebaf74dad5284c39a4de14
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3661622814510775583
 GameObject:
   m_ObjectHideFlags: 0
@@ -12880,7 +13243,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3670862211618217731
 GameObject:
   m_ObjectHideFlags: 0
@@ -12927,7 +13293,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3696934534311402103
 GameObject:
   m_ObjectHideFlags: 0
@@ -13006,7 +13375,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3791359423583779530
 GameObject:
   m_ObjectHideFlags: 0
@@ -13053,7 +13425,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 3c940ad214141ac41a1df49a91bd4397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3795260946060196240
 GameObject:
   m_ObjectHideFlags: 0
@@ -13133,7 +13508,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3802883853579477933
 GameObject:
   m_ObjectHideFlags: 0
@@ -13440,7 +13818,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3851119391800179693
 GameObject:
   m_ObjectHideFlags: 0
@@ -13692,7 +14073,10 @@ MonoBehaviour:
   assetGUID: d77c98116e343a74581a8fa20ded36ee
   childPath: PRF_Mistral_Nose_FullAssembled/Cockpit/PRF_CockpitTile_2Bx2Bx2B (2)/SG_Right
     Wall/SM_CockpitTile_2Bx2Bx2B_Wall1
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3945093182105217773
 GameObject:
   m_ObjectHideFlags: 0
@@ -13779,7 +14163,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &3982681465206903650
 GameObject:
   m_ObjectHideFlags: 0
@@ -13890,7 +14277,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4025444720490547975
 GameObject:
   m_ObjectHideFlags: 0
@@ -13937,7 +14327,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4033696640498100815
 GameObject:
   m_ObjectHideFlags: 0
@@ -14030,7 +14423,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 3c940ad214141ac41a1df49a91bd4397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4060036590939061654
 GameObject:
   m_ObjectHideFlags: 0
@@ -14361,7 +14757,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4095223570537360945
 GameObject:
   m_ObjectHideFlags: 0
@@ -14409,7 +14808,10 @@ MonoBehaviour:
   - fc90b5d2cd831c24c9cfcadd0f72b11b
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4097468844760026483
 GameObject:
   m_ObjectHideFlags: 0
@@ -14456,7 +14858,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4121097138477048753
 GameObject:
   m_ObjectHideFlags: 0
@@ -14503,7 +14908,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4126171233066667575
 GameObject:
   m_ObjectHideFlags: 0
@@ -14550,7 +14958,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4148040686268967035
 GameObject:
   m_ObjectHideFlags: 0
@@ -14597,7 +15008,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4164469429496184045
 GameObject:
   m_ObjectHideFlags: 0
@@ -14644,7 +15058,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4204309217112180005
 GameObject:
   m_ObjectHideFlags: 0
@@ -14756,7 +15173,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4256281823136639273
 GameObject:
   m_ObjectHideFlags: 0
@@ -14867,7 +15287,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4323643479452119203
 GameObject:
   m_ObjectHideFlags: 0
@@ -14914,7 +15337,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4327859482683117697
 GameObject:
   m_ObjectHideFlags: 0
@@ -15229,7 +15655,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4473778737872510547
 GameObject:
   m_ObjectHideFlags: 0
@@ -15340,7 +15769,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4491577705157604859
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,7 +15883,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4510678250673480255
 GameObject:
   m_ObjectHideFlags: 0
@@ -15562,7 +15997,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4548269093741634806
 GameObject:
   m_ObjectHideFlags: 0
@@ -15609,7 +16047,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4591565897631898965
 GameObject:
   m_ObjectHideFlags: 0
@@ -15656,7 +16097,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4594245735076107604
 GameObject:
   m_ObjectHideFlags: 0
@@ -15767,7 +16211,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4618771686236114515
 GameObject:
   m_ObjectHideFlags: 0
@@ -15970,7 +16417,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 542e620ff51e2504c9573b77e8d8dcd9
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4679433512074584292
 GameObject:
   m_ObjectHideFlags: 0
@@ -16035,7 +16485,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 795b3b663785fc74fac76a20bfeae31d, type: 2}
+  - {fileID: 2100000, guid: 52bb65e1ad3ba0a4198fc012a2832828, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16373,7 +16823,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4739282845783630327
 GameObject:
   m_ObjectHideFlags: 0
@@ -16420,7 +16873,10 @@ MonoBehaviour:
   refs: []
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4742375197759951874
 GameObject:
   m_ObjectHideFlags: 0
@@ -16531,7 +16987,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4788304452798058477
 GameObject:
   m_ObjectHideFlags: 0
@@ -16928,7 +17387,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4931468214845128185
 GameObject:
   m_ObjectHideFlags: 0
@@ -17131,7 +17593,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4950045669443762381
 GameObject:
   m_ObjectHideFlags: 0
@@ -17178,7 +17643,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5020391851400036091
 GameObject:
   m_ObjectHideFlags: 0
@@ -17225,7 +17693,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5023696581233532522
 GameObject:
   m_ObjectHideFlags: 0
@@ -17272,7 +17743,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5043209734254064874
 GameObject:
   m_ObjectHideFlags: 0
@@ -17319,7 +17793,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5073775362343648526
 GameObject:
   m_ObjectHideFlags: 0
@@ -17366,7 +17843,10 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5075817161537611271
 GameObject:
   m_ObjectHideFlags: 0
@@ -17509,7 +17989,10 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5104385843860470290
 GameObject:
   m_ObjectHideFlags: 0
@@ -17873,7 +18356,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5172791706268208449
 GameObject:
   m_ObjectHideFlags: 0
@@ -17920,7 +18406,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5202841796461669124
 GameObject:
   m_ObjectHideFlags: 0
@@ -17967,7 +18456,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35c477eb326a5a644a6b6cc50822043a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5206507178486150785
 GameObject:
   m_ObjectHideFlags: 0
@@ -18014,7 +18506,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5232347550401146088
 GameObject:
   m_ObjectHideFlags: 0
@@ -18125,7 +18620,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5305639169217339828
 GameObject:
   m_ObjectHideFlags: 0
@@ -18216,7 +18714,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5342161029562948154
 GameObject:
   m_ObjectHideFlags: 0
@@ -18529,7 +19030,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5415318811307972273
 GameObject:
   m_ObjectHideFlags: 0
@@ -18705,7 +19209,10 @@ MonoBehaviour:
   - fc90b5d2cd831c24c9cfcadd0f72b11b
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5529232484088375497
 GameObject:
   m_ObjectHideFlags: 0
@@ -18752,7 +19259,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5535459006574307167
 GameObject:
   m_ObjectHideFlags: 0
@@ -19003,6 +19513,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 57a427c7abfb6564a8826479fa4de2e7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_StandingTerminal_Tall_VariantMackeralThruster
   - HP Walkway
@@ -19013,6 +19524,8 @@ MonoBehaviour:
   - PRF_Thruster_crossbeam/SM_cutpoint_X
   - PRF_Thruster_crossbeam/SM_cutpoint_Y
   - PRF_Thruster_crossbeam/SM_cutpoint_Z
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5576934567710130234
 GameObject:
   m_ObjectHideFlags: 0
@@ -19059,7 +19572,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5596910706202313507
 GameObject:
   m_ObjectHideFlags: 0
@@ -19106,7 +19622,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5623758230978336723
 GameObject:
   m_ObjectHideFlags: 0
@@ -19153,8 +19672,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 43fd403687533d8438f0813c5e068835
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP Nav Terminal
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5644382937601538987
 GameObject:
   m_ObjectHideFlags: 0
@@ -19201,7 +19723,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5690966196820217458
 GameObject:
   m_ObjectHideFlags: 0
@@ -19376,7 +19901,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5735496784933695758
 GameObject:
   m_ObjectHideFlags: 0
@@ -19423,7 +19951,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 68ca19e01d1791548946414e5233d5ea
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5745301365607905934
 GameObject:
   m_ObjectHideFlags: 0
@@ -19471,8 +20002,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 3e31a183ca9501f4da051b1caaa74c24
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - Opening
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!114 &2200289874022015585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19582,7 +20116,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5791040014709833917
 GameObject:
   m_ObjectHideFlags: 0
@@ -19629,7 +20166,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5794579981286199500
 GameObject:
   m_ObjectHideFlags: 0
@@ -19724,7 +20264,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5799954204437842605
 GameObject:
   m_ObjectHideFlags: 0
@@ -19831,7 +20374,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5823392869948987457
 GameObject:
   m_ObjectHideFlags: 0
@@ -19909,6 +20455,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 57a427c7abfb6564a8826479fa4de2e7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_StandingTerminal_Tall_VariantMackeralThruster
   - HP Walkway
@@ -19919,6 +20466,8 @@ MonoBehaviour:
   - PRF_Thruster_crossbeam/SM_cutpoint_X
   - PRF_Thruster_crossbeam/SM_cutpoint_Y
   - PRF_Thruster_crossbeam/SM_cutpoint_Z
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5855859003235947452
 GameObject:
   m_ObjectHideFlags: 0
@@ -19965,7 +20514,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5896891520666457197
 GameObject:
   m_ObjectHideFlags: 0
@@ -20013,7 +20565,10 @@ MonoBehaviour:
   - fc90b5d2cd831c24c9cfcadd0f72b11b
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5905872175384713920
 GameObject:
   m_ObjectHideFlags: 0
@@ -20060,7 +20615,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5911874106018451643
 GameObject:
   m_ObjectHideFlags: 0
@@ -20202,8 +20760,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5962093742460221537
 GameObject:
   m_ObjectHideFlags: 0
@@ -20319,7 +20880,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5995782958603985305
 GameObject:
   m_ObjectHideFlags: 0
@@ -20785,7 +21349,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint/PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_A/SM_Cap_Stepper_4x4X4_TrimStraightA
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6187343694299944070
 GameObject:
   m_ObjectHideFlags: 0
@@ -20965,7 +21532,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6278100559795867174
 GameObject:
   m_ObjectHideFlags: 0
@@ -21281,8 +21851,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6387675181081015337
 GameObject:
   m_ObjectHideFlags: 0
@@ -21544,7 +22117,10 @@ MonoBehaviour:
   refs: []
   assetGUID: ae952abfcfc159a48ac6454743471af8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6430455741793859427
 GameObject:
   m_ObjectHideFlags: 0
@@ -21747,7 +22323,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6452834064034747574
 GameObject:
   m_ObjectHideFlags: 0
@@ -21951,7 +22530,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6492408437413748514
 GameObject:
   m_ObjectHideFlags: 0
@@ -22062,7 +22644,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6518199395908686523
 GameObject:
   m_ObjectHideFlags: 0
@@ -22109,10 +22694,13 @@ MonoBehaviour:
   refs: []
   assetGUID: 43fd403687533d8438f0813c5e068835
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP Nav Terminal
   - GRP_StandingTerminal/PRF_Computer_Keyboard_CxAxB_VariantA (1)
   - GRP_StandingTerminal/PRF_Computer_Shell_Straight_DoubledVertically_Cx1xB (1)
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6559722703325988875
 GameObject:
   m_ObjectHideFlags: 0
@@ -22282,7 +22870,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6676566877003276603
 GameObject:
   m_ObjectHideFlags: 0
@@ -22426,8 +23017,11 @@ MonoBehaviour:
   refs: []
   assetGUID: 45c813d00eac1f54187c14d9c3d84d2a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_PickupSpawner
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6726688270460352327
 GameObject:
   m_ObjectHideFlags: 0
@@ -22474,7 +23068,10 @@ MonoBehaviour:
   refs: []
   assetGUID: b92fadce52983b542a0cadac14f216a3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6751809150959679410
 GameObject:
   m_ObjectHideFlags: 0
@@ -22713,7 +23310,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 4e697143ef9945a4da5893eef61b3061
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6787088345850952595
 GameObject:
   m_ObjectHideFlags: 0
@@ -22824,7 +23424,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6816870398760748080
 GameObject:
   m_ObjectHideFlags: 0
@@ -23204,7 +23807,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6841520877337764934
 GameObject:
   m_ObjectHideFlags: 0
@@ -23251,7 +23857,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6848040847845277348
 GameObject:
   m_ObjectHideFlags: 0
@@ -23344,7 +23953,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6870290947962353416
 GameObject:
   m_ObjectHideFlags: 0
@@ -23391,7 +24003,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 55e4543219d71284780dbbae02ff72e6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6875821271271093069
 GameObject:
   m_ObjectHideFlags: 0
@@ -23630,7 +24245,10 @@ MonoBehaviour:
   refs: []
   assetGUID: f82407aa9f772e146b2612b48b21c4bb
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6940048096537968923
 GameObject:
   m_ObjectHideFlags: 0
@@ -23709,7 +24327,10 @@ MonoBehaviour:
   refs: []
   assetGUID: f644d015be931a34fb31264ce3f4affb
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6971948736419659868
 GameObject:
   m_ObjectHideFlags: 0
@@ -23854,7 +24475,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7096034911704501672
 GameObject:
   m_ObjectHideFlags: 0
@@ -24058,7 +24682,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7131860485489588912
 GameObject:
   m_ObjectHideFlags: 0
@@ -24105,7 +24732,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7133221133299799675
 GameObject:
   m_ObjectHideFlags: 0
@@ -24216,7 +24846,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7166808762708728305
 GameObject:
   m_ObjectHideFlags: 0
@@ -24500,7 +25133,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7300048317088066763
 GameObject:
   m_ObjectHideFlags: 0
@@ -24721,7 +25357,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint/PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_A/SM_Cap_Stepper_4x4X4_TrimStraightA
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7358051780224225736
 GameObject:
   m_ObjectHideFlags: 0
@@ -24768,7 +25407,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7409807572429247486
 GameObject:
   m_ObjectHideFlags: 0
@@ -24879,7 +25521,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7453104121295093573
 GameObject:
   m_ObjectHideFlags: 0
@@ -25015,7 +25660,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7475863655212103461
 GameObject:
   m_ObjectHideFlags: 0
@@ -25126,7 +25774,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7485969468154273517
 GameObject:
   m_ObjectHideFlags: 0
@@ -25725,7 +26376,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7664560263953024816
 GameObject:
   m_ObjectHideFlags: 0
@@ -25818,7 +26472,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7722544585615073513
 GameObject:
   m_ObjectHideFlags: 0
@@ -25865,7 +26522,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7722853549696952356
 GameObject:
   m_ObjectHideFlags: 0
@@ -25912,7 +26572,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 5e061568bd2417841b220b473a596c01
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7728652241631898070
 GameObject:
   m_ObjectHideFlags: 0
@@ -25959,7 +26622,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7730905757643305228
 GameObject:
   m_ObjectHideFlags: 0
@@ -26118,11 +26784,14 @@ MonoBehaviour:
   refs: []
   assetGUID: d77c98116e343a74581a8fa20ded36ee
   childPath: PRF_Mistral_Nose_FullAssembled/Cockpit/PRF_CockpitTile_2Bx2Bx2B (3)
+  enableChildHardpoints: 0
   disabledChildren:
   - ROOM_Cockpit
   - PRF_HP_CockpitTileProps
   - PRF_Reinforce_Chamfer_RobotShoe_ChassisInt_BxB0xB
   - PRF_Reinforce_Chamfer_RobotShoe_ChassisInt_BxB0xB
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7747243908332782793
 GameObject:
   m_ObjectHideFlags: 0
@@ -26233,7 +26902,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7770727757447846701
 GameObject:
   m_ObjectHideFlags: 0
@@ -26550,7 +27222,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7846579533394553664
 GameObject:
   m_ObjectHideFlags: 0
@@ -26661,7 +27336,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7901119577534816739
 GameObject:
   m_ObjectHideFlags: 0
@@ -26782,7 +27460,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7939538011900190187
 GameObject:
   m_ObjectHideFlags: 0
@@ -26829,6 +27510,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Cap_StepperL_2x4x4/SM_Cap_2xBx4
   - PRF_Cap_StepperR_2x4x4/SM_Cap_2xBx4
@@ -26838,6 +27520,8 @@ MonoBehaviour:
   - PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_B/SM_Cap_Stepper_4x4X4_TrimStraightB
   - PRF_Cap_StepperR_2x4x4/SM_Trim_Corner_BxBxB1
   - PRF_Cap_StepperR_2x4x4/SM_Trim_Corner_BxBxB2
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7945732195084322017
 GameObject:
   m_ObjectHideFlags: 0
@@ -26948,7 +27632,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7959759732680539681
 GameObject:
   m_ObjectHideFlags: 0
@@ -27060,7 +27747,10 @@ MonoBehaviour:
   - fc90b5d2cd831c24c9cfcadd0f72b11b
   assetGUID: fc90b5d2cd831c24c9cfcadd0f72b11b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &7993656129050974097
 GameObject:
   m_ObjectHideFlags: 0
@@ -27422,7 +28112,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 795b3b663785fc74fac76a20bfeae31d, type: 2}
+  - {fileID: 2100000, guid: 52bb65e1ad3ba0a4198fc012a2832828, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27578,7 +28268,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1e6143bf6acc0c74992f6e21c7f2160e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8099357659933099318
 GameObject:
   m_ObjectHideFlags: 0
@@ -27734,7 +28427,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8139484946793701858
 GameObject:
   m_ObjectHideFlags: 0
@@ -27781,7 +28477,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1ad9c1a76c84b25409cf31ea57606bc6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8164497503193420378
 GameObject:
   m_ObjectHideFlags: 0
@@ -27829,7 +28528,10 @@ MonoBehaviour:
   - a1f15a473a3e3aa4191f1a4afa9c2f88
   assetGUID: 9272358818e45e745bd00b44d239a397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8167437202428074145
 GameObject:
   m_ObjectHideFlags: 0
@@ -27940,7 +28642,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8235273166108440182
 GameObject:
   m_ObjectHideFlags: 0
@@ -28174,7 +28879,10 @@ MonoBehaviour:
   refs: []
   assetGUID: d77c98116e343a74581a8fa20ded36ee
   childPath: PRF_Mistral_Nose_FullAssembled/PRF_Mistral_Nose_Canopy
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8303668092893486985
 GameObject:
   m_ObjectHideFlags: 0
@@ -28221,7 +28929,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8310946795205935229
 GameObject:
   m_ObjectHideFlags: 0
@@ -28268,7 +28979,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8319839419584200188
 GameObject:
   m_ObjectHideFlags: 0
@@ -28315,7 +29029,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8353272545601331908
 GameObject:
   m_ObjectHideFlags: 0
@@ -28362,7 +29079,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9c64ce4058b1a854b8d1e6d83f2bb73a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8357568179438281348
 GameObject:
   m_ObjectHideFlags: 0
@@ -28409,7 +29129,10 @@ MonoBehaviour:
   refs: []
   assetGUID: abb228d488d2c0844ae84e00ee590ae0
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8368625069153139904
 GameObject:
   m_ObjectHideFlags: 0
@@ -28456,7 +29179,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8405348942177342185
 GameObject:
   m_ObjectHideFlags: 0
@@ -28600,7 +29326,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 35c477eb326a5a644a6b6cc50822043a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8504294306523084834
 GameObject:
   m_ObjectHideFlags: 0
@@ -28743,7 +29472,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a8d935734e5eb74ea5c69eb7b408e98
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8574500018363619587
 GameObject:
   m_ObjectHideFlags: 0
@@ -28918,7 +29650,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8612034041044173878
 GameObject:
   m_ObjectHideFlags: 0
@@ -29029,7 +29764,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8692104947457203408
 GameObject:
   m_ObjectHideFlags: 0
@@ -29350,7 +30088,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8749075443553133634
 GameObject:
   m_ObjectHideFlags: 0
@@ -29397,7 +30138,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 3c940ad214141ac41a1df49a91bd4397
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8796094542346998223
 GameObject:
   m_ObjectHideFlags: 0
@@ -29778,7 +30522,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8846844861016538268
 GameObject:
   m_ObjectHideFlags: 0
@@ -30058,7 +30805,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 79ff0ba85ff9498468fea0a37e7efd4c
   childPath: Mandatory Joint/PRF_Cap_StepperMid_4x4X4/GRP_Cap_Stepper_A/SM_Cap_Stepper_4x4X4_TrimStraightA
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8939867877828701304
 GameObject:
   m_ObjectHideFlags: 0
@@ -30293,7 +31043,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &9013698330823482440
 GameObject:
   m_ObjectHideFlags: 0
@@ -30452,7 +31205,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &9088584048570568498
 GameObject:
   m_ObjectHideFlags: 0
@@ -30697,7 +31453,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &9120361248144176763
 GameObject:
   m_ObjectHideFlags: 0
@@ -30828,7 +31587,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &9205634408872627817
 GameObject:
   m_ObjectHideFlags: 0
@@ -30921,7 +31683,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 25199cd7e4d62b0439879ca666683785
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1001 &969079110
 PrefabInstance:
   m_ObjectHideFlags: 0

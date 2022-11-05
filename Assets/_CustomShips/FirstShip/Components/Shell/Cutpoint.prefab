@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65951d5478ae5c04a89e8937f96f23b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onChild: []
   comp:
   - BBI.Unity.Game.StructurePart
   - BBI.Unity.Game.EntityBlueprintComponent

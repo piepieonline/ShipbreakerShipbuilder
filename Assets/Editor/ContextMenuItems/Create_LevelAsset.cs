@@ -109,7 +109,9 @@ public class Create_LevelAssets : EditorWindow
         string prefabGuid = AssetDatabase.GUIDFromAssetPath(GetPathForAsset("", folderPath, "prefab")).ToString();
 
         // Create the hardpoint (Root prefab > Prefab hardpoint)
-        string prefabHardpointGuid = Create_Hardpoint.CreateHardpointAsset(spawnerFolderPath, spawnFolderName, prefabGuid, 1, -1);
+        string prefabHardpointGuid = Create_Hardpoint.CreateHardpointAsset(spawnerFolderPath, spawnFolderName, 
+            new Create_Hardpoint.HardpointAssetReference[] { new Create_Hardpoint.HardpointAssetReference() { assetRef = prefabGuid, weight = 1 } },
+        -1);
 
         // Create the root prefab ref (Construction Asset > Root prefab)
         GameObject rootPrefab = new GameObject($"{levelName}_RootRef", new System.Type[] { typeof(RootModuleDefinition) });

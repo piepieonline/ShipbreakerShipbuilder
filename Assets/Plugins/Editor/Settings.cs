@@ -38,11 +38,6 @@ public class Settings
             Debug.LogError("Please provide an author name");
             return false;
         }
-        else if(buildSettings.ShipPath == null || buildSettings.ShipPath == "")
-        {
-            Debug.LogError("Please provide a Ship Path");
-            return false;
-        }
         else if(buildSettings.ShipbreakerPath == null || buildSettings.ShipbreakerPath == "")
         {
             Debug.LogError("Please provide a path to Hardspace: Shipbreaker");
@@ -91,6 +86,5 @@ public class Settings
     {
         public string ShipbreakerPath;
         public string Author;
-        public string ShipPath;
     }
 }

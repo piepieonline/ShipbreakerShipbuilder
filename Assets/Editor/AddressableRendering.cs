@@ -170,10 +170,12 @@ public class AddressableRendering : MonoBehaviour
     {
         var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(addressRef));
 
+        bool treatAsHardpointPosition = isHardpoint;
+
         // Only treat it as a hardpoint if it's loading from the game files, for some reason?
         if (prefab)
         {
-            isHardpoint = false;
+            treatAsHardpointPosition = false;
         }
         else
         {
@@ -218,7 +220,7 @@ public class AddressableRendering : MonoBehaviour
                     currentRecursiveDepth--;
                 }
 
-                await TryCacheAsset(addressRef, result, isHardpoint, addressRef + assetPath.Replace("/", "_"));
+                await TryCacheAsset(addressRef, result, treatAsHardpointPosition, addressRef + assetPath.Replace("/", "_"));
 
                 result.transform.localPosition = cachedPosition;
 
@@ -229,7 +231,7 @@ public class AddressableRendering : MonoBehaviour
                     {
                         if(currentRecursiveDepth++ < GameRenderWindow.maxLoopDepth)
                         {
-                            await LoadAddress(assetGUID, hardpoint.transform, isHardpoint);
+                            await LoadAddress(assetGUID, hardpoint.transform, treatAsHardpointPosition);
                         }
                         currentRecursiveDepth--;
                     }
@@ -244,17 +246,17 @@ public class AddressableRendering : MonoBehaviour
             temp.name = addressRef;
             temp.hideFlags = HideFlags.DontSave | HideFlags.HideInHierarchy;
 
-            if (isHardpoint)
+            if (treatAsHardpointPosition)
                 temp.transform.GetChild(0).localPosition = Vector3.zero;
 
             foreach (var room in temp.GetComponentsInChildren<RoomSubVolumeDefinition>())
             {
-                rooms.Add(RenderableMapping.RoomMapping(room.transform, isHardpoint));
+                rooms.Add(RenderableMapping.RoomMapping(room.transform, treatAsHardpointPosition));
             }
 
             foreach (var roomOverlap in temp.GetComponentsInChildren<RoomOpeningDefinition>())
             {
-                roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, isHardpoint));
+                roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, treatAsHardpointPosition));
             }
 
             if (disabledChildren != null)
@@ -266,7 +268,11 @@ public class AddressableRendering : MonoBehaviour
                     var cList = children.ToList();
                     foreach (var childPathPart in disabledChild.Split('/'))
                     {
-                        foundChild = children.Where(c => c.name.StartsWith(childPathPart)).First()?.gameObject;
+                        foundChild = children.Where(c => c.name.StartsWith(childPathPart)).FirstOrDefault()?.gameObject;
+                        if(foundChild == null)
+                        {
+                            Debug.LogError($"Error: {parent.name} does not have a child at path {disabledChild}");
+                        }
                         children = foundChild.transform.Cast<Transform>();
                     }
                     if (foundChild != null)
@@ -277,13 +283,16 @@ public class AddressableRendering : MonoBehaviour
             temp.AddComponent<FakePrefabDisplay>();
             fakes.Add(temp);
 
-            foreach (var hardpoint in temp.GetComponentsInChildren<FakeHardpoint>())
+            if(isHardpoint)
             {
-                if(currentRecursiveDepth++ < GameRenderWindow.maxLoopDepth)
+                foreach (var hardpoint in temp.GetComponentsInChildren<FakeHardpoint>())
                 {
-                    var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true);
+                    if(currentRecursiveDepth++ < GameRenderWindow.maxLoopDepth)
+                    {
+                        var hardpointPrefab = await LoadAddress(hardpoint.AssetGUID, hardpoint.transform, true);
+                    }
+                    currentRecursiveDepth--;
                 }
-                currentRecursiveDepth--;
             }
         }
 
@@ -389,7 +398,7 @@ public class AddressableRendering : MonoBehaviour
             EditorUtility.CopySerialized(roomOpening, newRoomOpening);
         }
 
-        if (inTransform.TryGetComponent<HardPoint>(out var hardPoint))
+        if (inTransform.TryGetComponent<HardPoint>(out var hardPoint) && hardPoint.gameObject.activeSelf)
         {
             var assetGUID = await LoadHardpoint(hardPoint);
             if (!string.IsNullOrEmpty(assetGUID))

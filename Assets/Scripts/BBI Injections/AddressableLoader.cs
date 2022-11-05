@@ -13,7 +13,16 @@ namespace BBI.Unity.Game
         public string assetGUID = "";
         public string childPath = "";
 
+        [HideInInspector]
+        public bool enableChildHardpoints = false;
+
         public List<string> disabledChildren = new List<string>();
+
+        // TODO: Not working right now
+        [HideInInspector]
+        public List<Component> componentsOnChildren = new List<Component>();
+        [HideInInspector]
+        public List<string> componentsOnChildrenPaths = new List<string>();
 
         void OnValidate()
         {

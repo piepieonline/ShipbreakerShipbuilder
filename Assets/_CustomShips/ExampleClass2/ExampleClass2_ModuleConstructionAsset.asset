@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: -680302862, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
   m_Name: ExampleClass2_ModuleConstructionAsset
   m_EditorClassIdentifier: 
+  m_AssetGUID: ee954277c628a2d4d9f5d9aff57e165e
   AssetBasis: 9900de72f695aa8458a72af8aca89a62
-  m_AssetGUID: 
   Data:
     m_ShipArchetype: {fileID: 0}
     m_Manufacturer: {fileID: 0}

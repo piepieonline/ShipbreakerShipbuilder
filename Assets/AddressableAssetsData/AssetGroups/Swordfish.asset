@@ -120,6 +120,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7445a4d8c721dad4c93c2f2879bc2abd
+    m_Address: Assets/_CustomShips/Swordfish/SwordfishShipCatalog.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

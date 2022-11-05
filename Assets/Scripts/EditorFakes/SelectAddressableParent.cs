@@ -21,7 +21,7 @@ public class SelectAddressableParent : MonoBehaviour
 
     void SelectParent()
     {
-        parent = GetComponentsInParent<BBI.Unity.Game.AddressableLoader>().FirstOrDefault()?.gameObject ?? GetComponentsInParent<FakeHardpoint>().FirstOrDefault()?.gameObject;
+        parent = GetComponentsInParent<BBI.Unity.Game.AddressableLoader>().FirstOrDefault()?.gameObject ?? GetComponentsInParent<BBI.Unity.Game.HardPoint>().FirstOrDefault()?.gameObject;
 
         if (parent == null) return;
 

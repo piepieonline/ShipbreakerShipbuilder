@@ -46,6 +46,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -95,6 +96,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -144,6 +146,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -193,6 +196,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -242,6 +246,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -291,6 +296,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -375,6 +381,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e087783ce3a9073458f6f37d806ac6a0
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -424,6 +431,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -473,6 +481,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -522,6 +531,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 4f1750b4d6bf2b24abfaa1a11b3f2ba5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -571,6 +581,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -684,6 +695,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -765,6 +777,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 853e59c2b0030ee4fad6e9a92696c548
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -877,6 +890,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -974,6 +988,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1023,6 +1038,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1075,6 +1091,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   - PRF_Panel_4xBx4 (3)
@@ -1190,6 +1207,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6e53171e7b05e374db3a8c4dfde026e1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1463,6 +1481,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 68ca19e01d1791548946414e5233d5ea
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1512,6 +1531,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1609,6 +1629,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1820,6 +1841,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1953,6 +1975,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -2003,6 +2026,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bc14fa19bd7354a40b6882cc5709c4d1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2100,6 +2124,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2149,6 +2174,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2198,6 +2224,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2247,6 +2274,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 853e59c2b0030ee4fad6e9a92696c548
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2296,6 +2324,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5b842480168815d4087b7eada4aeba82
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2345,6 +2374,7 @@ MonoBehaviour:
   refs: []
   assetGUID: eac70ccc9313a9940b818c8317c44199
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2395,6 +2425,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d7f2a28797a8c9844974f144b13321ed
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2563,6 +2594,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2655,6 +2687,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5c3fd15364d86394cbd859366356c488
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2716,6 +2749,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2765,6 +2799,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2848,6 +2883,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -2899,6 +2935,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2948,6 +2985,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2259647c5e73cc44aa0ee2cc2e2e3d92
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -2997,6 +3035,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5b842480168815d4087b7eada4aeba82
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3046,6 +3085,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3095,6 +3135,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3144,6 +3185,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3193,6 +3235,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3275,6 +3318,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3513,6 +3557,7 @@ MonoBehaviour:
   refs: []
   assetGUID: ebb7b7dc7b5bda34c942463c6763c086
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -3563,6 +3608,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3612,6 +3658,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3661,6 +3708,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3821,6 +3869,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -3951,6 +4000,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4000,6 +4050,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4049,6 +4100,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4098,6 +4150,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4147,6 +4200,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4201,6 +4255,7 @@ MonoBehaviour:
   refs: []
   assetGUID: fa799306c6d0c6045a1bdd929062bcb4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4449,6 +4504,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4533,6 +4589,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4582,6 +4639,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bc14fa19bd7354a40b6882cc5709c4d1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4666,6 +4724,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4749,6 +4808,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4798,6 +4858,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4847,6 +4908,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -4966,6 +5028,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5b842480168815d4087b7eada4aeba82
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5048,6 +5111,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5161,6 +5225,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5210,6 +5275,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5259,6 +5325,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5340,6 +5407,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5389,6 +5457,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5470,6 +5539,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -5590,6 +5660,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5639,6 +5710,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 125fdeaae8dbd29498abfa82ef6408b0
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5688,6 +5760,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5770,6 +5843,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5819,6 +5893,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5868,6 +5943,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 3d5fc4191e258d140812d03eacc1f8a8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5949,6 +6025,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -5998,6 +6075,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6047,6 +6125,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6096,6 +6175,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6145,6 +6225,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6194,6 +6275,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6243,6 +6325,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6326,6 +6409,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6375,6 +6459,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6424,6 +6509,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1bc3ebfbab7413d4a92996709bd90bcb
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6473,6 +6559,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6522,6 +6609,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6571,6 +6659,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6620,6 +6709,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6702,6 +6792,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6751,6 +6842,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6800,6 +6892,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6849,6 +6942,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6898,6 +6992,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -6933,6 +7028,8 @@ Transform:
   - {fileID: 6481512634743011372}
   - {fileID: 8688228966660565381}
   - {fileID: 3085889902965035834}
+  - {fileID: 5200024734340672835}
+  - {fileID: 5959258434675993780}
   m_Father: {fileID: 5526001368242576822}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6982,6 +7079,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2553fc6a159b9a409cb19d928a8d4e1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7031,6 +7129,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7199,6 +7298,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7249,6 +7349,7 @@ MonoBehaviour:
   refs: []
   assetGUID: a81b4ed11185f93409f1843739db442c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7298,6 +7399,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7411,6 +7513,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7460,6 +7563,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7669,6 +7773,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7879,6 +7984,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2c5991afd313f8641aa49766ce5d54df
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -7992,6 +8098,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8137,6 +8244,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8186,6 +8294,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8235,6 +8344,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8286,6 +8396,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dc03f4e88b4ae4c44bbca89195d378dd
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_Cutpoint
   - PRF_HP_Amplifier_Antenna
@@ -8369,6 +8480,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5b842480168815d4087b7eada4aeba82
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8418,6 +8530,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8467,6 +8580,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8518,6 +8632,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7fa062c4f4384ee428ae109c74c977d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Radial_ChassisKit_RoomCage_AxAx3C
   - PRF_ShipKit_Internal_RoundedInteriorRoom_NoPaintjob_5x5x3C/PRF_ShipKit_Internal_ChassisCornerTriangleTrim_3CxAx3C
@@ -8642,6 +8757,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2553fc6a159b9a409cb19d928a8d4e1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8691,6 +8807,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8740,6 +8857,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8792,6 +8910,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5c3fd15364d86394cbd859366356c488
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8853,6 +8972,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -8942,6 +9062,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2c7a8b5a96324124ab43b400f3b17b85
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9057,6 +9178,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1bc3ebfbab7413d4a92996709bd90bcb
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9335,6 +9457,7 @@ MonoBehaviour:
   refs: []
   assetGUID: da121151c1a40434689be5a27bde183d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   - PRF_Javelin_Cockpit_StarboardNoAerobridge
@@ -9389,6 +9512,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9438,6 +9562,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9487,6 +9612,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9537,6 +9663,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b3f974a51c2318a428e52c58f7b2462c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_HP_Jav_Bayonet
   componentsOnChildren: []
@@ -9634,6 +9761,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9747,6 +9875,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9796,6 +9925,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 853e59c2b0030ee4fad6e9a92696c548
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -9845,6 +9975,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10005,6 +10136,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10054,6 +10186,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10135,6 +10268,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10184,6 +10318,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10233,6 +10368,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10317,6 +10453,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -10367,6 +10504,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10416,6 +10554,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10545,6 +10684,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10658,6 +10798,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10707,6 +10848,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10756,6 +10898,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10805,6 +10948,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -10888,6 +11032,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5b842480168815d4087b7eada4aeba82
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11071,6 +11216,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11120,6 +11266,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11169,6 +11316,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11218,6 +11366,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2259647c5e73cc44aa0ee2cc2e2e3d92
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11285,6 +11434,70 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Metric: 0.25
   m_Type: {fileID: 0}
+--- !u!1 &3502141822420913355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5959258434675993780}
+  - component: {fileID: 7763580969860565034}
+  m_Layer: 0
+  m_Name: WallOrRadiation (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5959258434675993780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502141822420913355}
+  m_LocalRotation: {x: -0.50008976, y: -0.49991295, z: 0.5000868, w: -0.4999105}
+  m_LocalPosition: {x: -1.8750118, y: -1.8749882, z: 3.8750572}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2857410333865516703}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -270.02, y: 0, z: -90.02}
+--- !u!114 &7763580969860565034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502141822420913355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: 3533f67d6878c19408d8b82a6ee139e6
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &3512723006564770533
 GameObject:
   m_ObjectHideFlags: 0
@@ -11331,6 +11544,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 39f3ca33263261446aad0c163620df3b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11417,6 +11631,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11466,6 +11681,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11515,6 +11731,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e087783ce3a9073458f6f37d806ac6a0
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11564,6 +11781,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11613,6 +11831,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 4f1750b4d6bf2b24abfaa1a11b3f2ba5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11655,6 +11874,70 @@ Transform:
   m_Father: {fileID: 1749185415419549091}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
+--- !u!1 &3738542684300636930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5200024734340672835}
+  - component: {fileID: 6162392497587620098}
+  m_Layer: 0
+  m_Name: WallOrRadiation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5200024734340672835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738542684300636930}
+  m_LocalRotation: {x: -0.49983063, y: -0.50016963, z: -0.49983045, w: 0.5001692}
+  m_LocalPosition: {x: -1.8749882, y: 1.8749999, z: 0.125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2857410333865516703}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -89.972, y: 0, z: -89.961}
+--- !u!114 &6162392497587620098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738542684300636930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2009007612, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 0}
+  m_AssetRef:
+    m_AssetGUID: 3533f67d6878c19408d8b82a6ee139e6
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  m_DisableInFreeMode: 0
+  m_UseGenerationLimit: 0
+  m_GenerationLimit: -1
+  m_ConsumedHardPoints: []
+  m_SpawnedModuleRotationOverride: 0
+  m_FixedRotationOverride: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMin: {x: 0, y: 0, z: 0}
+  m_RandomRotationOverrideMax: {x: 0, y: 0, z: 0}
+  m_SpawnMultipleModulesWithThisHardPoint: 0
+  m_MinModulesToSpawn: 0
+  m_MaxModulesToSpawn: 0
+  m_Bounds: {x: 0, y: 0, z: 0}
+  m_Offset: {x: 0, y: 0, z: 0}
+  m_Metric: 0.25
+  m_Type: {fileID: 0}
 --- !u!1 &3755717871330495537
 GameObject:
   m_ObjectHideFlags: 0
@@ -11895,6 +12178,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -11946,6 +12230,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -11995,6 +12280,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12044,6 +12330,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12125,6 +12412,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12174,6 +12462,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12262,6 +12551,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12715,6 +13005,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12766,6 +13057,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dc03f4e88b4ae4c44bbca89195d378dd
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_Cutpoint
   - PRF_HP_Amplifier_Antenna
@@ -12817,6 +13109,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12866,6 +13159,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12915,6 +13209,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -12996,6 +13291,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13045,6 +13341,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1d1039742bfecb74fb38552a483c8bf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13094,6 +13391,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13145,6 +13443,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -13195,6 +13494,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -13246,6 +13546,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13295,6 +13596,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13344,6 +13646,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13393,6 +13696,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13442,6 +13746,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13491,6 +13796,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13540,6 +13846,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2259647c5e73cc44aa0ee2cc2e2e3d92
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13624,6 +13931,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13674,6 +13982,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b4a4e334fcb06944195f5feda5eae15b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13757,6 +14066,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13806,6 +14116,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13855,6 +14166,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13904,6 +14216,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -13961,6 +14274,7 @@ MonoBehaviour:
   refs: []
   assetGUID: a1c41fab2d8a93049a178aa164de5195
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14074,6 +14388,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 3d5fc4191e258d140812d03eacc1f8a8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14125,6 +14440,7 @@ MonoBehaviour:
   refs: []
   assetGUID: ebb7b7dc7b5bda34c942463c6763c086
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   - PRF_ShipKit_AirlockCoupler_Var01Longer_2Cx2Cx1CA/Volumes/Room - Crawlspace Side
@@ -14180,6 +14496,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14262,6 +14579,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14311,6 +14629,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14392,6 +14711,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14488,6 +14808,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14606,6 +14927,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14655,6 +14977,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14704,6 +15027,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14753,6 +15077,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14808,6 +15133,7 @@ MonoBehaviour:
   refs: []
   assetGUID: a631ead92b0ba0d47ac964cf1e41142c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14857,6 +15183,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 47bb89a9b8df6954b999947d6d105849
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -14970,6 +15297,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15019,6 +15347,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15068,6 +15397,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b4a4e334fcb06944195f5feda5eae15b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15120,6 +15450,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 4849ea1a6f3525742b82287006388aba
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15181,6 +15512,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -15266,6 +15598,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15397,6 +15730,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 64bee7c59f6a96345a180c772c4fbc04
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15526,6 +15860,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15612,6 +15947,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15661,6 +15997,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15710,6 +16047,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15759,6 +16097,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15908,6 +16247,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 88700d49c8481f94dbd00bd28daf9095
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -15959,6 +16299,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7fa062c4f4384ee428ae109c74c977d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Radial_ChassisKit_RoomCage_AxAx3C
   - PRF_ShipKit_Internal_RoundedInteriorRoom_NoPaintjob_5x5x3C/PRF_ShipKit_Internal_ChassisCornerTriangleTrim_3CxAx3C
@@ -16020,6 +16361,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16069,6 +16411,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16118,6 +16461,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f52a7d633e614042943d89e9ff0a954
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16167,6 +16511,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16411,6 +16756,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16460,6 +16806,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16509,6 +16856,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c523a31f1c686ed4ead87b3e34698fb6
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16558,6 +16906,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6096e611d609fcc4c91b12e0593d9848
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16642,6 +16991,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16691,6 +17041,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16740,6 +17091,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16887,6 +17239,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b87c04a1006a5f748bfab837a4fd3cac
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -16972,6 +17325,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5b842480168815d4087b7eada4aeba82
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17021,6 +17375,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17104,6 +17459,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17219,6 +17575,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17304,6 +17661,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17353,6 +17711,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17402,6 +17761,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7fa062c4f4384ee428ae109c74c977d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Radial_ChassisKit_RoomCage_AxAx3C
   - PRF_ShipKit_Internal_RoundedInteriorRoom_NoPaintjob_5x5x3C/PRF_ShipKit_Internal_ChassisCornerTriangleTrim_3CxAx3C
@@ -17459,6 +17819,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 64bee7c59f6a96345a180c772c4fbc04
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17508,6 +17869,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17720,6 +18082,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -17770,6 +18133,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17820,6 +18184,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b3f974a51c2318a428e52c58f7b2462c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_HP_Jav_Bayonet
   componentsOnChildren: []
@@ -17870,6 +18235,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e087783ce3a9073458f6f37d806ac6a0
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17919,6 +18285,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -17968,6 +18335,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18022,6 +18390,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   - PRF_Panel_4xBx4 (3)
@@ -18073,6 +18442,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18122,6 +18492,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18171,6 +18542,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1918e29d11d08d747ad581c37b76a0f2
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18220,6 +18592,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 64bee7c59f6a96345a180c772c4fbc04
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18303,6 +18676,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18352,6 +18726,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18401,6 +18776,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7fa062c4f4384ee428ae109c74c977d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Radial_ChassisKit_RoomCage_AxAx3C
   - PRF_ShipKit_Internal_RoundedInteriorRoom_NoPaintjob_5x5x3C/PRF_ShipKit_Internal_ChassisCornerTriangleTrim_3CxAx3C
@@ -18458,6 +18834,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18507,6 +18884,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18723,6 +19101,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18804,6 +19183,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -18924,6 +19304,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -18975,6 +19356,7 @@ MonoBehaviour:
   refs: []
   assetGUID: fc85e68d6eba29c4ab01712caa1153c3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19024,6 +19406,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19073,6 +19456,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19192,6 +19576,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2c7a8b5a96324124ab43b400f3b17b85
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19241,6 +19626,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19290,6 +19676,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19339,6 +19726,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19436,6 +19824,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19485,6 +19874,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19662,6 +20052,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19711,6 +20102,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19763,6 +20155,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5c3fd15364d86394cbd859366356c488
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19824,6 +20217,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -19912,6 +20306,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20121,6 +20516,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20170,6 +20566,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20219,6 +20616,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20268,6 +20666,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20317,6 +20716,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20366,6 +20766,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20415,6 +20816,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b4a4e334fcb06944195f5feda5eae15b
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20464,6 +20866,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20513,6 +20916,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20562,6 +20966,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20644,6 +21049,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20726,6 +21132,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20775,6 +21182,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20857,6 +21265,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -20970,6 +21379,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21019,6 +21429,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21068,6 +21479,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21149,6 +21561,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21230,6 +21643,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21279,6 +21693,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b161b94f4388d854c9b48c89d57b0b36
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21361,6 +21776,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 3d4a90b34f326da42abd3e74dfe37af9
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21445,6 +21861,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 4849ea1a6f3525742b82287006388aba
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21611,6 +22028,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 853e59c2b0030ee4fad6e9a92696c548
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21630,7 +22048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6481512634743011372
 Transform:
   m_ObjectHideFlags: 0
@@ -21660,6 +22078,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21741,6 +22160,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2c4ae1d9416f84e40bb8cbac0e7fd3b3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21790,6 +22210,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21871,6 +22292,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21920,6 +22342,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 16f35771a347aef4888438f3fbcbf2d0
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -21969,6 +22392,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22018,6 +22442,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7fa062c4f4384ee428ae109c74c977d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Radial_ChassisKit_RoomCage_AxAx3C
   - PRF_ShipKit_Internal_RoundedInteriorRoom_NoPaintjob_5x5x3C/PRF_ShipKit_Internal_ChassisCornerTriangleTrim_3CxAx3C
@@ -22075,6 +22500,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22188,6 +22614,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22237,6 +22664,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22355,6 +22783,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22404,6 +22833,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6e53171e7b05e374db3a8c4dfde026e1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22453,6 +22883,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22502,6 +22933,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 35fb5991f7e70334b9a7e8c29ea62358
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22652,6 +23084,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5c3fd15364d86394cbd859366356c488
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22713,6 +23146,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7fa062c4f4384ee428ae109c74c977d3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_ShipKit_Radial_ChassisKit_RoomCage_AxAx3C
   - PRF_ShipKit_Internal_RoundedInteriorRoom_NoPaintjob_5x5x3C/PRF_ShipKit_Internal_ChassisCornerTriangleTrim_3CxAx3C
@@ -22770,6 +23204,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22819,6 +23254,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22900,6 +23336,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22949,6 +23386,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -22998,6 +23436,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23081,6 +23520,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 96d89125766e98240b5fa8f1ed9e0de3
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23130,6 +23570,7 @@ MonoBehaviour:
   refs: []
   assetGUID: eac70ccc9313a9940b818c8317c44199
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23179,6 +23620,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23228,6 +23670,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23277,6 +23720,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23326,6 +23770,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23375,6 +23820,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 2259647c5e73cc44aa0ee2cc2e2e3d92
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23424,6 +23870,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23507,6 +23954,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 324e4b6da115b5b45b743b4461a1328d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23556,6 +24004,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b615c3eadf4b9254cbb32fa1b38a7421
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23797,6 +24246,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23816,7 +24266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8794082028167734745
 Transform:
   m_ObjectHideFlags: 0
@@ -23846,6 +24296,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -23994,6 +24445,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b651e6f35359e5147a5441ce983a83be
   childPath: PRF_SubSystems_Reactor_ClassB
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_SubSystems_Reactor_ClassB
   componentsOnChildren: []
@@ -24276,6 +24728,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24328,6 +24781,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5c3fd15364d86394cbd859366356c488
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24456,6 +24910,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 5c3fd15364d86394cbd859366356c488
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24517,6 +24972,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24566,6 +25022,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24620,6 +25077,7 @@ MonoBehaviour:
   refs: []
   assetGUID: a631ead92b0ba0d47ac964cf1e41142c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Reinforce_Chamfer_Bx1AxB
   - PRF_Shipkit_ReinforcementBeam_BxBx1C_ExtendedAngledEnd
@@ -24672,6 +25130,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24721,6 +25180,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -24772,6 +25232,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1b62756b0c557fd4b9521decf87de63d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24821,6 +25282,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 18a901626b13cc44fa20245912830ca4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24870,6 +25332,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -24920,6 +25383,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b3f974a51c2318a428e52c58f7b2462c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_HP_Jav_Bayonet
   componentsOnChildren: []
@@ -25018,6 +25482,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 65991eadfe3b0c14983ee6b234b6eee7
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - SG_WasteDisposalUnit
   - SM_Component_WasteDisposal_BraceNib2 (1)
@@ -25069,6 +25534,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25118,6 +25584,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25167,6 +25634,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bc14fa19bd7354a40b6882cc5709c4d1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25216,6 +25684,7 @@ MonoBehaviour:
   refs: []
   assetGUID: c2ed2a5a9c64cc24ea13dd5b026d2712
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25312,6 +25781,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25361,6 +25831,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25410,6 +25881,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25459,6 +25931,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25508,6 +25981,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25557,6 +26031,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25650,6 +26125,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dc03f4e88b4ae4c44bbca89195d378dd
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - HP_Cutpoint
   - PRF_HP_Amplifier_Antenna
@@ -25709,6 +26185,7 @@ MonoBehaviour:
   refs: []
   assetGUID: a1c41fab2d8a93049a178aa164de5195
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25758,6 +26235,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25807,6 +26285,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25856,6 +26335,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -25905,6 +26385,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26002,6 +26483,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26053,6 +26535,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -26167,6 +26650,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 3b8555507ab65534b84d0224be16a327
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26216,6 +26700,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26265,6 +26750,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26314,6 +26800,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26363,6 +26850,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26481,6 +26969,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26530,6 +27019,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26712,6 +27202,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26761,6 +27252,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7f8a39233b29b504a81bf6d17f6d296d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26810,6 +27302,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26859,6 +27352,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26908,6 +27402,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -26990,6 +27485,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27039,6 +27535,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27088,6 +27585,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27137,6 +27635,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 1d1039742bfecb74fb38552a483c8bf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27186,6 +27685,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27235,6 +27735,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27286,6 +27787,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -27376,6 +27878,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27425,6 +27928,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27474,6 +27978,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bd6c65b248ea41f408abb2ed67d92225
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27523,6 +28028,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27572,6 +28078,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27621,6 +28128,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27670,6 +28178,7 @@ MonoBehaviour:
   refs: []
   assetGUID: df6baca9dc6efbd4aa1ebe2fdc604a1d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27719,6 +28228,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bf19fdb5626cba34c8415ffc77e939be
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27768,6 +28278,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27849,6 +28360,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27898,6 +28410,7 @@ MonoBehaviour:
   refs: []
   assetGUID: d5562a278d5db4249a8831f6d3aa087c
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27947,6 +28460,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -27996,6 +28510,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28093,6 +28608,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28142,6 +28658,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 9a892cecf5257f64a96dabb4ecdf6643
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28239,6 +28756,7 @@ MonoBehaviour:
   refs: []
   assetGUID: b161b94f4388d854c9b48c89d57b0b36
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28288,6 +28806,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28337,6 +28856,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28386,6 +28906,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28435,6 +28956,7 @@ MonoBehaviour:
   refs: []
   assetGUID: e8658edfe4b7ad847b6853f51aa95689
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28484,6 +29006,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28572,6 +29095,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f67aa5d2ede6fdf4fb14abdffc97935e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   componentsOnChildren: []
@@ -28622,6 +29146,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 35e6215cd51fe444b9a8e58bd696d6d4
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28742,6 +29267,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28791,6 +29317,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28840,6 +29367,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28889,6 +29417,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 95e237e4d84d3f44b86c2e8a743d9cf5
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28938,6 +29467,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 3d4a90b34f326da42abd3e74dfe37af9
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -28987,6 +29517,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29137,6 +29668,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 072b711609b97c742be475224ab32f68
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29186,6 +29718,7 @@ MonoBehaviour:
   refs: []
   assetGUID: dfb58d5e0d7f5ac41b455511e96b20f8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29235,6 +29768,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 52d5f7efd3adb7f42807a10c5ca02a3e
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29284,6 +29818,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29333,6 +29868,7 @@ MonoBehaviour:
   refs: []
   assetGUID: f381ab1820ebb544cb57e7b48dd6465d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29417,6 +29953,7 @@ MonoBehaviour:
   refs: []
   assetGUID: da121151c1a40434689be5a27bde183d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Javelin_Octogon_ChassisRing
   - PRF_Gecko_Airlock 1Way/PRF_AirLock_Board_Wall (1)
@@ -29472,6 +30009,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 7d575a8832ad5cc41868f95824c7e07d
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29587,6 +30125,7 @@ MonoBehaviour:
   refs: []
   assetGUID: bc14fa19bd7354a40b6882cc5709c4d1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -29703,6 +30242,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f5f3f62762389547a24687e9b425666
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -30184,9 +30724,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
---- !u!1 &9095781602176364408 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+--- !u!4 &8594104148085277676 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 1672315801680173083}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3414019963195412589 stripped
@@ -30194,14 +30734,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4058951958339356790, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 1672315801680173083}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8002831721945340882 stripped
+--- !u!1 &5389044248513546240 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 1672315801680173083}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8594104148085277676 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+--- !u!1 &9095781602176364408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 1672315801680173083}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4026971557511214765 stripped
@@ -30214,9 +30754,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2909117181186250298, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 1672315801680173083}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5389044248513546240 stripped
+--- !u!1 &8002831721945340882 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 1672315801680173083}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &3810342990343715170
@@ -30426,19 +30966,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+--- !u!1 &3989637488582596037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2909117181186250298, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 2234146611911164927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7438767706284179510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 2234146611911164927}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &9182961607500978184 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 2234146611911164927}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8506947788698924188 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2234146611911164927}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2834175718129798025 stripped
@@ -30451,9 +30986,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2234146611911164927}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3989637488582596037 stripped
+--- !u!1 &8506947788698924188 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2909117181186250298, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 2234146611911164927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9182961607500978184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2234146611911164927}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4600048333744926025 stripped
@@ -30731,14 +31271,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4058951958339356790, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2947107359536752601}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5230681289503177774 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+--- !u!1 &8438272261634979778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2947107359536752601}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5826740752525059088 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 2947107359536752601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5230681289503177774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2947107359536752601}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &52205012653650403 stripped
@@ -30754,11 +31299,6 @@ GameObject:
 --- !u!1 &4749553746924179642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 2947107359536752601}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8438272261634979778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 2947107359536752601}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &2186668656988586389
@@ -31603,26 +32143,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2366623014648671926, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 6377437857504306756}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3571005417054408999 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 6377437857504306756}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6977622544616369714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4058951958339356790, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 6377437857504306756}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4102800826296368563 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 6377437857504306756}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2358675236985038221 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 6377437857504306756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &395697313894659679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
@@ -31631,6 +32151,26 @@ GameObject:
 --- !u!1 &8133069201133514878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2909117181186250298, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 6377437857504306756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4102800826296368563 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 6377437857504306756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3571005417054408999 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 6377437857504306756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2358675236985038221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 6377437857504306756}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6977622544616369714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4058951958339356790, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 6377437857504306756}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1319488576425168119
@@ -31946,14 +32486,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
---- !u!1 &2219061459180414257 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
-  m_PrefabInstance: {fileID: 7417771580112611064}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6819994368299511438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4058951958339356790, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+--- !u!4 &468393737650142479 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 7417771580112611064}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5669598013451808962 stripped
@@ -31961,9 +32496,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2909117181186250298, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 7417771580112611064}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1152570227799855515 stripped
+--- !u!1 &6819994368299511438 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4058951958339356790, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 7417771580112611064}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4255284401093605091 stripped
@@ -31971,14 +32506,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6772562188099407899, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 7417771580112611064}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &468393737650142479 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6949377945613818871, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+--- !u!1 &1152570227799855515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7570541561309181795, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 7417771580112611064}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5054966108503427150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2366623014648671926, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
+  m_PrefabInstance: {fileID: 7417771580112611064}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2219061459180414257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8663385613563380681, guid: 8096ef8ee6118c44ea682117e1a13514, type: 3}
   m_PrefabInstance: {fileID: 7417771580112611064}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1212899212754690054
@@ -32342,9 +32882,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10bf19e60cd502f46b9d1bc8eada74f5, type: 3}
---- !u!4 &3144063485012933734 stripped
+--- !u!4 &656750484546790601 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6080001465392663842, guid: 10bf19e60cd502f46b9d1bc8eada74f5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 8564803176939083149, guid: 10bf19e60cd502f46b9d1bc8eada74f5, type: 3}
   m_PrefabInstance: {fileID: 9205766701733212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2737621819172182003 stripped
@@ -32352,9 +32892,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6502222046442858167, guid: 10bf19e60cd502f46b9d1bc8eada74f5, type: 3}
   m_PrefabInstance: {fileID: 9205766701733212484}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &656750484546790601 stripped
+--- !u!4 &3144063485012933734 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8564803176939083149, guid: 10bf19e60cd502f46b9d1bc8eada74f5, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6080001465392663842, guid: 10bf19e60cd502f46b9d1bc8eada74f5, type: 3}
   m_PrefabInstance: {fileID: 9205766701733212484}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1132591700011340131

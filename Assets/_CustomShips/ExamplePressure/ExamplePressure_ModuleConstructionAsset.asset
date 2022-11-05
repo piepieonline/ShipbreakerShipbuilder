@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: -680302862, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
   m_Name: ExamplePressure_ModuleConstructionAsset
   m_EditorClassIdentifier: 
+  m_AssetGUID: 2777b9404255d434ea44ffb92c310a52
   AssetBasis: e12fedd63b6c4b1468821b2ea98e2d95
-  m_AssetGUID: 
   Data:
     m_ShipArchetype: {fileID: 0}
     m_Manufacturer: {fileID: 0}

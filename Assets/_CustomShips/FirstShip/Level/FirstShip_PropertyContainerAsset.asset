@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2011575154, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
+  m_Name: FirstShip_PropertyContainerAsset
+  m_EditorClassIdentifier: 
+  m_AssetGUID: 9a9ae34fc32e41c428b55cce78723435
+  AssetBasis: 83c90cfd3d2eb894bae80e0f359b85cf
+  m_Theme: []
+  m_Condition: []
+  m_Difficulty: []
+  m_LightLevel: []
+  m_ValueRange: []
+  m_Atmosphere: []
+  m_RoomType: []
+  m_Company: []
+  m_Role: []
+  m_Size: []
+  m_StartingChance: 0
+  m_DiminishRate: 0
+  m_Affixes: []
+  m_ShipTierGainedPATs: []
+  m_ShipTierLostPATs: []

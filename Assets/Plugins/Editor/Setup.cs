@@ -34,10 +34,11 @@ public class Setup
 
         foreach(var typeDefinition in typeAssetTypes)
         {
-            var foundField = typeDefinition.Fields.Where(field => field.Name == "AssetBasis").FirstOrDefault();
-            if(foundField != null)
+            var foundFieldAssetBasis = typeDefinition.Fields.Where(field => field.Name == "AssetBasis").FirstOrDefault();
+            var foundFieldAssetCloneRef = typeDefinition.Fields.Where(field => field.Name == "AssetCloneRef").FirstOrDefault();
+            if(foundFieldAssetBasis != null && foundFieldAssetCloneRef != null)
             {
-                fields.Add(foundField);
+                fields.Add(foundFieldAssetBasis);
             }
         }
 
@@ -68,6 +69,7 @@ public class Setup
             foreach(var typeDefinition in typeAssetTypes)
             {
                 typeDefinition.Fields.Insert(0, new FieldDefinition("AssetBasis", FieldAttributes.Public, writingAssembly.MainModule.ImportReference(typeof(string))));
+                typeDefinition.Fields.Insert(0, new FieldDefinition("AssetCloneRef", FieldAttributes.Public, writingAssembly.MainModule.ImportReference(typeof(string))));
             }
 
             writingAssembly.Write(assemblyPath);

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: -680302862, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
   m_Name: Swordfish_ModuleConstructionAsset
   m_EditorClassIdentifier: 
-  AssetBasis: 64a1a1f3e77574f468b15c16dfe0229f
-  m_AssetGUID: 
+  m_AssetGUID: 97ed8cdb8dcbc404589b840eb3327067
+  AssetBasis: 118843c85e405524287bdd12fbaabb65
   Data:
-    m_ShipArchetype: {fileID: 0}
+    m_ShipArchetype: {fileID: 11400000, guid: a71c79fc6b9f4b34cb93570b2f709238, type: 2}
     m_Manufacturer: {fileID: 0}
     ManufacturerRef:
       m_AssetGUID: 
@@ -36,7 +36,7 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     m_CatalogueImageRef:
-      m_AssetGUID: 
+      m_AssetGUID: 7445a4d8c721dad4c93c2f2879bc2abd
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

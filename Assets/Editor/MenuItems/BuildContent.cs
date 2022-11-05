@@ -19,6 +19,17 @@ public class BuildContent
     [MenuItem("Shipbreaker/Build", priority = 2)]
     static bool RunBuild()
     {
+        foreach(var typeAsset in Resources.FindObjectsOfTypeAll<BBI.Unity.Game.TypeAsset>())
+        {
+            if(AssetDatabase.TryGetGUIDAndLocalFileIdentifier(typeAsset, out string guid, out long id))
+            {
+                typeAsset.SetAssetGUIDInEditMode(guid);
+                EditorUtility.SetDirty(typeAsset);
+            }
+        }
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
         AddressableAssetSettingsDefaultObject.Settings.activeProfileId = AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetProfileId("Default");
 
         AddressableAssetSettings.BuildPlayerContent(out AddressablesPlayerBuildResult result);
@@ -66,8 +77,9 @@ public class BuildContent
             foreach(var assetGUID in AssetDatabase.FindAssets($"t:{typeString}", null))
             {
                 var asset = AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(assetGUID), type);
-                var val = ((string)type.GetField("AssetBasis").GetValue(asset));
-                if(val != null && val != "")
+                var AssetCloneRef = ((string)type.GetField("AssetCloneRef").GetValue(asset));
+                var AssetBasis = ((string)type.GetField("AssetBasis").GetValue(asset));
+                if((AssetBasis != null && AssetBasis != "") || (AssetCloneRef != null && AssetCloneRef != ""))
                 {
                     baseVersionList.Add($"[{assetGUID}]");
                 }

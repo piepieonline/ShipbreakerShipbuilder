@@ -16,9 +16,8 @@ public class Create_Hardpoint : EditorWindow
     }
 
     string hardpointName;
-    string assetRef;
-
-    float weight;
+    HardpointAssetReference[] assetReferences = new HardpointAssetReference[0];
+    bool assetReferencesOpen;
     float weightEmpty;
 
     void OnGUI()
@@ -28,10 +27,9 @@ public class Create_Hardpoint : EditorWindow
 
             GUILayout.Label("Hardpoint name", EditorStyles.label);
             hardpointName = GUILayout.TextField(hardpointName);
-            GUILayout.Label("Hardpoint asset reference", EditorStyles.label);
-            assetRef = GUILayout.TextField(assetRef);
-            GUILayout.Label("Spawn weight", EditorStyles.label);
-            weight = EditorGUILayout.FloatField(weight);
+
+            assetReferences = HardpointAssetReferenceArrayField("Asset references", ref assetReferencesOpen, assetReferences);
+        
             GUILayout.Label("Spawn empty weight", EditorStyles.label);
             weightEmpty = EditorGUILayout.FloatField(weightEmpty);
 
@@ -41,7 +39,7 @@ public class Create_Hardpoint : EditorWindow
                 if (folderPath.Contains("."))
                     folderPath = folderPath.Remove(folderPath.LastIndexOf('/'));
                 
-                var createdGUID = CreateHardpointAsset(folderPath, hardpointName, assetRef, weight, weightEmpty);
+                var createdGUID = CreateHardpointAsset(folderPath, hardpointName, assetReferences, weightEmpty);
                 
                 Selection.activeObject = AssetDatabase.LoadAssetAtPath<GameObject>(AssetDatabase.GUIDToAssetPath(createdGUID));
 
@@ -50,15 +48,18 @@ public class Create_Hardpoint : EditorWindow
         }
     }
 
-    public static string CreateHardpointAsset(string folderPath, string hardpointName, string assetRef, float weight, float weightEmpty)
+    public static string CreateHardpointAsset(string folderPath, string hardpointName, HardpointAssetReference[] assetReferences, float weightEmpty)
     {
         var moduleEntryContainer = CreateInstance<ModuleEntryContainer>();
 
-        var moduleEntryDefinition = CreateInstance<ModuleEntryDefinition>();
-        moduleEntryDefinition.ModuleDefRef = new AssetReferenceGameObject(assetRef);
-        moduleEntryDefinition.Weight = weight;
-        AssetDatabase.CreateAsset(moduleEntryDefinition, $"{folderPath}/{hardpointName}_ModuleEntryDefinition.asset");
-        moduleEntryContainer.Add(moduleEntryDefinition);
+        foreach(var assetRef in assetReferences)
+        {
+            var moduleEntryDefinition = CreateInstance<ModuleEntryDefinition>();
+            moduleEntryDefinition.ModuleDefRef = new AssetReferenceGameObject(assetRef.assetRef);
+            moduleEntryDefinition.Weight = assetRef.weight;
+            AssetDatabase.CreateAsset(moduleEntryDefinition, $"{folderPath}/{hardpointName}_ModuleEntryDefinition.asset");
+            moduleEntryContainer.Add(moduleEntryDefinition);
+        }
 
         if(weightEmpty > 0)
         {
@@ -85,5 +86,51 @@ public class Create_Hardpoint : EditorWindow
         AssetDatabase.SaveAssets();
 
         return moduleListAssetGuid;
+    }
+
+    public static HardpointAssetReference[] HardpointAssetReferenceArrayField(string label, ref bool open, HardpointAssetReference[] array) {
+        open = EditorGUILayout.Foldout(open, label);
+        int newSize = array.Length;
+
+        if (open) {
+            newSize = EditorGUILayout.IntField("Size", newSize);
+            newSize = newSize < 0 ? 0 : newSize;
+
+            if (newSize != array.Length) {
+                array = ResizeArray<HardpointAssetReference>(array, newSize);
+            }
+
+            for (var i = 0; i < newSize; i++) {
+                EditorGUILayout.BeginHorizontal();
+                array[i].assetRef = EditorGUILayout.TextField("Reference: ", array[i].assetRef, GUILayout.ExpandWidth(true));
+                array[i].weight = EditorGUILayout.FloatField("Weight: ", array[i].weight, GUILayout.ExpandWidth(false));
+                EditorGUILayout.EndHorizontal();
+            }
+        }
+        return array;
+    }
+
+    private static T[] ResizeArray<T>(T[] array, int size) where T : new()
+    {
+        T[] newArray = new T[size];
+
+        for (var i = 0; i < size; i++) {
+            if (i < array.Length) {
+                newArray[i] = array[i];
+            }
+            else
+            {
+                newArray[i] = new T();
+            }
+        }
+
+        return newArray;
+    }
+
+    [System.Serializable]
+    public class HardpointAssetReference
+    {
+        public string assetRef;
+        public float weight;
     }
 }

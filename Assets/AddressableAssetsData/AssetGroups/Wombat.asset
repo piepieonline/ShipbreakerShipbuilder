@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 228af8fd329b1294ca03e6c2c382da24
   m_SerializeEntries:
-  - m_GUID: 7151b4118af3fc143acade43a7935919
-    m_Address: Assets/_CustomShips/Experiments/Experiments.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3d2d8343bf47d5c4e92ba75334f8fb49
     m_Address: Assets/_CustomShips/ExamplePressure/Spawn/Spawn_ModuleListAsset.asset
     m_ReadOnly: 0
@@ -246,29 +241,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 48e7d7cff47868247aa811768678528a
-    m_Address: Assets/_CustomShips/Experiments/Experiments_LevelAsset.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - GameMode_Free
-    - Release
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7e408ee7847f0344796e867ca5d46ca9
-    m_Address: Assets/_CustomShips/Experiments/Experiments_ModuleConstructionAsset.asset
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - ModdedLevel
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6ca561e0fadaed648888c05001bf4604
-    m_Address: Assets/_CustomShips/Experiments/Spawn/Experiments_RootRef.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: edf10bd49e2d3a947afd63ee96ef5a98
-    m_Address: Assets/_CustomShips/Experiments/Spawn/Spawn_ModuleListAsset.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 69b68048802f4c94180220ecc793a856
     m_Address: Assets/CustomOperation/FirstShip/Components/Cockpit/CockpitBackRoom.prefab
     m_ReadOnly: 0
@@ -399,6 +371,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46d85cd9ba50c714aa12c7252b1de398
     m_Address: Assets/CustomOperation/FirstShip/ShipImage.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72363a6d5e3681c40b6cf9b39480045a
+    m_Address: Assets/_CustomShips/FirstShip/SwordfishShipCatalog.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

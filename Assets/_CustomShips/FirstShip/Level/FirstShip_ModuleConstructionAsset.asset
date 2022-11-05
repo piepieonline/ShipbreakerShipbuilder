@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: -680302862, guid: ce18f73e52ea6c74eaa70e7784553b2c, type: 3}
   m_Name: FirstShip_ModuleConstructionAsset
   m_EditorClassIdentifier: 
+  m_AssetGUID: 52445c10e45068c4ca1e5a6f9a9d86a1
   AssetBasis: 64a1a1f3e77574f468b15c16dfe0229f
-  m_AssetGUID: 
   Data:
     m_ShipArchetype: {fileID: 11400000, guid: 7520bc2b2600662419c6851b162d9012, type: 2}
     m_Manufacturer: {fileID: 0}
@@ -36,11 +36,11 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     m_CatalogueImageRef:
-      m_AssetGUID: 
+      m_AssetGUID: 72363a6d5e3681c40b6cf9b39480045a
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    m_SkinData: {fileID: 11400000, guid: 9c3c12a91aa64ab49a62f09ec65c9afe, type: 2}
+    m_SkinData: {fileID: 0}
     m_PropertyData: {fileID: 0}
     m_ShipRewardsData: {fileID: 0}
     m_IsTutorialShip: 0
@@ -49,10 +49,7 @@ MonoBehaviour:
     m_ShipAudioSize: {fileID: 0}
     m_VitalityData: {fileID: 0}
     m_ShipIcon: {fileID: 0}
-    m_Restrictions:
-    - Type: {fileID: 11400000, guid: 8263e1b9bafae874dbc08d8bb04dbf83, type: 2}
-      Max: 3
-      Properties: []
+    m_Restrictions: []
     m_NoRandomSeed: 0
     m_SeedToSet: 0
     m_ShipEncounteredPlayerAction: {fileID: 0}
