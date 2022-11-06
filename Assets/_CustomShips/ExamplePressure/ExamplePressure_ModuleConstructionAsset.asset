@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ExamplePressure_ModuleConstructionAsset
   m_EditorClassIdentifier: 
   m_AssetGUID: 2777b9404255d434ea44ffb92c310a52
+  AssetCloneRef: 
   AssetBasis: e12fedd63b6c4b1468821b2ea98e2d95
   Data:
     m_ShipArchetype: {fileID: 0}

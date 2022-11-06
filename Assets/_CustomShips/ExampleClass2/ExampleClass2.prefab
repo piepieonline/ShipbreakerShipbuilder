@@ -46,7 +46,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1918e29d11d08d747ad581c37b76a0f2
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &1882216181
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +252,10 @@ MonoBehaviour:
   refs: []
   assetGUID: b651e6f35359e5147a5441ce983a83be
   childPath: PRF_SubSystems_Reactor_ClassB
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &252351744818133572
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +428,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 853e59c2b0030ee4fad6e9a92696c548
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &4855873206539331892
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +478,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 828a401dea9a6d140a832499ecaff83a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5092032524644009805
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,11 +528,14 @@ MonoBehaviour:
   refs: []
   assetGUID: 35c477eb326a5a644a6b6cc50822043a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren:
   - PRF_Light_Running_C
   - PRF_Light_Running_C (1)
   - PRF_Light_Running_C (2)
   - PRF_Light_Running_C (3)
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5380432946100410750
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +582,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 6f52a7d633e614042943d89e9ff0a954
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &5709646020246950583
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,7 +632,10 @@ MonoBehaviour:
   refs: []
   assetGUID: bc14fa19bd7354a40b6882cc5709c4d1
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &6076458057854129307
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +682,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 1918e29d11d08d747ad581c37b76a0f2
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8144069909746308536
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,7 +732,10 @@ MonoBehaviour:
   refs: []
   assetGUID: 3a6a5c0b9da886d4b9ffc87460fce2ee
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
+  componentsOnChildren: []
+  componentsOnChildrenPaths: []
 --- !u!1 &8674902959785398093
 GameObject:
   m_ObjectHideFlags: 0

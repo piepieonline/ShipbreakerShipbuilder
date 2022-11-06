@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ExampleClass2_ModuleConstructionAsset
   m_EditorClassIdentifier: 
   m_AssetGUID: ee954277c628a2d4d9f5d9aff57e165e
+  AssetCloneRef: 
   AssetBasis: 9900de72f695aa8458a72af8aca89a62
   Data:
     m_ShipArchetype: {fileID: 0}

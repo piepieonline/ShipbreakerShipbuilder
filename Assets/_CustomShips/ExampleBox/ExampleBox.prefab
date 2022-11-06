@@ -46,6 +46,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -95,6 +96,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -144,6 +146,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -193,6 +196,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 8bfcf9445daf21c40ad30d9510038d99
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -242,6 +246,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 68ca19e01d1791548946414e5233d5ea
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -291,6 +296,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -340,6 +346,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -389,6 +396,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -502,6 +510,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -551,6 +560,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -600,6 +610,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -728,6 +739,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -777,6 +789,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 35c477eb326a5a644a6b6cc50822043a
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -826,6 +839,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -875,6 +889,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -924,6 +939,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -973,6 +989,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1086,6 +1103,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 15e523455b134fe40b33c5d6a4346fe8
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []
@@ -1135,6 +1153,7 @@ MonoBehaviour:
   refs: []
   assetGUID: 0caceaf1d5a2db34082d0fac56da1914
   childPath: 
+  enableChildHardpoints: 0
   disabledChildren: []
   componentsOnChildren: []
   componentsOnChildrenPaths: []

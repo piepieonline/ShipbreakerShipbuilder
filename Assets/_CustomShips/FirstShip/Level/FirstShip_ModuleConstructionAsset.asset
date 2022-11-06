@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FirstShip_ModuleConstructionAsset
   m_EditorClassIdentifier: 
   m_AssetGUID: 52445c10e45068c4ca1e5a6f9a9d86a1
+  AssetCloneRef: 
   AssetBasis: 64a1a1f3e77574f468b15c16dfe0229f
   Data:
     m_ShipArchetype: {fileID: 11400000, guid: 7520bc2b2600662419c6851b162d9012, type: 2}
@@ -49,7 +50,10 @@ MonoBehaviour:
     m_ShipAudioSize: {fileID: 0}
     m_VitalityData: {fileID: 0}
     m_ShipIcon: {fileID: 0}
-    m_Restrictions: []
+    m_Restrictions:
+    - Type: {fileID: 11400000, guid: c1a4320a4e3025b46a98709ee97e28c7, type: 2}
+      Max: 1
+      Properties: []
     m_NoRandomSeed: 0
     m_SeedToSet: 0
     m_ShipEncounteredPlayerAction: {fileID: 0}

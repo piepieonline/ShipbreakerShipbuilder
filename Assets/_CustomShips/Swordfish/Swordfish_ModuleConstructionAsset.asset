@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Swordfish_ModuleConstructionAsset
   m_EditorClassIdentifier: 
   m_AssetGUID: 97ed8cdb8dcbc404589b840eb3327067
+  AssetCloneRef: 
   AssetBasis: 118843c85e405524287bdd12fbaabb65
   Data:
     m_ShipArchetype: {fileID: 11400000, guid: a71c79fc6b9f4b34cb93570b2f709238, type: 2}

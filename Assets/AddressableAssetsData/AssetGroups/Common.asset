@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: ac6adf41935d3ba4ea6462428e98e6f3
   m_SerializeEntries:
-  - m_GUID: 61dbaea3826b0344794f35dbff252404
-    m_Address: Assets/_CustomShips/_Common/Shaders/FakeLynxHDSurface.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: dd1247acda043024f88591cc4b285aaa, type: 2}
   m_SchemaSet:

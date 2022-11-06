@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FirstShip_PropertyContainerAsset
   m_EditorClassIdentifier: 
   m_AssetGUID: 9a9ae34fc32e41c428b55cce78723435
+  AssetCloneRef: 
   AssetBasis: 83c90cfd3d2eb894bae80e0f359b85cf
   m_Theme: []
   m_Condition: []
