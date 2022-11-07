@@ -35,7 +35,7 @@ public class AddressableComponentLoaderEditor : Editor
 
             EditorGUI.indentLevel++;
 
-            foldoutsOpen[index] = EditorGUI.Foldout(new Rect(position.x, position.y, 10, EditorGUIUtility.singleLineHeight), foldoutsOpen[index], element?.FindPropertyRelative("component")?.objectReferenceValue.GetType().ToString() ?? "<Missing Component?");
+            foldoutsOpen[index] = EditorGUI.Foldout(new Rect(position.x, position.y, 10, EditorGUIUtility.singleLineHeight), foldoutsOpen[index], element?.FindPropertyRelative("component")?.objectReferenceValue?.GetType().ToString() ?? "Missing Component");
 
             // EditorGUI.PropertyField(new Rect(position.x + 200, position.y, rect.width - 200, EditorGUIUtility.singleLineHeight), element, GUIContent.none);
 
@@ -48,12 +48,12 @@ public class AddressableComponentLoaderEditor : Editor
 
                 Component selectedComponent = (Component)element.FindPropertyRelative("component").objectReferenceValue;
 
-                var fields = selectedComponent.GetType()
+                var fields = selectedComponent?.GetType()
                     .GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)
                     .Where(fi => !fi.FieldType.IsPrimitive)
                 ;
 
-                List<string> componentFields = fields.Select(fi => fi.Name).ToList();
+                List<string> componentFields = fields == null ? new List<string>() : fields.Select(fi => fi.Name).ToList();
                 int selectedIndex = componentFields.IndexOf(element.FindPropertyRelative("field").stringValue);
 
                 serializedObject.Update();

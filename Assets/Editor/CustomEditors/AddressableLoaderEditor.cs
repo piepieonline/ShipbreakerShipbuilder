@@ -193,7 +193,11 @@ class GameObjectTreeView : TreeView
     {
         if(idToPathMap.TryGetValue(id, out var path) && path.StartsWith(childPath) && path != childPath)
         {
-            path = path.Remove(0, childPath.Length + 1);
+            if(childPath.Length > 0)
+            {
+                path = path.Remove(0, childPath.Length + 1);
+            }
+
             if(disabledChildren.Contains(path))
             {
                 disabledChildren.Remove(path);
@@ -202,6 +206,7 @@ class GameObjectTreeView : TreeView
             {
                 disabledChildren.Add(path);
             }
+            
             EditorUtility.SetDirty(serializedObject.targetObject);
             Reload();
         }
