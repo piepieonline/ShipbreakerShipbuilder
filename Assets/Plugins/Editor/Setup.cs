@@ -73,6 +73,8 @@ public class Setup
             }
 
             writingAssembly.Write(assemblyPath);
+
+            writingAssembly.Dispose();
         }
         else
         {

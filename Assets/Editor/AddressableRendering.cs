@@ -82,7 +82,7 @@ public class AddressableRendering : MonoBehaviour
                         roomOverlaps.Add(RenderableMapping.RoomMapping(roomOverlap.transform, false));
                     }
 
-                    if (!needToRefreshCache || LoadGameAssets.handle1.IsValid() && LoadGameAssets.handle2.IsValid())
+                    if (!needToRefreshCache || LoadGameAssets.CheckHandlesValid())
                     {
                         foreach (var addressable in addressablesToLoad)
                         {
@@ -142,7 +142,23 @@ public class AddressableRendering : MonoBehaviour
 
     async static System.Threading.Tasks.Task<string> LoadHardpointGuidFromModuleListAsset(string moduleListAssetGuid)
     {
-        var res = Addressables.LoadAssetAsync<ModuleListAsset>(moduleListAssetGuid);
+        if(string.IsNullOrEmpty(moduleListAssetGuid))
+        {
+            Debug.LogError($"Missing HardPoint GUID");
+            return "";
+        }
+
+        UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle<ModuleListAsset> res;
+        try
+        {
+            res = Addressables.LoadAssetAsync<ModuleListAsset>(moduleListAssetGuid);
+        }
+        catch(System.Exception ex)
+        {
+            Debug.LogError($"Failed to load GUID {moduleListAssetGuid}");
+            Debug.LogError(ex);
+            return "";
+        }
         await res.Task;
 
         if (res.IsValid())

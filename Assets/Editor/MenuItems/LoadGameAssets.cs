@@ -8,13 +8,15 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 [InitializeOnLoad]
 public class LoadGameAssets
 {
-    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle1;
-    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> handle2;
+    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> customAssetResourceHandle;
+    public static AsyncOperationHandle<UnityEngine.AddressableAssets.ResourceLocators.IResourceLocator> gameAssetResourceHandle;
 
     public static string knownAssetString;
     public static Dictionary<string, string> knownAssetMap = new Dictionary<string, string>();
     
     static Finalizer finalizer;
+
+    static bool customAssetsLoaded = false;
 
     static LoadGameAssets()
     {
@@ -31,8 +33,9 @@ public class LoadGameAssets
 
         if(System.IO.File.Exists(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json"))
         {
-            handle1 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
-            handle1.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
+            customAssetsLoaded = true;
+            customAssetResourceHandle = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
+            customAssetResourceHandle.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
         }
         else
         {
@@ -41,8 +44,8 @@ public class LoadGameAssets
 
         if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
         {
-            handle2 = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
-            handle2.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
+            gameAssetResourceHandle = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+            gameAssetResourceHandle.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
         }
         else
         {
@@ -51,6 +54,18 @@ public class LoadGameAssets
 
         knownAssetString = System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../known_assets.json"));
         knownAssetMap = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(knownAssetString);
+    }
+
+    public static bool CheckHandlesValid()
+    {
+        if(customAssetsLoaded)
+        {
+            return customAssetResourceHandle.IsValid() && gameAssetResourceHandle.IsValid();
+        }
+        else
+        {
+            return gameAssetResourceHandle.IsValid();
+        }
     }
 
     [MenuItem("Shipbreaker/Clear Asset Cache", priority = 20)]
@@ -79,15 +94,17 @@ public class LoadGameAssets
 
     static void UnloadAssets()
     {
-        if (handle1.IsValid())
+        customAssetsLoaded = false;
+
+        if (customAssetResourceHandle.IsValid())
         {
-            Addressables.RemoveResourceLocator(handle1.Result);
-            Addressables.Release(handle1);
+            Addressables.RemoveResourceLocator(customAssetResourceHandle.Result);
+            Addressables.Release(customAssetResourceHandle);
         }
-        if (handle2.IsValid())
+        if (gameAssetResourceHandle.IsValid())
         {
-            Addressables.RemoveResourceLocator(handle2.Result);
-            Addressables.Release(handle2); 
+            Addressables.RemoveResourceLocator(gameAssetResourceHandle.Result);
+            Addressables.Release(gameAssetResourceHandle); 
         }
 
         Addressables.ClearResourceLocators(); 
@@ -99,5 +116,5 @@ public class LoadGameAssets
             Debug.Log("Unloading");
             LoadGameAssets.UnloadAssets();
         }
-    } 
+    }
 }
