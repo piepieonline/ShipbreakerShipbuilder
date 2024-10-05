@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.AddressableAssets;
@@ -31,10 +32,10 @@ public class LoadGameAssets
         AssetBundle.UnloadAllAssetBundles(false);
         UnloadAssets();
 
-        if(System.IO.File.Exists(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json"))
+        if(File.Exists(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Library", "com.unity.addressables", "aa", "Windows", "catalog.json"))))
         {
             customAssetsLoaded = true;
-            customAssetResourceHandle = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", false);
+            customAssetResourceHandle = Addressables.LoadContentCatalogAsync(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Library", "com.unity.addressables", "aa", "Windows", "catalog.json")), false);
             customAssetResourceHandle.Completed += status => { Debug.Log($"Loading custom assets complete. Valid: {status.IsValid()}"); };
         }
         else
@@ -42,9 +43,9 @@ public class LoadGameAssets
             Debug.LogWarning("No custom assets loaded - assuming none have been built yet");
         }
 
-        if(System.IO.File.Exists(Application.dataPath + "\\..\\modded_catalog.json"))
+        if(File.Exists(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "modded_catalog.json"))))
         {
-            gameAssetResourceHandle = Addressables.LoadContentCatalogAsync(Application.dataPath + "\\..\\modded_catalog.json", false);
+            gameAssetResourceHandle = Addressables.LoadContentCatalogAsync(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "modded_catalog.json")), false);
             gameAssetResourceHandle.Completed += status => { Debug.Log($"Loading game assets complete. Valid: {status.IsValid()}"); };
         }
         else
@@ -52,8 +53,9 @@ public class LoadGameAssets
             Debug.LogError("No game assets loaded - Make sure you have built the catalog!");
         }
 
-        knownAssetString = System.IO.File.ReadAllText(System.IO.Path.Combine(Application.dataPath, "../known_assets.json"));
+        knownAssetString = File.ReadAllText(Path.GetFullPath(Path.Combine(Application.dataPath, "..", "known_assets.json")));
         knownAssetMap = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(knownAssetString);
+        Debug.Log($"Known Asset list is {System.Text.Encoding.Unicode.GetByteCount(knownAssetString)} bytes in {knownAssetMap.Count} records");    
     }
 
     public static bool CheckHandlesValid()

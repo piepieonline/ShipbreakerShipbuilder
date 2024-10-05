@@ -19,6 +19,12 @@ public class BuildContent
     [MenuItem("Shipbreaker/Build", priority = 2)]
     static bool RunBuild()
     {
+        // Don't go through with lengthy build process if build settings are not in order
+        if (!Settings.VerifyBuildSettings())
+        {
+            return false;
+        }
+
         foreach(var typeAsset in Resources.FindObjectsOfTypeAll<BBI.Unity.Game.TypeAsset>())
         {
             if(AssetDatabase.TryGetGUIDAndLocalFileIdentifier(typeAsset, out string guid, out long id))
@@ -32,26 +38,40 @@ public class BuildContent
 
         AddressableAssetSettingsDefaultObject.Settings.activeProfileId = AddressableAssetSettingsDefaultObject.Settings.profileSettings.GetProfileId("Default");
 
+        Debug.Log("Starting to build player content...");
         AddressableAssetSettings.BuildPlayerContent(out AddressablesPlayerBuildResult result);
         bool success = string.IsNullOrEmpty(result.Error);
 
-        if (success && Settings.VerifyBuildSettings())
+        if (success)
         {
+            Debug.Log("Player content is built.");
+            Debug.Log("Starting to move ship bundles...");
+            
             var manifest = GenerateManifest();
 
             // Move the default bundle, if it exists
-            var defaultCatalogBundle = Directory.GetFiles(Application.dataPath + "\\..\\BuiltShipContent", "*.bundle", SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var builtShipContentPath = Path.GetFullPath(Path.Combine(Application.dataPath, "..", "BuiltShipContent"));
+            var defaultCatalogBundle = Directory.GetFiles(builtShipContentPath, "*.bundle", SearchOption.TopDirectoryOnly).FirstOrDefault();
             if(defaultCatalogBundle != null)
             {
-                MoveShipBundle("Common", Application.dataPath + "\\..\\Library\\com.unity.addressables\\aa\\Windows\\catalog.json", defaultCatalogBundle, manifest);
+                MoveShipBundle("Common", Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Library", "com.unity.addressables", "aa", "Windows", "catalog.json")), defaultCatalogBundle, manifest);
+            }
+            else
+            {
+                Debug.LogWarning("Default catalog bundle not found in " + builtShipContentPath);
             }
 
             // Move each custom bundle
-            foreach(var shipDirectory in Directory.GetDirectories(Application.dataPath + "\\..\\BuiltShipContent"))
+            foreach(var shipDirectory in Directory.GetDirectories(builtShipContentPath))
             {
+                Debug.Log("Current shipDirectory is: " + shipDirectory);
                 var shipName = Path.GetFileName(shipDirectory);
-                MoveShipBundle(shipName, shipDirectory + "\\" + shipName + ".json", shipDirectory + "\\" + shipName + "_assets_all.bundle", manifest);
+                var bundlePath = Path.Combine(shipDirectory, shipName + "_assets_all.bundle");
+                Debug.Log("Current bundlePath is: " + bundlePath);
+
+                MoveShipBundle(shipName, Path.Combine(shipDirectory, shipName + ".json"), bundlePath, manifest);
             }
+            Debug.Log("Moving ship bundles completed");
 
             LoadGameAssets.ReloadAssets();
             Debug.Log("Build Complete");
@@ -91,7 +111,7 @@ public class BuildContent
 
     private static void MoveShipBundle(string shipName, string catalogPath, string bundlePath, Manifest manifest)
     {
-        var modPath = "BepInEx\\plugins\\ModdedShipLoader\\Ships";
+        var modPath = Path.Combine("BepInEx", "plugins", "ModdedShipLoader", "Ships");
         var shipPath = $"{shipName}.{Settings.buildSettings.Author}";
 
         if(!Directory.Exists(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath)))
@@ -100,15 +120,23 @@ public class BuildContent
             Directory.CreateDirectory(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath));
         }
 
-        Debug.Log($"{shipName} - Moving bundle");
+        string targetPath = Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, bundlePath.Split('\\').Last());
+        string pathToGameFolder = Settings.buildSettings.ShipbreakerPath;
+        
+        if(SystemInfo.operatingSystem.ToLower().Contains("linux"))
+        {
+            targetPath = Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, bundlePath.Split('/').Last());
+            pathToGameFolder = Settings.buildSettings.WindowsShipbreakerPathOnLinux;
+        }
+        
+        Debug.Log($"{shipName} - Moving bundle from {bundlePath} to {targetPath}"); 
 
         File.Copy(
             bundlePath,
-            Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, bundlePath.Split('\\').Last()),
+            targetPath,
             true
         );
-        // File.Delete(bundlePath);
-
+        
         Debug.Log($"{shipName} - Moving and modifying catalog");
         var catalog = JObject.Parse(File.ReadAllText(catalogPath));
         var internalIds = (JArray)catalog.SelectToken("$.m_InternalIds");
@@ -117,11 +145,12 @@ public class BuildContent
         {
             if(internalIds[i].ToString().Contains("common_assets_all.bundle"))
             {
-                internalIds[i].Replace(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, $"Common.{Settings.buildSettings.Author}", "common_assets_all.bundle"));
+                // make sure all paths inside the bundles are Windows format, as the Windows-based game will use them (replacing potential Linux path separators / with Windows \\)
+                internalIds[i].Replace(Path.Combine(pathToGameFolder, modPath, $"Common.{Settings.buildSettings.Author}", "common_assets_all.bundle").Replace("/","\\")); 
             }
             else if(internalIds[i].ToString().Contains(".bundle"))
             {
-                internalIds[i].Replace(Path.Combine(Settings.buildSettings.ShipbreakerPath, modPath, shipPath, shipName + "_assets_all.bundle"));
+                internalIds[i].Replace(Path.Combine(pathToGameFolder, modPath, shipPath, shipName + "_assets_all.bundle").Replace("/","\\")); 
             }
         }
 
@@ -143,11 +172,18 @@ public class BuildContent
     [MenuItem("Shipbreaker/Update game catalog", priority = 1000)]
     static void UpdateGameCatalog()
     {
-        var catalog = File.ReadAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\catalog.json"));
+        var catalog = File.ReadAllText(Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data", "StreamingAssets", "aa", "catalog.json"));
 
-        catalog = catalog.Replace(@"{UnityEngine.AddressableAssets.Addressables.RuntimePath}\\StandaloneWindows64\\", (Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data\\StreamingAssets\\aa\\StandaloneWindows64") + "\\").Replace("\\", "\\\\"));
+        string sep = "\\\\";
+        if(SystemInfo.operatingSystem.ToLower().Contains("linux"))
+        {
+            sep = "/";
+        }
 
-        var path = System.IO.Path.GetFullPath(Application.dataPath + "\\..\\modded_catalog.json");
+        // make sure all paths inside the modded catalog are platform correct, as the Unity Editor will use them which may be running on Linux
+        catalog = catalog.Replace(@"{UnityEngine.AddressableAssets.Addressables.RuntimePath}\\StandaloneWindows64\\", (Path.Combine(Settings.buildSettings.ShipbreakerPath, "Shipbreaker_Data", "StreamingAssets", "aa", "StandaloneWindows64") + "\\").Replace("\\", sep));
+
+        var path = System.IO.Path.GetFullPath(Path.Combine(Application.dataPath, "..", "modded_catalog.json"));
 
         File.WriteAllText(path, catalog);
         Debug.Log($"Game catalog recreated and written to {path}");
@@ -175,9 +211,18 @@ public class BuildContent
         output[output.Count - 1] = output[output.Count - 1].TrimEnd(',');
         output.Add("}");
 
-        var path = System.IO.Path.GetFullPath(Application.dataPath + "\\..\\known_assets.json");
+        var path = System.IO.Path.GetFullPath(Path.Combine(Application.dataPath, "..", "known_assets.json"));
 
-        File.WriteAllLines(path, output);
+        // regardless of platform, make sure the Known Assets file is saved with Windows line terminators, as the GameInspectorWindow regex search depends on them
+        using (var writer = new StreamWriter(path)) 
+        {
+            writer.NewLine = "\r\n";
+            foreach (var line in output) 
+            {
+                writer.WriteLine(line);
+            }
+        }
+        //File.WriteAllLines(path, output);
         Debug.Log($"Known asset list recreated and written to {path}");
     }
 

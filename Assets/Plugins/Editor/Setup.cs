@@ -16,8 +16,8 @@ public class Setup
 
         Debug.Log("Rewriting Dll");
 
-        string assemblyPath = Path.GetFullPath(Application.dataPath + "\\Dlls\\BBI.Unity.Game.dll");
-        string cleanPath = Path.GetFullPath(Application.dataPath + "\\Dlls\\BBI.Unity.Game.dll.clean");
+        string assemblyPath = Path.GetFullPath(Path.Combine(Application.dataPath, "Dlls", "BBI.Unity.Game.dll"));
+        string cleanPath = Path.GetFullPath(Path.Combine(Application.dataPath, "Dlls", "BBI.Unity.Game.dll.clean"));
 
         AssemblyResolver.ResolveDirectories = new string[]
         {
